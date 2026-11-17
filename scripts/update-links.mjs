@@ -19,6 +19,7 @@
  * start afresh. Behind a proxy, run with NODE_USE_ENV_PROXY=1.
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { realpathSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -84,7 +85,17 @@ async function get(url) {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+/** True when this file was started with `node`, not imported. Works on Windows and with spaces in the path. */
+function runDirectly() {
+  if (!process.argv[1]) return false;
+  try {
+    return realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url));
+  } catch {
+    return false;
+  }
+}
+
+if (runDirectly()) {
   const rows = JSON.parse(await readFile(resolve(dataDir, 'guidelines.json'), 'utf8'));
   const urlBySlug = new Map(rows.map((r) => [slugOf(r.url), r.url]));
 
