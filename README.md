@@ -71,7 +71,7 @@ page's main content that point at another guideline in the dataset. So
 not cover citations that appear only inside the PDF documents.
 
 The bundled link map is interim: EMA's site rate-limited the collection, so it
-covers 404 of the 1,001 guideline pages (see `data/guideline-links.meta.json`),
+covers at least 407 of the 1,001 guideline pages (see `data/guideline-links.meta.json`),
 and the detail card says so. Running `npm run update-links` in a fresh clone
 starts from the first page and rebuilds the whole map.
 
