@@ -17,6 +17,11 @@
  * limit persists. Every page read is remembered in .cache/guideline-pages.json,
  * so a second run only asks for the pages still missing. Delete that file to
  * start afresh. Behind a proxy, run with NODE_USE_ENV_PROXY=1.
+ *
+ * It never replaces the map in data/ with one built from fewer pages than the
+ * map already there covers, which is what a run cut short by EMA would
+ * otherwise do. It says so and leaves the files alone. Pass --force to write
+ * the smaller map anyway.
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { realpathSync } from 'node:fs';
@@ -83,6 +88,15 @@ async function get(url) {
     if (++streak % 20 === 0 && pause > BASE_PAUSE) pause = Math.max(BASE_PAUSE, Math.round(pause * 0.8));
     return { status: res.status, url: res.url, text: await res.text() };
   }
+}
+
+/**
+ * Whether a map built from `read` pages may replace the existing one.
+ * @param {{pages_read?: unknown}|null} existing  the current meta file, if any
+ */
+export function mayReplace(existing, read, force = false) {
+  const before = Number(existing?.pages_read);
+  return force || !Number.isFinite(before) || read >= before;
 }
 
 /** True when this file was started with `node`, not imported. Works on Windows and with spaces in the path. */
@@ -160,9 +174,24 @@ if (runDirectly()) {
     records.push({ from: row.url, to });
   }
   const read = rows.filter((r) => r.url in cache.pages).length;
+  const metaFile = resolve(dataDir, 'guideline-links.meta.json');
+  let existing = null;
+  try {
+    existing = JSON.parse(await readFile(metaFile, 'utf8'));
+  } catch {
+    /* no map yet */
+  }
+  if (!mayReplace(existing, read, process.argv.includes('--force'))) {
+    console.log(`Read ${read} of ${rows.length} pages, fewer than the ${existing.pages_read} the current map covers.`);
+    console.log('Left data/guideline-links.json and its meta file unchanged. Pages read are kept in .cache/ for the next run.');
+    console.log('To write the smaller map anyway, run again with --force.');
+    if (stopped) console.log(`Stopped early: ${stopped} Run again later to read the rest.`);
+    for (const f of failed.slice(0, 20)) console.log(`  not read: ${f.url} (${f.reason})`);
+    process.exit(0);
+  }
   await writeFile(resolve(dataDir, 'guideline-links.json'), `[\n${records.map((r) => JSON.stringify(r)).join(',\n')}\n]\n`);
   await writeFile(
-    resolve(dataDir, 'guideline-links.meta.json'),
+    metaFile,
     `${JSON.stringify(
       {
         description: 'Links between guideline pages on ema.europa.eu, read from the <main> element of each page.',

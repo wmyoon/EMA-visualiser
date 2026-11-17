@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { slugOf, mainLinks } from '../scripts/update-links.mjs';
+import { slugOf, mainLinks, mayReplace } from '../scripts/update-links.mjs';
 import guidelines, { normalise } from '../js/datasets/guidelines.js';
 
 test('every URL form EMA uses for a guideline resolves to the same slug', () => {
@@ -51,4 +51,13 @@ test('without the link map the card simply has no reference lists', () => {
   const records = normalise([row('a'), row('b')]);
   assert.ok(records.every((r) => !r.linked && r.back.length === 0));
   assert.deepEqual(guidelines.detail(records[0], { snapshotMs: Date.UTC(2026, 0, 1), records }).lists, []);
+});
+
+test('a run that read fewer pages never replaces a bigger map unless forced', () => {
+  assert.equal(mayReplace({ pages_read: 407 }, 12), false);
+  assert.equal(mayReplace({ pages_read: 407 }, 12, true), true);
+  assert.equal(mayReplace({ pages_read: 407 }, 407), true);
+  assert.equal(mayReplace({ pages_read: 407 }, 1001), true);
+  assert.equal(mayReplace(null, 0), true); // no map yet
+  assert.equal(mayReplace({}, 0), true);
 });

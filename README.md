@@ -113,6 +113,9 @@ to ema.europa.eu, one every three seconds, so a full run takes about an hour.
 If EMA answers "too many requests" it waits, slows down, and stops cleanly if
 the refusals persist. Pages already read are kept in `.cache/` (not committed),
 so running it again on the same machine only asks for the pages still missing.
+It never replaces the bundled map with one built from fewer pages (a run cut
+short by EMA, say); it leaves the files alone and says so. Add `--force` to
+override that.
 
 ## Layout of the code
 
