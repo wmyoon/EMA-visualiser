@@ -1,0 +1,10 @@
+{
+  "description": "Links between guideline pages on ema.europa.eu, read from the <main> element of each page.",
+  "crawled_at": "2026-11-17T02:36:11.628Z",
+  "pages_total": 1001,
+  "pages_read": 404,
+  "pages_with_links": 141,
+  "links": 576,
+  "unmatched_link_targets": 0,
+  "note": "Interim: EMA rate-limited the collection. pages_read counts the pages read by the first run; run scripts/update-links.mjs again to complete it."
+}

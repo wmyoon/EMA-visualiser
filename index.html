@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulatory Atlas</title>
+<meta name="description" content="An unofficial 3D explorer for the European Medicines Agency's open data: scientific guidelines and medicines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+<a class="skip" href="#list">Skip to the list of results</a>
+
+<div class="app" id="app" data-detail="closed">
+  <aside class="side" id="side" aria-label="Find guidelines">
+    <header class="brand">
+      <h1 class="brand__name">Regulatory Atlas</h1>
+      <div class="switch" id="dataset-switch" role="tablist" aria-label="Dataset"></div>
+      <p class="brand__sub">
+        <span><span id="brand-total">–</span> EMA <span id="brand-title">records</span></span>
+        <span class="brand__stamp">Snapshot <time id="brand-snapshot">–</time></span>
+      </p>
+    </header>
+
+    <div class="search" role="search">
+      <svg class="search__icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m10.6 10.6 3.4 3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="q" class="search__input" type="search" placeholder="Search" autocomplete="off" spellcheck="false" aria-label="Search">
+      <kbd class="search__kbd" aria-hidden="true">/</kbd>
+    </div>
+
+    <details class="filters" id="filters" open>
+      <summary class="filters__summary">
+        <span>Filters</span>
+        <span class="filters__badge" id="filter-badge" hidden></span>
+      </summary>
+      <div class="filters__body">
+        <div class="facets" id="facets"></div>
+        <section class="facet" aria-labelledby="facet-years-title">
+          <h2 class="facet__title" id="facet-years-title"><span id="years-basis">First published</span> <output class="facet__value" id="years-value" for="years-from years-to"></output></h2>
+          <div class="years" id="years">
+            <div class="years__bars" id="years-bars" aria-hidden="true"></div>
+            <div class="years__track">
+              <input class="years__range" id="years-from" type="range" step="1" aria-label="From year">
+              <input class="years__range" id="years-to" type="range" step="1" aria-label="To year">
+            </div>
+          </div>
+        </section>
+      </div>
+    </details>
+
+    <div class="results-head">
+      <p class="results-head__count" id="result-count" role="status" aria-live="polite"></p>
+      <button class="link-btn" id="clear-filters" type="button" hidden>Clear</button>
+      <label class="sort">
+        <span class="visually-hidden">Sort by</span>
+        <select id="sort" class="sort__select"></select>
+      </label>
+    </div>
+
+    <div class="list" id="list" role="listbox" tabindex="0" aria-label="Results">
+      <div class="list__pad" id="list-pad"></div>
+    </div>
+    <p class="list-empty" id="list-empty" hidden>
+      Nothing matches these filters.
+      <button class="link-btn" id="empty-clear" type="button">Clear search and filters</button>
+    </p>
+
+    <footer class="credit">
+      Data: <a href="https://www.ema.europa.eu/en/about-us/about-website/download-website-data-json-data-format" target="_blank" rel="noopener">European Medicines Agency website data</a>.
+      Unofficial viewer, not affiliated with EMA.
+    </footer>
+  </aside>
+
+  <main class="stage" id="stage" aria-label="3D map">
+    <canvas class="stage__canvas" id="canvas" tabindex="0" role="application" aria-roledescription="3D map"
+      aria-label="One dot per record. Arrow keys orbit, plus and minus zoom, 0 resets. Every record is also in the list."></canvas>
+    <div class="stage__overlay" id="overlay" aria-hidden="true"></div>
+    <p class="stage__notice" id="stage-notice" hidden></p>
+
+    <div class="stage__top">
+      <div class="seg" id="seg-layout" role="radiogroup" aria-label="Arrangement"></div>
+      <div class="seg" id="seg-basis" role="radiogroup" aria-label="Date used for position"></div>
+      <div class="seg" id="seg-color" role="radiogroup" aria-label="Colour"></div>
+    </div>
+
+    <div class="stage__tools" role="toolbar" aria-label="View">
+      <button class="tool" id="tool-in" type="button" aria-label="Zoom in" title="Zoom in"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+      <button class="tool" id="tool-out" type="button" aria-label="Zoom out" title="Zoom out"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+      <button class="tool" id="tool-reset" type="button" aria-label="Reset the view" title="Reset the view"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 6V2.8M3 6h3.2M13 10v3.2M13 10H9.8M3.4 6A5 5 0 0 1 12.6 6.6M12.6 10A5 5 0 0 1 3.4 9.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="tool" id="tool-help" type="button" aria-label="How to move around" aria-expanded="false" aria-controls="help" title="How to move around"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6 6.2a2 2 0 1 1 3 1.7c-.6.4-1 .8-1 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="12" r="1" fill="currentColor"/></svg></button>
+    </div>
+
+    <div class="help" id="help" hidden>
+      <h2 class="help__title">Moving around</h2>
+      <dl class="help__list">
+        <dt>Drag</dt><dd>Orbit</dd>
+        <dt>Scroll or pinch</dt><dd>Zoom</dd>
+        <dt>Right-drag, Shift-drag, two fingers</dt><dd>Pan</dd>
+        <dt>Click a dot</dt><dd>Open its card</dd>
+        <dt><kbd>/</kbd></dt><dd>Search</dd>
+        <dt id="help-layout-keys"></dt><dd id="help-layouts"></dd>
+        <dt><kbd>J</kbd> <kbd>K</kbd></dt><dd>Next and previous result</dd>
+        <dt><kbd>Esc</kbd></dt><dd>Close the open card</dd>
+      </dl>
+    </div>
+
+    <div class="legend" id="legend"></div>
+
+    <article class="detail" id="detail" hidden aria-label="Selected record"></article>
+  </main>
+</div>
+
+<noscript><p class="noscript">Regulatory Atlas needs JavaScript to draw the map and filter the list.</p></noscript>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

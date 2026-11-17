@@ -1,0 +1,14 @@
+{
+  "name": "regulatory-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An unofficial 3D explorer for the European Medicines Agency's open data: scientific guidelines and medicines.",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test",
+    "update-data": "node scripts/update-data.mjs",
+    "update-links": "node scripts/update-links.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
