@@ -72,7 +72,8 @@ not cover citations that appear only inside the PDF documents.
 
 The bundled link map is interim: EMA's site rate-limited the collection, so it
 covers 404 of the 1,001 guideline pages (see `data/guideline-links.meta.json`),
-and the detail card says so. `npm run update-links` resumes where it stopped.
+and the detail card says so. Running `npm run update-links` in a fresh clone
+starts from the first page and rebuilds the whole map.
 
 ### Medicines
 
@@ -108,7 +109,10 @@ npm run update-links
 ```
 
 Rebuilds the guideline reference map. It makes about a thousand page requests
-to ema.europa.eu, a few at a time, and takes around fifteen minutes.
+to ema.europa.eu, one every three seconds, so a full run takes about an hour.
+If EMA answers "too many requests" it waits, slows down, and stops cleanly if
+the refusals persist. Pages already read are kept in `.cache/` (not committed),
+so running it again on the same machine only asks for the pages still missing.
 
 ## Layout of the code
 
