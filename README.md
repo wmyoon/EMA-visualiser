@@ -70,10 +70,9 @@ page's main content that point at another guideline in the dataset. So
 "Referenced by" means *another guideline's EMA page links to this one*. It does
 not cover citations that appear only inside the PDF documents.
 
-The bundled link map is interim: EMA's site rate-limited the collection, so it
-covers at least 407 of the 1,001 guideline pages (see `data/guideline-links.meta.json`),
-and the detail card says so. Running `npm run update-links` in a fresh clone
-starts from the first page and rebuilds the whole map.
+The bundled link map covers all 1,001 guideline pages: 407 of them link to
+another guideline, 1,196 links in all (see `data/guideline-links.meta.json`).
+Running `npm run update-links` rebuilds it from the current EMA pages.
 
 ### Medicines
 
