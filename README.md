@@ -21,12 +21,34 @@ npm start
 ```
 
 Then open http://localhost:4173. There is no build step and no dependency to
-install: the app is native ES modules, and three.js loads from cdnjs at a pinned
-version. Any static file server works.
+install: the app is native ES modules. three.js and the two fonts are bundled in
+`vendor/`, so the page makes no request beyond its own folder. Any static file
+server works.
 
 ```bash
 npm test
 ```
+
+## Mac app
+
+```bash
+npm run build:mac
+```
+
+Builds `macos/build/Regulatory Atlas.app`, a native macOS app (about 6 MB)
+that shows the same page in a window and works offline. It needs macOS 12 or
+later and Apple's Command Line Tools (`xcode-select --install`), not Xcode.
+Add `-- --install` to copy it to /Applications, `-- --universal` to build for
+both Apple silicon and Intel, `-- --open` to launch it.
+
+The app is a small Swift program, [`macos/RegulatoryAtlas.swift`](macos/RegulatoryAtlas.swift):
+a WebKit view serving the page from inside the app bundle. Links to
+ema.europa.eu open in your default browser. It carries a snapshot of `data/`
+from build time; run `npm run update-data` and build again to refresh it.
+
+The app is signed ad hoc for the Mac that built it. Copied to another Mac,
+macOS will refuse to open it until it is allowed in System Settings ▸ Privacy &
+Security; sharing it widely would need an Apple Developer ID and notarisation.
 
 ## What you can do
 
@@ -116,6 +138,14 @@ It never replaces the bundled map with one built from fewer pages (a run cut
 short by EMA, say); it leaves the files alone and says so. Add `--force` to
 override that.
 
+```bash
+npm run vendor
+```
+
+Downloads three.js and the Archivo and IBM Plex Mono fonts into `vendor/`. The
+files are committed, so run this only to change versions (set in
+`scripts/vendor.mjs`). Licences are kept next to the files.
+
 ## Layout of the code
 
 ```
@@ -132,7 +162,9 @@ js/encodings.js         colour modes, read from the CSS tokens
 js/scene.js             WebGL stage: points shader, picking, labels, link arcs
 js/camera.js            orbit / pan / zoom rig
 js/ui/*.js              sidebar, virtualised list, detail card, stage controls
-scripts/                dev server, data refresh, guideline link map
+scripts/                dev server, data refresh, guideline link map, vendoring
+vendor/                 three.js and fonts, with their licences
+macos/                  Mac app: Swift source, icon, build script
 tests/                  node:test suites for the pure modules
 ```
 

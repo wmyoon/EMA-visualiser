@@ -8,7 +8,9 @@
     "start": "node scripts/serve.mjs",
     "test": "node --test",
     "update-data": "node scripts/update-data.mjs",
-    "update-links": "node scripts/update-links.mjs"
+    "update-links": "node scripts/update-links.mjs",
+    "vendor": "node scripts/vendor.mjs",
+    "build:mac": "bash macos/build.sh"
   },
   "engines": { "node": ">=20" }
 }

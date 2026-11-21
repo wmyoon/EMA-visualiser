@@ -6,7 +6,7 @@
  *
  * Renders on demand: a frame is drawn only while something is changing.
  */
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.170.0/three.module.min.js';
+import * as THREE from '../vendor/three/three.module.min.js';
 import { OrbitRig } from './camera.js';
 
 const FOV = 32;
