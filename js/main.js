@@ -118,6 +118,7 @@ async function mount(dataset, { records, meta }, saved) {
     ),
     years: Array.isArray(saved.years) ? saved.years : null,
     selected: byId.get(saved.selected)?.i ?? null,
+    folded: saved.folded === true && byId.has(saved.selected), // the card is minimised to a bar; the record stays selected and its arcs stay drawn
     hovered: null,
   });
 
@@ -130,8 +131,10 @@ async function mount(dataset, { records, meta }, saved) {
     hover: (i) => store.set({ hovered: i }),
     select(i, { from = 'stage' } = {}) {
       selectFrom = from;
-      store.set({ selected: i });
+      // Closing the card ends the minimised state too: the next record opens in full.
+      store.set(i == null ? { selected: null, folded: false } : { selected: i });
     },
+    fold: (on) => store.set({ folded: on && store.get().selected != null }),
     zoom: (f) => stage?.zoom(f),
     resetView: () => stage?.resetView(),
     openDataset: (id) => open(id),
@@ -163,7 +166,8 @@ async function mount(dataset, { records, meta }, saved) {
   };
   const narrow = matchMedia('(max-width: 880px)');
   const detailInset = () => {
-    const open = store.get().selected != null && !narrow.matches;
+    const { selected, folded } = store.get();
+    const open = selected != null && !folded && !narrow.matches;
     stage?.setRightInset(open ? Math.min(404, $('stage').clientWidth * 0.5) : 0);
   };
   /** The selected record's connections to other records, for the arcs on the map. */
@@ -238,6 +242,7 @@ async function mount(dataset, { records, meta }, saved) {
       }
       if (changed.has('colorBy')) applyTheme();
       if (changed.has('hovered')) stage.setHover(state.hovered);
+      if (changed.has('folded')) detailInset(); // a minimised card gives the map its full width
       if (changed.has('selected')) {
         stage.setSelected(state.selected);
         stage.setLinks(linksOf(state.selected));
@@ -271,6 +276,8 @@ async function mount(dataset, { records, meta }, saved) {
         e.preventDefault();
       } else if (+e.key >= 1 && +e.key <= dataset.layouts.length && e.target !== $('canvas')) {
         store.set({ layout: dataset.layouts[+e.key - 1].id });
+      } else if (e.key === 'm' || e.key === 'M') {
+        if (store.get().selected != null) actions.fold(!store.get().folded);
       } else if (e.key === 'j' || e.key === 'k') {
         if (store.get().selected != null) detail.step(e.key === 'j' ? 1 : -1);
         else if (view.results.length) actions.select(view.results[0].i, { from: 'list' });
@@ -291,7 +298,7 @@ async function mount(dataset, { records, meta }, saved) {
       return {
         dataset: dataset.id, layout: s.layout, basis: s.basis, colorBy: s.colorBy, sort: s.sort, query: s.query,
         sel: Object.fromEntries(Object.entries(s.sel).map(([k, set]) => [k, [...set]])), years: s.years,
-        selected: s.selected == null ? null : records[s.selected].id,
+        selected: s.selected == null ? null : records[s.selected].id, folded: s.folded,
       };
     },
     destroy() {

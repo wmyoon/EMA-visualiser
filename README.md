@@ -58,12 +58,12 @@ Security; sharing it widely would need an Apple Developer ID and notarisation.
 | **Two date bases** | Place by the record's primary date or by its last update. The year filter follows the same choice. |
 | **Colour** | Guidelines: audience or update age. Medicines: status, type (generic, biosimilar, orphan), audience or update age. |
 | **Search and filter** | Free-text search, chips with live counts, and a year range. Matches re-seat at the base of each stack so a filter reads as a bar inside the full bar. |
-| **Detail card** | Dates, a lifetime bar, the EMA link, and related records. For a guideline: the guidelines that reference it and the ones it refers to, also drawn as arcs on the map. For a medicine: every dated milestone and other medicines with the same active substance. |
+| **Detail card** | Dates, a lifetime bar, the EMA link, and related records. For a guideline: the guidelines that reference it and the ones it refers to, also drawn as arcs on the map. For a medicine: every dated milestone and other medicines with the same active substance. Minimise it (`M` or the ⌄ button) to a bar at the bottom of the map: the record stays selected, its arcs stay drawn and the map takes the full width. |
 | **Deep links** | `#g-<id>` selects a guideline, `#m-<id>` a medicine, `#medicines` opens that dataset. |
 
 Controls: drag to orbit, scroll or pinch to zoom toward the pointer, right-drag
 or Shift-drag to pan. `/` search, number keys for arrangements, `J` `K` step
-through results, `Esc` close.
+through results, `M` minimise or restore the card, `Esc` close.
 
 ## What is EMA data and what is derived
 

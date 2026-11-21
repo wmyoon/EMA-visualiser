@@ -2,6 +2,9 @@
  * The card for the selected record. The dataset supplies the content as plain
  * data (`dataset.detail`); this component owns the layout, the navigation
  * through the current results, the link to EMA and the related records.
+ *
+ * The card can be minimised to a bar at the bottom of the map. The record stays
+ * selected, so its connection arcs stay drawn, and the map gets its full width.
  */
 import { isEmaUrl } from '../data.js';
 import { touched } from '../store.js';
@@ -9,6 +12,8 @@ import { $, h, icon, tokenDot, nf } from './dom.js';
 
 const ICONS = {
   close: 'M4 4l8 8M12 4l-8 8',
+  fold: 'M4 6.5 8 10.5l4-4',
+  unfold: 'M4 9.5 8 5.5l4 4',
   prev: 'M10 3.5 5.5 8l4.5 4.5',
   next: 'M6 3.5 10.5 8 6 12.5',
   out: 'M6.5 3.5h-3v9h9v-3M9 3.5h3.5V7M12.5 3.5 7.5 8.5',
@@ -22,6 +27,7 @@ export function mountDetail({ dataset, records, extent, snapshotMs, actions }) {
   let shown = null;
   let step = { prev: null, next: null };
   let textOpen = false;
+  let refocus = null; // id of the control to focus after the card is minimised or restored
   const expanded = new Set(); // ids of connection lists shown in full
   const SHORT = 6;
   root.setAttribute('aria-label', `Selected ${dataset.noun[0]}`);
@@ -111,9 +117,46 @@ export function mountDetail({ dataset, records, extent, snapshotMs, actions }) {
     );
   }
 
-  function render(r, view) {
-    const at = view.results.findIndex((x) => x.i === r.i);
-    step = { prev: view.results[at - 1] ?? null, next: at >= 0 ? view.results[at + 1] ?? null : null };
+  const go = (target) => () => target && actions.select(target.i, { from: 'list' });
+  const position = (at, view) => (at >= 0 ? `${nf.format(at + 1)} of ${nf.format(view.results.length)}` : 'Outside the current filters');
+  const fold = (on) => () => {
+    refocus = on ? 'detail-unfold' : 'detail-fold';
+    actions.fold(on);
+  };
+  const stepButtons = () => [
+    h('button', { class: 'icon-btn', type: 'button', id: 'detail-prev', 'aria-label': 'Previous result', title: 'Previous result (K)', disabled: !step.prev, onClick: go(step.prev) }, icon(ICONS.prev)),
+    h('button', { class: 'icon-btn', type: 'button', id: 'detail-next', 'aria-label': 'Next result', title: 'Next result (J)', disabled: !step.next, onClick: go(step.next) }, icon(ICONS.next)),
+  ];
+  const closeButton = () =>
+    h('button', { class: 'icon-btn', type: 'button', id: 'detail-close', 'aria-label': 'Close', title: 'Close (Esc)', onClick: () => actions.select(null) }, icon(ICONS.close));
+
+  /** The minimised card: one bar with the title and a key to the arcs on the map. */
+  function renderFolded(r, view, at) {
+    const d = dataset.detail(r, { snapshotMs, records });
+    const lists = d.lists ?? [];
+    const meta = lists.length
+      ? lists.map((l) =>
+          h('span', { class: 'detail__key', dataset: { tone: l.tone ?? '' } }, h('span', { class: 'detail__key-line', 'aria-hidden': 'true' }), `${l.label} ${nf.format(l.items.length)}`),
+        )
+      : [position(at, view)];
+    root.replaceChildren(
+      h(
+        'div',
+        { class: 'detail__folded' },
+        h(
+          'button',
+          { class: 'detail__unfold', type: 'button', id: 'detail-unfold', 'aria-expanded': 'false', title: 'Show the card (M)', onClick: fold(false) },
+          h('span', { class: 'detail__folded-title' }, tokenDot(dataset.row(r).tokens), h('span', { class: 'detail__folded-name', text: d.title })),
+          h('span', { class: 'detail__folded-meta' }, ...meta),
+          icon(ICONS.unfold),
+        ),
+        ...stepButtons(),
+        closeButton(),
+      ),
+    );
+  }
+
+  function render(r, view, at) {
     const d = dataset.detail(r, { snapshotMs, records });
     const safe = isEmaUrl(r.url);
 
@@ -137,16 +180,19 @@ export function mountDetail({ dataset, records, extent, snapshotMs, actions }) {
     );
 
     const related = dataset.related(records, r);
-    const go = (target) => () => target && actions.select(target.i, { from: 'list' });
 
     root.replaceChildren(
       h(
         'div',
         { class: 'detail__bar' },
-        h('span', { class: 'detail__pos', text: at >= 0 ? `${nf.format(at + 1)} of ${nf.format(view.results.length)}` : 'Outside the current filters' }),
-        h('button', { class: 'icon-btn', type: 'button', id: 'detail-prev', 'aria-label': 'Previous result', title: 'Previous result (K)', disabled: !step.prev, onClick: go(step.prev) }, icon(ICONS.prev)),
-        h('button', { class: 'icon-btn', type: 'button', id: 'detail-next', 'aria-label': 'Next result', title: 'Next result (J)', disabled: !step.next, onClick: go(step.next) }, icon(ICONS.next)),
-        h('button', { class: 'icon-btn', type: 'button', id: 'detail-close', 'aria-label': 'Close', title: 'Close (Esc)', onClick: () => actions.select(null) }, icon(ICONS.close)),
+        h('span', { class: 'detail__pos', text: position(at, view) }),
+        ...stepButtons(),
+        h(
+          'button',
+          { class: 'icon-btn', type: 'button', id: 'detail-fold', 'aria-label': 'Minimise the card', 'aria-expanded': 'true', title: 'Minimise the card to the bottom of the map (M)', onClick: fold(true) },
+          icon(ICONS.fold),
+        ),
+        closeButton(),
       ),
       h(
         'div',
@@ -173,7 +219,7 @@ export function mountDetail({ dataset, records, extent, snapshotMs, actions }) {
         ...(d.lists ?? []).filter((l) => l.items.length || l.empty).map((l) =>
           recordList(l, go, () => {
             const top = $('detail-body').scrollTop;
-            render(r, view);
+            render(r, view, at);
             $('detail-body').scrollTop = top;
           }),
         ),
@@ -211,22 +257,35 @@ export function mountDetail({ dataset, records, extent, snapshotMs, actions }) {
       if (target) actions.select(target.i, { from: 'list' });
     },
     update(state, view, changed) {
-      if (changed && !touched(changed, 'selected', 'query', 'sel', 'years', 'sort', 'basis')) return;
+      if (changed && !touched(changed, 'selected', 'folded', 'query', 'sel', 'years', 'sort', 'basis')) return;
       const r = state.selected == null ? null : records[state.selected];
+      const hadFocus = root.contains(document.activeElement);
       root.hidden = !r;
-      $('app').dataset.detail = r ? 'open' : 'closed';
+      $('app').dataset.detail = r ? (state.folded ? 'folded' : 'open') : 'closed';
+      root.dataset.size = state.folded ? 'folded' : 'full';
       if (!r) {
         shown = null;
+        refocus = null;
         root.replaceChildren();
         return;
       }
+      // Minimising or restoring from the keyboard keeps focus in the card, on the matching control.
+      if (!refocus && changed?.has('folded') && hadFocus) refocus = state.folded ? 'detail-unfold' : 'detail-fold';
       if (shown !== r.i) {
         textOpen = false;
         expanded.clear();
       }
-      const scrollTop = shown === r.i ? $('detail-body')?.scrollTop ?? 0 : 0;
-      render(r, view);
-      $('detail-body').scrollTop = scrollTop;
+      const at = view.results.findIndex((x) => x.i === r.i);
+      step = { prev: view.results[at - 1] ?? null, next: at >= 0 ? view.results[at + 1] ?? null : null };
+      if (state.folded) {
+        renderFolded(r, view, at);
+      } else {
+        const scrollTop = shown === r.i ? $('detail-body')?.scrollTop ?? 0 : 0;
+        render(r, view, at);
+        $('detail-body').scrollTop = scrollTop;
+      }
+      if (refocus) $(refocus)?.focus();
+      refocus = null;
       shown = r.i;
     },
   };
