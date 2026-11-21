@@ -16,7 +16,7 @@ set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 repo="$(cd "$here/.." && pwd)"
 name="Regulatory Atlas"
-app="$here/build/$name.app"
+out="$here/build/$name.app"
 min_macos="12.0"
 
 universal=0; install=0; open_app=0
@@ -40,12 +40,15 @@ fi
 
 step() { printf '\n\033[1m%s\033[0m\n' "$1"; }
 work="$(mktemp -d)"; trap 'rm -rf "$work"' EXIT
+# The app is assembled and signed in a temporary folder, then copied into
+# place. Folders synced by iCloud (Desktop, Documents) add Finder information
+# to files, which codesign refuses to sign over.
+app="$work/$name.app"
 
 step "1/5  Copying the page and data"
-rm -rf "$app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources/web"
 for part in index.html css js data vendor; do
-  cp -R "$repo/$part" "$app/Contents/Resources/web/"
+  ditto --norsrc --noextattr --noqtn "$repo/$part" "$app/Contents/Resources/web/$part"
 done
 # The app works offline: the page must not load anything from the network.
 if grep -rqE "https://(cdnjs|fonts\.googleapis|fonts\.gstatic)" "$app/Contents/Resources/web/index.html" "$app/Contents/Resources/web/js" "$app/Contents/Resources/web/css"; then
@@ -107,15 +110,19 @@ PLIST
 plutil -lint "$app/Contents/Info.plist" >/dev/null
 
 step "5/5  Signing (ad hoc, for this Mac)"
+xattr -cr "$app" # clear any extended attributes the copies picked up
 codesign --force --deep --sign - "$app"
 codesign --verify --deep --strict "$app"
 
+rm -rf "$out"
+mkdir -p "$(dirname "$out")"
+ditto "$app" "$out"
 echo
-echo "Built: $app"
+echo "Built: $out"
 if [ "$install" = 1 ]; then
   rm -rf "/Applications/$name.app"
-  cp -R "$app" "/Applications/"
-  app="/Applications/$name.app"
-  echo "Installed: $app"
+  ditto "$app" "/Applications/$name.app"
+  out="/Applications/$name.app"
+  echo "Installed: $out"
 fi
-if [ "$open_app" = 1 ]; then open "$app"; fi
+if [ "$open_app" = 1 ]; then open "$out"; fi
