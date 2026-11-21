@@ -139,6 +139,20 @@ short by EMA, say); it leaves the files alone and says so. Add `--force` to
 override that.
 
 ```bash
+npm run download-guidelines
+```
+
+Saves the current document of every guideline: the PDF in
+`.cache/guidelines/pdf/<id>.pdf`, its text in `text/<id>.txt` if `pdftotext` is
+installed (`brew install poppler` on a Mac), and in `manifest.json` every
+document each guideline page lists and which one was picked. The files come to
+about 300 MB and are not committed. Set `OUT_DIR` to save them elsewhere, for
+example `OUT_DIR=~/Documents/EMA-guidelines npm run download-guidelines`. It
+makes about 2,000 requests, one every six seconds, so a full run takes three to
+four hours; it slows down when EMA says it is busy. Stop it with Ctrl-C and run
+it again to carry on: guidelines already saved are skipped.
+
+```bash
 npm run vendor
 ```
 

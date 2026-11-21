@@ -17,9 +17,10 @@
  * guideline only out for consultation), the most recent draft. manifest.json
  * records every document listed on each page and which rule picked the file.
  *
- * About 2,000 requests, one at a time with a pause between them (three
- * seconds unless PAUSE_MS says otherwise), so a full run takes two hours or
- * more. It slows down when EMA answers 429 and stops cleanly if that goes on.
+ * About 2,000 requests, one at a time with a pause between them (six
+ * seconds unless PAUSE_MS says otherwise), so a full run takes three to four
+ * hours. It slows down when EMA answers 429 or 503 and stops cleanly if that
+ * goes on.
  * Run it again to continue: guidelines already in the manifest are skipped.
  * Behind a proxy, run with NODE_USE_ENV_PROXY=1.
  */
@@ -117,7 +118,7 @@ export function chooseDocument({ sections }) {
 // ---------------------------------------------------------------- fetching
 
 class RateLimited extends Error {}
-const BASE_PAUSE = Number(process.env.PAUSE_MS) || 3000;
+const BASE_PAUSE = Number(process.env.PAUSE_MS) || 6000;
 let pause = BASE_PAUSE;
 let streak = 0;
 

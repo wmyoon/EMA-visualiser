@@ -10,7 +10,8 @@
     "update-data": "node scripts/update-data.mjs",
     "update-links": "node scripts/update-links.mjs",
     "vendor": "node scripts/vendor.mjs",
-    "build:mac": "bash macos/build.sh"
+    "build:mac": "bash macos/build.sh",
+    "download-guidelines": "node scripts/download-guidelines.mjs"
   },
   "engines": { "node": ">=20" }
 }
