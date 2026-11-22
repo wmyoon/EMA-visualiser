@@ -24,10 +24,10 @@
   --human: var(--series-1);
   --veterinary: var(--series-2);
   --herbal: var(--series-3);
-  /* stage-assessment confidence: one hue, darker = surer */
-  --conf-high: #184f95;
-  --conf-medium: #3987e5;
-  --conf-low: #9cc3f2;
+  /* stage-assessment confidence: full colour when sure, partly greyed when medium, grey when low */
+  --conf-high: #2466c3;
+  --conf-medium: #788eae;
+  --conf-low: #ababab;
   /* update-age ramp, most recent first */
   --age-1: #0d366b;
   --age-2: #184f95;
@@ -67,9 +67,9 @@
     --series-2: #d95926;
     --series-3: #199e70;
     --neutral: #66758a;
-    --conf-high: #b7d3f6;
-    --conf-medium: #6da7ec;
-    --conf-low: #2f5f9e;
+    --conf-high: #70a6f5;
+    --conf-medium: #70819b;
+    --conf-low: #5b5b5b;
     --age-1: #b7d3f6;
     --age-2: #6da7ec;
     --age-3: #3987e5;
@@ -98,9 +98,9 @@
   --series-2: #d95926;
   --series-3: #199e70;
   --neutral: #66758a;
-  --conf-high: #b7d3f6;
-  --conf-medium: #6da7ec;
-  --conf-low: #2f5f9e;
+  --conf-high: #70a6f5;
+  --conf-medium: #70819b;
+  --conf-low: #5b5b5b;
   --age-1: #b7d3f6;
   --age-2: #6da7ec;
   --age-3: #3987e5;

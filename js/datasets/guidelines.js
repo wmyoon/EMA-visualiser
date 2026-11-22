@@ -68,6 +68,7 @@ export function normalise(rows, extras = {}) {
       hay: `${r.title} ${code ?? ''} ${cats.join(' ')} ${area === 'general' ? '' : AREA_BY_ID[area].label} ${stage ? STAGE_BY_ID[stage.stage].label : ''}`.toLowerCase(),
     });
   }
+  unassessed = out.filter((r) => !r.stage).length;
   coverage = extras.linksMeta && extras.linksMeta.pages_read < extras.linksMeta.pages_total ? extras.linksMeta : null;
   if (Array.isArray(extras.links)) {
     const byUrl = new Map(out.map((r) => [r.url, r]));
@@ -106,6 +107,9 @@ function assessmentOf(r) {
     note: 'Assessed for this atlas from the guideline’s current document. EMA does not classify guidelines this way.',
   };
 }
+
+/** How many guidelines have no stage assessment in the loaded data. */
+let unassessed = 0;
 
 /** Set when the link map covers only part of the guideline pages, so the card can say so. */
 let coverage = null;
@@ -215,7 +219,11 @@ export default {
       label: 'Confidence',
       legendTitle: 'Stage assessment',
       of: (r) => [r.stage ? CONFIDENCE[r.stage.confidence].token : '--neutral'],
-      legend: [...Object.values(CONFIDENCE).map((c) => ({ label: c.label, tokens: [c.token] })), { label: 'Not assessed', tokens: ['--neutral'] }],
+      // "Not assessed" is listed only when some guideline has no assessment, so it is never confused with Low.
+      get legend() {
+        const keys = Object.values(CONFIDENCE).map((c) => ({ label: c.label, tokens: [c.token] }));
+        return unassessed ? [...keys, { label: 'Not assessed', tokens: ['--neutral'] }] : keys;
+      },
     },
   ],
 
