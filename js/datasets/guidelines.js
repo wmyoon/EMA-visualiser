@@ -102,7 +102,7 @@ function assessmentOf(r) {
     ].filter(Boolean),
     reasoning: a.reasoning,
     evidence: a.evidence,
-    source: a.evidenceSource === 'page summary' ? { label: 'From EMA’s page summary' } : { label: 'From', document: a.document, status: a.documentStatus, url: a.documentUrl },
+    source: a.evidenceSource === 'page summary' ? { label: 'From EMA’s page summary' } : a.evidenceSource === 'document title' ? { label: 'From the title of the document (no text was available)' } : { label: 'From', document: a.document, status: a.documentStatus, url: a.documentUrl },
     note: 'Assessed for this atlas from the guideline’s current document. EMA does not classify guidelines this way.',
   };
 }

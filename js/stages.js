@@ -80,7 +80,7 @@ export function indexStages(file) {
       foodChain: s.food_chain === true,
       reasoning: String(s.reasoning ?? ''),
       evidence: String(s.evidence ?? ''),
-      evidenceSource: s.evidence_source === 'page summary' ? 'page summary' : 'document',
+      evidenceSource: ['page summary', 'document title'].includes(s.evidence_source) ? s.evidence_source : 'document',
       document: typeof s.document === 'string' ? s.document : null,
       documentStatus: typeof s.document_status === 'string' ? s.document_status : null,
       documentUrl: typeof s.document_url === 'string' ? s.document_url : null,

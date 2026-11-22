@@ -69,10 +69,11 @@ with open(out, 'a') as f:
                 t = ''
                 if e.get('text') and os.path.exists(os.path.join(base, e['text'])):
                     t = open(os.path.join(base, e['text']), encoding='utf-8', errors='replace').read()
-                texts[gid] = (norm(t), norm(e.get('summary') or ''))
-            doc, page = texts[gid]
+                texts[gid] = (norm(t), norm(e.get('summary') or ''), norm((e.get('chosen') or {}).get('title') or ''))
+            doc, page, title = texts[gid]
             q = norm(ev)
-            source = 'document' if q and q in doc else 'page summary' if q and q in page else None
+            # The document's title is a last resort, for a file with no text and a page with no summary.
+            source = 'document' if q and q in doc else 'page summary' if q and q in page else 'document title' if q and not doc and not page and q in title else None
             if ev and not source:
                 problems.append('evidence was not found word for word in the document text or page summary')
             if problems:

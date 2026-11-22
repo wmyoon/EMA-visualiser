@@ -1,22 +1,22 @@
 {
  "meta": {
   "generated": "2026-11-22",
-  "assessed": 891,
+  "assessed": 1001,
   "total_guidelines": 1001,
   "by_stage": {
-   "NC": 89,
-   "MA": 267,
-   "CD": 257,
-   "QM": 226,
-   "PA": 47,
-   "XC": 5
+   "NC": 101,
+   "MA": 303,
+   "CD": 270,
+   "QM": 262,
+   "PA": 57,
+   "XC": 8
   },
   "by_confidence": {
-   "high": 764,
-   "medium": 124,
-   "low": 3
+   "high": 859,
+   "medium": 138,
+   "low": 4
   },
-  "food_chain": 42,
+  "food_chain": 57,
   "method": "Each guideline was assessed by reading the current document listed on its EMA page, following scripts/stages/RULES.md. The evidence is a quote checked word for word against the document text (or, where there was none, EMA’s page summary). These assessments are this project’s, not EMA’s.",
   "framework": {
    "source": [
@@ -349,6 +349,38 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/draft-guideline-clinical-requirements-medicines-intended-treatment-thalassaemia_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/user-safety-pharmaceutical-veterinary-medicinal-products",
+   "title": "User safety for pharmaceutical veterinary medicinal products",
+   "category": "Veterinary",
+   "stage": "NC",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Guides the assessment of risks to people who handle, give or come into contact with animals treated with non-vaccine veterinary medicines, for new applications and relevant variations. User safety is non-clinical under the rules, with marketing authorisation as secondary.",
+   "evidence": "The guideline applies to all applications for Marketing Authorisations (MA) for pharmaceutical veterinary medicinal products",
+   "evidence_source": "document",
+   "document": "Guideline on user safety for pharmaceutical veterinary medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-user-safety-pharmaceutical-veterinary-medicinal-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/user-safety-topically-administered-products",
+   "title": "User safety of topically administered products",
+   "category": "Veterinary",
+   "stage": "NC",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains how to assess the risk to people, such as owners and children, from spot-on and other topical products that stay on a pet's coat. User safety is non-clinical under the rules; the EMA page summary describes a different guideline, so the document text was relied on.",
+   "evidence": "This guideline focuses specifically on how user safety for topically administered VMPs that may remain on the surface of the animal's body is assessed",
+   "evidence_source": "document",
+   "document": "Guideline on user safety of topically administered veterinary medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-user-safety-topically-administered-veterinary-medicinal-products_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-investigation-medicinal-products-treatment-systemic-sclerosis",
    "title": "Clinical investigation of medicinal products for the treatment of systemic sclerosis",
    "category": "Human",
@@ -363,6 +395,22 @@
    "document": "Concept paper on the new reflection paper on the clinical investigation of medicinal products for the treatment of systemic sclerosis",
    "document_status": "Draft: consultation closed",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-new-reflection-paper-clinical-investigation-medicinal-products-treatment-systemic-sclerosis_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/questions-answers-post-approval-change-management-protocols-veterinary",
+   "title": "Questions and answers on post approval change management protocols (veterinary)",
+   "category": "Veterinary",
+   "stage": "QM",
+   "secondary": "PA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains how to prepare, submit and use protocols that agree in advance how a quality change will be made after authorisation. Post-approval change management is a quality matter carried out through variations.",
+   "evidence": "The use of a PACMP is optional. A PACMP can only be submitted for a quality change which does not require clinical and/or non-clinical data assessment.",
+   "evidence_source": "document",
+   "document": "Questions and answers on post approval change management protocols for veterinary medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/questions-answers-post-approval-change-management-protocols-veterinary-medicinal-products_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/guideline-summary-product-characteristics-spc-veterinary-medicinal-products-containing-antimicrobial-substances",
@@ -621,6 +669,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-data-recommendations-herbal-medicinal-products-traditional-herbal-medicinal-products-used-paediatric-patients_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/development-reflection-paper-use-external-controls-evidence-generation-regulatory-decision-making",
+   "title": "Development of a reflection paper on the use of external controls for evidence generation in regulatory decision-making",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Plans a paper on when control groups drawn from other trials or real-world data can stand in for a randomised control arm. Trial design and evidence methods belong to clinical development.",
+   "evidence": "The reflection paper will outline general principles for assessing when external controls could be appropriate for regulatory decision making",
+   "evidence_source": "document",
+   "document": "Concept paper on the development of a reflection paper on the use of External controls for evidence generation in regulatory decision-making",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-development-reflection-paper-use-external-controls-evidence-generation-regulatory-decision-making_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/need-maximum-residue-limit-mrl-evaluation-biological-substances",
    "title": "Need for maximum residue limit (MRL) evaluation for biological substances",
    "category": "Veterinary",
@@ -701,6 +765,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-development-manufacture-synthetic-peptides_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/liraglutide-6-mg-ml-solution-injection-prefilled-pen-product-specific-bioequivalence-guidance",
+   "title": "Liraglutide 6 mg/mL solution for injection in a prefilled pen product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic liraglutide pen injection, using the starting dose to avoid tolerability problems. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Liraglutide exhibits dose proportional pharmacokinetics and 0.6 mg is the starting dose. Higher doses can lead to tolerability issues without careful up-titration",
+   "evidence_source": "document",
+   "document": "Liraglutide 6 mg/mL solution for injection in a prefilled pen product-specific bioequivalence guidance",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/liraglutide-6-mg-ml-solution-injection-prefilled-pen-product-specific-bioequivalence-guidance_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/tafamidis-soft-gelatin-capsules-20-mg-61-mg-product-specific-bioequivalence-guidance",
    "title": "Tafamidis soft gelatin capsules 20 mg and 61 mg product-specific bioequivalence guidance",
    "category": "Human",
@@ -763,6 +843,22 @@
    "document": "Concept paper on the development for guidance on demonstration of biosimilarity of biological veterinary medicinal products",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-development-guidance-demonstration-biosimilarity-biological-veterinary-medicinal-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-macrolides-lincosamides-streptogramins-mls-animals-european-union",
+   "title": "Use of macrolides, lincosamides and streptogramins (MLS) in animals in the European Union",
+   "category": "Veterinary",
+   "stage": "PA",
+   "secondary": "XC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "A draft revision reviewing the use of macrolides and lincosamides in food-producing and companion animals and recommending actions to limit resistance. Reviews of antimicrobial classes already used in animals sit in post-authorisation.",
+   "evidence": "recommendations for actions that could be taken to mitigate the development of resistance and impact on public and animal health due to the use of MLS in animals in the EU are presented",
+   "evidence_source": "document",
+   "document": "Draft reflection paper on the use of macrolides, lincosamides and streptogramins (MLS) in animals in the European Union: development of resistance and impact on public and animal health - Revision 1",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/draft-reflection-paper-use-macrolides-lincosamides-streptogramins-mls-animals-european-union-development-resistance-impact-public-animal-health-revision-1_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/core-summary-product-characteristics-human-normal-immunoglobulin-subcutaneous-intramuscular-use",
@@ -861,6 +957,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/other/reflection-paper-tailored-clinical-approach-biosimilar-development_en.pdf-0"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/melatonin-product-specific-bioequivalence-guidance",
+   "title": "Melatonin product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic prolonged-release melatonin tablets, with fasting and fed studies and partial exposure measures. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Both fasted and fed single-dose study are needed since this is a prolonged-release formulation",
+   "evidence_source": "document",
+   "document": "Melatonin prolonged release tablets 2 mg product-specific bioequivalence guidance",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/melatonin-prolonged-release-tablets-2-mg-product-specific-bioequivalence-guidance_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/eltrombopag-product-specific-bioequivalence-guidance",
    "title": "Eltrombopag product-specific bioequivalence guidance",
    "category": "Human",
@@ -875,6 +987,22 @@
    "document": "Eltrombopag film-coated tablets 12.5 mg, 25 mg, 50 mg, 75 mg and powder for oral suspension 25 mg product-specific bioequivalence guidance",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/eltrombopag-film-coated-tablets-125-mg-25-mg-50-mg-75-mg-powder-oral-suspension-25-mg-product-specific-bioequivalence-guidance_en.pdf-0"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/plant-testing-strategy-risk-assessment-veterinary-medicinal-products",
+   "title": "Plant testing strategy in the risk assessment for veterinary medicinal products",
+   "category": "Veterinary",
+   "stage": "NC",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the testing strategy and options for refining the risk to plants when the second-phase environmental assessment still shows a risk. Environmental risk assessment is non-clinical work submitted with the application.",
+   "evidence": "If a risk for plants is still identified in Tier B of a Phase II ERA for VMPs, the following three options for a further risk assessment exist",
+   "evidence_source": "document",
+   "document": "Guideline on the plant testing strategy for veterinary medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-plant-testing-strategy-veterinary-medicinal-products_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/guidance-template-risk-management-plan-rmp-novel-therapy-veterinary-medicinal-products",
@@ -1117,6 +1245,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/aliskiren-film-coated-tablet-150-mg-300-mg-product-specific-bioequivalence-guidance-revision-1_en.pdf-0"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/ledipasvir-sofosbuvir-product-specific-bioequivalence-guidance",
+   "title": "Ledipasvir/sofosbuvir product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic ledipasvir/sofosbuvir tablets and granules, treated as formulation-sensitive so fasting and fed studies are needed. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "without prejudice to the need to ensure that the data submitted in support of a marketing authorisation application complies with the appropriate scientific, regulatory and legal requirements",
+   "evidence_source": "document",
+   "document": "Ledipasvir/sofosbuvir film-coated tablet 45 mg/200 mg and 90 mg/400 mg, coated granules 33.75mg/150mg and 45mg/200mg product-specific bioequivalence guidance - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ledipasvir-sofosbuvir-film-coated-tablet-45-mg-200-mg-90-mg-400-mg-coated-granules-3375mg-150mg-45mg-200mg-product-specific-bioequivalence-guidance-revision-1_en.pdf-0"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/epidemiological-data-blood-transmissible-infections",
    "title": "Epidemiological data on blood transmissible infections",
    "category": "Human",
@@ -1163,6 +1307,22 @@
    "document": "Guideline on clinical evaluation of diagnostic agents - Revision 1",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-clinical-evaluation-diagnostic-agents-revision-1_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/questions-answers-how-use-cep-context-marketing-authorisation-application-or-marketing-authorisation-variation",
+   "title": "Questions and answers on how to use a CEP in the context of a Marketing Authorisation Application or a Marketing Authorisation Variation",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Clarifies what active substance quality information, such as the QP declaration and extra impurity data, must accompany a certificate of suitability in an application or variation. It concerns the quality part of the dossier.",
+   "evidence": "This document aims to clarify existing guidance as a compilation of required data to be submitted in a MAA or in certain MAVs when a CEP is referred to in the MA dossier.",
+   "evidence_source": "document",
+   "document": "Questions and answers on how to use a CEP in the context of a Marketing Authorisation Application (MAA) or a Marketing Authorisation Variation (MAV)",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/questions-answers-how-use-cep-context-marketing-authorisation-application-maa-or-marketing-authorisation-variation-mav_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-q3e-extractables-leachables",
@@ -1227,6 +1387,22 @@
    "document": "Guideline on the pharmaceutical quality of inhalation and nasal medicinal products - Revision 1",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-pharmaceutical-quality-inhalation-nasal-medicinal-products-revision-1_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/questions-answers-use-product-lifecycle-management-plcm-document",
+   "title": "Questions and answers on the use of Product Lifecycle Management (PLCM) document",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": "PA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains how and where a product lifecycle management document for manufacturing and control changes is submitted, through a variation. Post-approval change management falls in quality, with post-authorisation as secondary.",
+   "evidence": "The PLCM document is a tool which facilitates global harmonisation of post-approval CMC changes",
+   "evidence_source": "document",
+   "document": "Questions and answers on the use of Product Lifecycle Management (PLCM) document",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/questions-answers-use-product-lifecycle-management-plcm-document_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/demonstration-efficacy-ectoparasiticides",
@@ -1419,6 +1595,22 @@
    "document": "Guideline on stability testing for applications for variations to a marketing authorisation - Revision 3",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-stability-testing-applications-variations-marketing-authorisation-revision-3_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/questions-answers-post-approval-change-management-protocols-human",
+   "title": "Questions and answers on post approval change management protocols (human)",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": "PA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains how protocols for planned quality changes after approval are prepared, submitted and assessed under the variations system. Post-approval change management falls in quality, with post-authorisation as secondary.",
+   "evidence": "It describes how these protocols should be prepared and submitted and explains the procedure for their evaluation",
+   "evidence_source": "page summary",
+   "document": "Questions and answers on post approval change management protocols (PACMP) - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/questions-answers-post-approval-change-management-protocols-pacmp-revision-1_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/radiopharmaceuticals",
@@ -2141,6 +2333,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/tacrolimus-granules-oral-suspension-02-1-mg-product-specific-bioequivalence-guidance-revision-1_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/fingolimod-product-specific-bioequivalence-guidance",
+   "title": "Fingolimod product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic fingolimod capsules, allowing doses above the therapeutic dose if needed. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Highest strength to be used for a drug with linear pharmacokinetics. Supra-therapeutic doses could be used for the study if considered necessary",
+   "evidence_source": "document",
+   "document": "Fingolimod capsules 0.25 and 0.5 mg product-specific bioequivalence guidance - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/fingolimod-capsules-025-05-mg-product-specific-bioequivalence-guidance-revision-1_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/entecavir-product-specific-bioequivalence-guidance",
    "title": "Entecavir product-specific bioequivalence guidance",
    "category": "Human",
@@ -2237,6 +2445,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/sirolimus-coated-tablets-05-1-2-mg-oral-solution-1-mg-ml-product-specific-bioequivalence-guidance-revision-1_en.pdf-0"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/ibuprofen-product-specific-bioequivalence-guidance",
+   "title": "Ibuprofen product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic immediate-release oral ibuprofen of 200 to 800 mg. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Background: Pharmacokinetics is linear between 200 mg and 800 mg. Number of studies: In general, one single dose study",
+   "evidence_source": "document",
+   "document": "Ibuprofen oral use immediate release formulations 200 - 800 mg product-specific bioequivalence guidance - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ibuprofen-oral-use-immediate-release-formulations-200-800-mg-product-specific-bioequivalence-guidance-revision-1_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/dolutegravir-product-specific-bioequivalence-guidance",
    "title": "Dolutegravir product-specific bioequivalence guidance",
    "category": "Human",
@@ -2251,6 +2475,22 @@
    "document": "Dolutegravir film-coated tablets 10 mg, 25 mg and 50 mg product-specific bioequivalence guidance - First version",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/dolutegravir-film-coated-tablets-10-mg-25-mg-and-50-mg-product-specific-bioequivalence-guidance-first-version_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/levothyroxine-product-specific-bioequivalence-guidance",
+   "title": "Levothyroxine product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic levothyroxine tablets, a critical-dose drug with unusual solubility. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Solubility characteristics are atypical with self-association to form aggregates, low intrinsic solubility and intrinsic dissolution rate",
+   "evidence_source": "document",
+   "document": "Levothyroxine tablets 12.5 mcg, 25 mcg, 50 mcg, 75 mcg, 100 mcg and 200 mcg (and additional strengths within the range) product-specific bioequivalence guidance",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/levothyroxine-tablets-125-mcg-25-mcg-50-mcg-75-mcg-100-mcg-and-200-mcg-and-additional-strengths-within-range-product-specific-bioequivalence-guidance_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ursodeoxycholic-acid-product-specific-bioequivalence-guidance",
@@ -2317,6 +2557,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/oseltamivir-hard-capsules-30-45-75-mg-powder-oral-suspension-6-mg-ml-12-mg-ml-product-specific-bioequivalence-guidance-revision-1_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/metformin-product-specific-bioequivalence-guidance",
+   "title": "Metformin  product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic metformin tablets. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "without prejudice to the need to ensure that the data submitted in support of a marketing authorisation application complies with the appropriate scientific, regulatory and legal requirements",
+   "evidence_source": "document",
+   "document": "Metformin immediate-release film-coated tablets 500, 850 and 1000 mg and 1000 mg/5ml oral solution product-specific bioequivalence guidance - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/metformin-immediate-release-film-coated-tablets-500-850-1000-mg-1000-mg-5ml-oral-solution-product-specific-bioequivalence-guidance-revision-1_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/dabigatran-etexilate-product-specific-bioequivalence-guidance",
    "title": "Dabigatran etexilate product-specific bioequivalence guidance",
    "category": "Human",
@@ -2331,6 +2587,22 @@
    "document": "Dabigatran etexilate hard capsule 75 mg, 110 mg and 150 mg product-specific bioequivalence guidance - Revision 1",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/dabigatran-etexilate-hard-capsule-75-mg-110-mg-150-mg-product-specific-bioequivalence-guidance-revision-1_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/memantine-product-specific-bioequivalence-guidance",
+   "title": "Memantine product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic memantine, a highly soluble compound eligible to be considered for a solubility-based biowaiver. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Memantine hydrochloride is a high solubility compound with complete absorption. Bioequivalence study design",
+   "evidence_source": "document",
+   "document": "Memantine film-coated tablets 5, 10, 15 and 20 mg, oral solution 5 mg product-specific bioequivalence guidance - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/memantine-film-coated-tablets-5-10-15-20-mg-oral-solution-5-mg-product-specific-bioequivalence-guidance-revision-1_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/posaconazole-product-specific-bioequivalence-guidance",
@@ -2363,6 +2635,22 @@
    "document": "Reflection paper on lessons learned from the COVID-19 pandemic: Scientific considerations on non-clinical aspects",
    "document_status": "Draft: consultation closed",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-lessons-learned-covid-19-pandemic-scientific-considerations-non-clinical-aspects_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/lurasidone-product-specific-bioequivalence-guidance",
+   "title": "Lurasidone product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic lurasidone tablets, recommending a lower strength than usual for tolerability. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Lurasidone may be considered a low solubility compound. Bioequivalence study design",
+   "evidence_source": "document",
+   "document": "Lurasidone film-coated tablets 18.5, 37 and 74 mg 4 product-specific bioequivalence guidance",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/lurasidone-film-coated-tablets-185-37-and-74-mg-4-product-specific-bioequivalence-guidance_en.pdf-0"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/apixaban-product-specific-bioequivalence-guidance",
@@ -2461,6 +2749,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-need-revision-note-guidance-quality-aspects-pharmaceutical-veterinary-medicines-administration-drinking-water_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/methodology-environmental-risk-assessment-ectoparasiticidal-vmps-cats-dogs",
+   "title": "Methodology of environmental risk assessment for ectoparasiticidal VMPs for cats and dogs",
+   "category": "Veterinary",
+   "stage": "NC",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Plans guidance on environmental risk assessment methods for flea and tick products for cats and dogs where default assumptions do not fit, including the data to provide. Environmental risk assessment is non-clinical under the rules.",
+   "evidence": "elaboration of guidance on the assessment methodology to be used where the current default assumptions are not considered to be appropriate for ectoparasiticidal VMPs",
+   "evidence_source": "page summary",
+   "document": "Concept paper for the development of a guideline on the methodology of environmental risk assessment for ectoparasiticidal VMPs for cats and dogs",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-development-guideline-methodology-environmental-risk-assessment-ectoparasiticidal-vmps-cats-dogs_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/reflection-paper-use-real-world-data-non-interventional-studies-generate-real-world-evidence",
    "title": "Reflection paper on use of real-world data in non-interventional studies to generate real-world evidence",
    "category": "Human",
@@ -2555,6 +2859,22 @@
    "document": "Guideline on the evaluation of medicinal products indicated for treatment of bacterial infections - Revision 3",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-evaluation-medicinal-products-indicated-treatment-bacterial-infections-revision-3_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/template-qualified-persons-qp-declaration-concerning-good-manufacturing-practice-compliance-active-substance-manufacture-qp-declaration-template",
+   "title": "Template for the qualified person's (QP) declaration concerning good manufacturing practice compliance of active substance manufacture \"The QP declaration template\"",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Template for the qualified person's declaration that the active substance was made under GMP, required in applications. The document is a Word file, so this rests on the page summary, which is clear.",
+   "evidence": "QP declaration is required for marketing authorisations to confirm that the active substance has been manufactured in accordance with good manufacturing practice for medicinal products.",
+   "evidence_source": "page summary",
+   "document": "Qualified Person’s declaration concerning good manufacturing practice (GMP) compliance of the active substance manufacture “The QP declaration template”",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/template-form/qualified-persons-declaration-concerning-good-manufacturing-practice-gmp-compliance-active-substance-manufacture-qp-declaration-template_en.doc"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-investigation-medicinal-products-treatment-depression",
@@ -2701,6 +3021,38 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-conduct-efficacy-studies-intramammary-products-use-cattle-revision-3_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/guideline-assessment-reporting-mechanistic-models-used-context-model-informed-drug-development",
+   "title": "Guideline on assessment and reporting of mechanistic models used in the context of model informed drug development",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Plans a guideline on how mechanistic models such as physiologically based pharmacokinetic and systems pharmacology models should be assessed and reported. Modelling and simulation are placed in clinical development.",
+   "evidence": "Mechanistic models covered by this new guideline include, but are not limited to, Physiologically Based Pharmacokinetic (PBPK), Physiologically Based Biopharmaceutics (PBBM) and Quantitative Systems Pharmacology (QSP) models",
+   "evidence_source": "document",
+   "document": "Concept paper on the development of a Guideline on assessment and reporting of mechanistic models used in the context of model informed drug development",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-development-guideline-assessment-reporting-mechanistic-models-used-context-model-informed-drug-development_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/overview-current-regulatory-testing-requirements-veterinary-medicinal-products-opportunities-implementation-3rs",
+   "title": "Overview of the current regulatory testing requirements for veterinary medicinal products and opportunities for implementation of the 3Rs",
+   "category": "Veterinary",
+   "stage": "XC",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Surveys the animal tests required across the regulatory testing of veterinary medicines, from quality to safety and efficacy, and where they could be replaced, reduced or refined. The 3Rs across all testing is the rules' example of a cross-cutting subject.",
+   "evidence": "This reflection paper provides an overview of the main tests that involve the use of animals that are required for the regulatory testing of veterinary medicines",
+   "evidence_source": "page summary",
+   "document": "Draft reflection paper on the current regulatory testing requirements for veterinary medicinal products and opportunities for implementation of the 3Rs - Revision 1",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/draft-reflection-paper-current-regulatory-testing-requirements-veterinary-medicinal-products-opportunities-implementation-3rs-revision-1_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/overview-current-regulatory-testing-requirements-medicinal-products-human-use-opportunities-implementation-3rs",
    "title": "Overview of the current regulatory testing requirements for medicinal products for human use and opportunities for implementation of the 3Rs",
    "category": "Human",
@@ -2827,6 +3179,22 @@
    "document": "Final guideline on the assessment of the risk to public health from antimicrobial resistance due to the use of an antimicrobial veterinary medicinal product in food- producing animal species",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/final-guideline-assessment-risk-public-health-antimicrobial-resistance-due-use-antimicrobial-veterinary-medicinal-product-food-producing-animal-species_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/veterinary-medicinal-products-zootechnical-purposes",
+   "title": "Veterinary medicinal products for zootechnical purposes",
+   "category": "Veterinary",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Sets the efficacy and target animal safety studies needed for products such as oestrus synchronisers, and how hormonal protocols go into the product information. It is mainly about studies in the target species, though framed as data requirements for applications.",
+   "evidence": "The main purpose of this revised guideline is to provide more detailed guidance regarding data requirements for the conduct of preclinical studies and clinical trials for veterinary medicinal products for zootechnical purposes",
+   "evidence_source": "document",
+   "document": "Guideline on data requirements for veterinary medicinal products for zootechnical purposes",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-data-requirements-veterinary-medicinal-products-zootechnical-purposes_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/trametinib-product-specific-bioequivalence-guideline",
@@ -2957,6 +3325,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-clinical-evaluation-medicinal-products-used-weight-management_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/stability-testing-applications-variations-marketing-authorisation-veterinary-medicinal-products",
+   "title": "Stability testing for applications for variations to a marketing authorisation for veterinary medicinal products",
+   "category": "Veterinary",
+   "stage": "QM",
+   "secondary": "PA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the stability data needed to support variations to authorised veterinary medicines, for changes that do and do not need assessment. Quality changes after authorisation are quality with a post-authorisation side.",
+   "evidence": "The purpose of this guideline is to outline the stability data which have to be generated in case of variations.",
+   "evidence_source": "document",
+   "document": "Guideline on stability testing for applications for variations to a marketing authorisation for veterinary medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-stability-testing-applications-variations-marketing-authorisation-veterinary-medicinal-products_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/quality-data-requirements-applications-biological-veterinary-medicinal-products-intended-limited-markets",
    "title": "Quality data requirements for applications for biological veterinary medicinal products intended for limited markets",
    "category": "Veterinary",
@@ -3051,6 +3435,22 @@
    "document": "Guideline on quality and equivalence of locally applied, locally acting cutaneous products",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-quality-equivalence-locally-applied-locally-acting-cutaneous-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-artificial-intelligence-ai-medicinal-product-lifecycle",
+   "title": "Use of Artificial Intelligence (AI) in the medicinal product lifecycle",
+   "category": "Human",
+   "stage": "XC",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Reflects on principles for using artificial intelligence and machine learning at every step of a medicine's life, from discovery and trials to authorisation and safety monitoring. Principles that apply equally across all stages are cross-cutting.",
+   "evidence": "This reflection paper provides considerations on the use of AI/ML in the lifecycle of medicinal products, including medicinal products development, authorisation, and post-authorisation",
+   "evidence_source": "document",
+   "document": "Reflection paper on the use of Artificial Intelligence (AI) in the medicinal product lifecycle",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-artificial-intelligence-ai-medicinal-product-lifecycle_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/patient-experience-data-ped-reflection-paper",
@@ -3245,6 +3645,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-conduct-bioequivalence-studies-veterinary-medicinal-products-revision-4_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/poorly-extractable-or-non-radiolabelled-substances",
+   "title": "Poorly extractable and/or non- radiolabelled substances",
+   "category": "Veterinary",
+   "stage": "NC",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Offers practical solutions for soil transformation studies of active substances that bind strongly to soil or cannot be radiolabelled. Environmental fate testing is non-clinical work; the residues here are in soil, not food.",
+   "evidence": "the CVMP presents a pragmatic approach on how to deal with substances which are difficult to extract from soil",
+   "evidence_source": "document",
+   "document": "Reflection paper on poorly extractable and/or non-radiolabelled substances",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-poorly-extractable-or-non-radiolabelled-substances_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/determining-fate-veterinary-medicinal-products-manure",
    "title": "Determining the fate of veterinary medicinal products in manure",
    "category": "Veterinary",
@@ -3357,6 +3773,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-guideline-m10-bioanalytical-method-validation-step-5_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-near-infrared-spectroscopy-nirs-pharmaceutical-industry-data-requirements-new-submissions-variations",
+   "title": "Use of near infrared spectroscopy (NIRS) by the pharmaceutical industry and the data requirements for new submissions and variations",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the data needed in applications and variations that use near-infrared spectroscopy for testing or process control. Analytical control is quality.",
+   "evidence": "This guideline describes the regulatory requirements for marketing authorisation applications and variation applications submitted for medicinal products for human or veterinary use, which include the use of NIRS.",
+   "evidence_source": "document",
+   "document": "Guideline on the use of near-infrared spectroscopy by the pharmaceutical industry and the data requirements for new submissions and variations",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-use-near-infrared-spectroscopy-pharmaceutical-industry-and-data-requirements-new-submissions-and-variations_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/development-guideline-safety-nanoparticles-context-establishment-maximum-residue-limits-veterinary-marketing-authorisations",
    "title": "Development of a guideline on the safety of nanoparticles – in the context of the establishment of maximum residue limits and veterinary marketing authorisations",
    "category": "Veterinary",
@@ -3419,6 +3851,38 @@
    "document": "Information for the package leaflet regarding proline used as an excipient in medicinal products for human use",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/information-package-leaflet-regarding-proline-used-excipient-medicinal-products-human-use_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/liposomal-amphotericin-b-product-specific-bioequivalence-guidance",
+   "title": "Liposomal amphotericin B product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic liposomal amphotericin B infusion, to be read with the data requirements for liposomal products. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Liposomal and non-liposomal amphotericin B are both considered relevant to conclude on bioequivalence as they best reflect the biopharmaceutical quality of the proposed product",
+   "evidence_source": "document",
+   "document": "Liposomal amphotericin B powder for dispersion for infusion 50 mg product-specific bioequivalence guidance",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/liposomal-amphotericin-b-powder-dispersion-infusion-50-mg-product-specific-bioequivalence-guidance_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-clinical-clinical-evaluation-antiviral-medicinal-products-monoclonal-antibodies-prevention-treatment-covid-19",
+   "title": "Non-clinical and clinical evaluation of antiviral medicinal products and monoclonal antibodies for the prevention and treatment of COVID-19",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Proposes guidance on the non-clinical and clinical evaluation of antivirals and monoclonal antibodies against SARS-CoV-2 for treating or preventing COVID-19. The planned guideline concerns investigation of medicines for a disease, so clinical development with marketing authorisation secondary.",
+   "evidence": "This concept paper addresses the need to develop a guideline on the non-clinical and clinical evaluation of antiviral medicinal products and monoclonal antibodies intended for the treatment and/or prevention of coronavirus disease",
+   "evidence_source": "document",
+   "document": "Concept paper on the development of a guideline on the non-clinical and clinical evaluation of antiviral medicinal products and monoclonal antibodies for the prevention and treatment of COVID-19",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-development-guideline-non-clinical-clinical-evaluation-antiviral-medicinal-products-monoclonal-antibodies-prevention-treatment-covid-19_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/plasmid-dna-vaccines-veterinary-use",
@@ -3547,6 +4011,22 @@
    "document": "Questions and answers on data requirements when transitioning to low global warming potential (LGWP) propellants in oral pressurised metered dose inhalers",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/questions-answers-data-requirements-when-transitioning-low-global-warming-potential-lgwp-propellants-oral-pressurised-metered-dose-inhalers_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/regulatory-acceptance-3r-replacement-reduction-refinement-testing-approaches",
+   "title": "Regulatory acceptance of 3R (replacement, reduction, refinement) testing approaches",
+   "category": "Human;Veterinary",
+   "stage": "XC",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the process and validation criteria for getting replacement, reduction and refinement testing methods accepted by regulators. It applies across non-clinical, target animal, residue and batch control testing, so it is cross-cutting.",
+   "evidence": "This document describes the process for submission and evaluation of a proposal for regulatory acceptance of 3R testing approaches for use in the development and quality control during production of human and veterinary medicinal products.",
+   "evidence_source": "page summary",
+   "document": "Guideline on the principles of regulatory acceptance of 3Rs (replacement, reduction, refinement) testing approaches",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-principles-regulatory-acceptance-3rs-replacement-reduction-refinement-testing-approaches_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/fampridine-product-specific-bioequivalence-guidance",
@@ -3773,6 +4253,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-development-reflection-paper-availability-and-characteristics-diagnostic-tests-improve-responsible-use-antibiotics-animals_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/stability-testing-existing-active-substances-related-finished-products",
+   "title": "Stability testing of existing active substances and related finished products",
+   "category": "Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the stability testing to submit in applications for veterinary products containing already authorised active substances. Stability testing is quality.",
+   "evidence": "The guideline addresses the information to be submitted in registration applications for existing active substances and related finished products.",
+   "evidence_source": "document",
+   "document": "Guideline on Stability Testing: Stability testing of existing active substances and related finished products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-stability-testing-stability-testing-existing-active-substances-and-related-finished-products_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/excipients-dossier-application-marketing-authorisation-veterinary-medicinal-products",
    "title": "Excipients in the dossier for application for marketing authorisation for veterinary medicinal products",
    "category": "Veterinary",
@@ -3851,6 +4347,22 @@
    "document": "ICH guideline S12 on nonclinical biodistribution considerations for gene therapy products - Step 5",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/ich-guideline-s12-nonclinical-biodistribution-considerations-gene-therapy-products-step-5_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-q5ar2-guideline-viral-safety-evaluation-biotechnology-products-derived-cell-lines-human-or-animal-origin",
+   "title": "ICH Q5A(R2) Guideline on viral safety evaluation of biotechnology products derived from cell lines of human or animal origin",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets how to test cell lines and raw materials for viruses and to show that the manufacturing process clears them, and what data go in the application. Viral safety of biotechnology manufacture is quality (ICH Q series).",
+   "evidence": "This guideline describes the evaluation of the viral safety of biotechnology products including viral clearance and testing, and it outlines what data should be submitted in marketing applications for those products.",
+   "evidence_source": "document",
+   "document": "ICH Q5A(R2) Guideline on viral safety evaluation of biotechnology products derived from cell lines of human or animal origin - Step 5",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-q5ar2-guideline-viral-safety-evaluation-biotechnology-products-derived-cell-lines-human-or-animal-origin-step-5_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/quality-modified-release-dosage-forms-veterinary-use",
@@ -4093,6 +4605,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-summary-product-characteristics-antiparasitic-veterinary-medicinal-products-revision-1_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/lanreotide-acetate-product-specific-bioequivalence-guidance",
+   "title": "Lanreotide acetate product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic prolonged-release lanreotide injection, accepting a single-dose parallel study. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Due to the long half-life and for safety reasons the crossover design may not be practically feasible; therefore, a parallel design can be used",
+   "evidence_source": "document",
+   "document": "Lanreotide acetate, prolonged-release solution for injection in prefilled syringe 60, 90 and 120 mg productspecific bioequivalence guidance",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/lanreotide-acetate-prolonged-release-solution-injection-prefilled-syringe-60-90-and-120-mg-productspecific-bioequivalence-guidance_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-e8-general-considerations-clinical-studies",
    "title": "ICH E8 General considerations for clinical studies",
    "category": "Human",
@@ -4299,6 +4827,22 @@
    "document": "Olaparib 100 mg & 150 mg film-coated tablets product-specific bioequivalence guidance",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/olaparib-100-mg-150-mg-film-coated-tablets-product-specific-bioequivalence-guidance_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/ibrutinib-product-specific-bioequivalence-guidance",
+   "title": "Ibrutinib product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic ibrutinib capsules and tablets, with a study for each dosage form. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Highest strength to be used for a drug with linear pharmacokinetics and low solubility. Number of studies: One single dose study for each dosage form",
+   "evidence_source": "document",
+   "document": "Ibrutinib hard capsules 140 mg and film-coated tablets 140, 280, 420 & 560 mg product-specific bioequivalence guidance",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ibrutinib-hard-capsules-140-mg-and-film-coated-tablets-140-280-420-560-mg-product-specific-bioequivalence-guidance_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/enzalutamide-product-specific-bioequivalence-guidance",
@@ -4541,6 +5085,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-data-requirements-multi-strain-dossiers-inactivated-veterinary-vaccines-revision-2_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/environmental-impact-assessment-veterinary-medicinal-products-support-vich-guidelines-gl6-gl38",
+   "title": "Environmental impact assessment for veterinary medicinal products in support of the VICH guidelines GL6 and GL38",
+   "category": "Veterinary",
+   "stage": "NC",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Adds EU-specific technical detail to the international guidelines on phase I and phase II environmental assessment of veterinary medicines. Environmental risk assessment is non-clinical under the rules, with marketing authorisation as secondary.",
+   "evidence": "Provide for a harmonised approach for the assessment of environmental safety, independent of the application procedure",
+   "evidence_source": "document",
+   "document": "Guideline on environmental impact assessment for veterinary medicinal products in support of the VICH guidelines GL6 and GL38",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-environmental-impact-assessment-veterinary-medicinal-products-support-vich-guidelines-gl6-and-gl38_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/specifications-test-procedures-acceptance-criteria-herbal-substances-herbal-preparations-herbal-medicinal-products-traditional-herbal-medicinal-products",
    "title": "Specifications: test procedures and acceptance criteria for herbal substances, herbal preparations and herbal medicinal products/traditional herbal medicinal products",
    "category": "Human;Veterinary;Herbal",
@@ -4603,6 +5163,54 @@
    "document": "Points to consider on the impact of the war in Ukraine on methodological aspects of ongoing clinical trials",
    "document_status": null,
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/points-consider-impact-war-ukraine-methodological-aspects-ongoing-clinical-trials_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/interpretation-article-72-regulation-eu-2019-6-environmental-safety-documentation-environmental-risk-assessment-certain-veterinary-medicinal-products",
+   "title": "Interpretation of Article 72 of Regulation (EU) 2019/6 - Environmental safety documentation and environmental risk assessment of certain veterinary medicinal products",
+   "category": "Veterinary",
+   "stage": "PA",
+   "secondary": "NC",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Proposes how to identify older authorised veterinary medicines that may harm the environment and how to harmonise their environmental product information and risk assessment during the SPC harmonisation procedure. It concerns products already on the market, with environmental risk assessment as the science involved.",
+   "evidence": "the approach to identify RVMPs which are potentially harmful to the environment in accordance with the second paragraph of Article 72 of the VMP-Reg as well as to harmonise information of environmental relevance",
+   "evidence_source": "document",
+   "document": "Adopted reflection paper on the interpretation of Article 72 of Regulation (EU) 2019/6 - Environmental safety documentation and environmental risk assessment of certain veterinary medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/adopted-reflection-paper-interpretation-article-72-regulation-eu-20196-environmental-safety-documentation-and-environmental-risk-assessment-certain-veterinary-medicinal-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/injection-site-residues",
+   "title": "Injection-site residues",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Explains how to assess consumer risk from high residues left at injection sites and set withdrawal periods before slaughter that account for them. Withdrawal periods, including injection sites, are marketing authorisation under the rules.",
+   "evidence": "This guideline addresses the assessment of potential consumer risk from veterinary drug residues remaining at intramuscular and subcutaneous injection sites",
+   "evidence_source": "document",
+   "document": "Adopted guideline on injection site residues - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/adopted-guideline-injection-site-residues-revision-1_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/safety-residue-data-requirements-veterinary-medicinal-products-intended-minor-use-or-minor-species-mums-limited-market",
+   "title": "Safety and residue data requirements for veterinary medicinal products intended for minor use or minor species (MUMS)/limited market",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Defines when the safety and residue data for maximum residue limit applications can be reduced for substances used in minor species. Data requirements for MRL applications and for minor species are marketing authorisation under the rules, with food-chain relevance.",
+   "evidence": "The objective of this guideline is to clarify the data requirements for Maximum Residues Limit (MRL) applications for minor species",
+   "evidence_source": "document",
+   "document": "Adopted guideline on safety and residue data requirements for the establishment of Maximum Residue Limits in minor species",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/adopted-guideline-safety-and-residue-data-requirements-establishment-maximum-residue-limits-minor-species_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/determination-withdrawal-periods-milk",
@@ -4749,6 +5357,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-requirements-chemical-and-pharmaceutical-quality-documentation-concerning-investigational-medicinal-products-clinical-trials-revision-2_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/questions-answers-requirements-pre-clinical-studies-submitted-support-marketing-authorisation-application-veterinary-medicinal-product",
+   "title": "Questions and answers on requirements for pre-clinical studies submitted in support of a marketing authorisation application for a veterinary medicinal product",
+   "category": "Veterinary",
+   "stage": "NC",
+   "secondary": "CD",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Clarifies which laboratory studies supporting a veterinary application must follow good laboratory practice, and what standards apply to pre-clinical efficacy studies. Most of it concerns non-clinical safety studies, with efficacy studies in animals close behind.",
+   "evidence": "pharmacological, toxicological, residue and pre-clinical safety studies shall be carried out in conformity with the provisions related to Good Laboratory Practice",
+   "evidence_source": "document",
+   "document": "Question and answer document on requirements for pre-clinical studies submitted in support of a marketing authorisation application for a veterinary medicinal product",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/question-and-answer-document-requirements-pre-clinical-studies-submitted-support-marketing-authorisation-application-veterinary-medicinal-product_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/data-requirements-vaccine-antigen-master-files-vamf",
    "title": "Data requirements for vaccine antigen master files (VAMF)",
    "category": "Veterinary",
@@ -4845,6 +5469,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-registry-based-studies_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/limited-market-products-deemed-not-eligible-authorisation-under-article-23-regulation-2019-6",
+   "title": "Limited market products deemed not eligible for authorisation under Article 23 of Regulation 2019/6",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Proposes guidance on the data needed for limited-market products that do not qualify for the reduced-data route and must make a full application. It concerns what an application must contain, and one of the planned guidelines covers safety and residue data.",
+   "evidence": "Currently, there is no guidance on the data requirements for limited market products that are deemed not eligible for authorisation under Article 23.",
+   "evidence_source": "document",
+   "document": "Concept paper on scientific guidelines for limited market products deemed not eligible for authorisation under Article 23 of Regulation 2019/6",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-scientific-guidelines-limited-market-products-deemed-not-eligible-authorisation-under-article-23-regulation-2019-6_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/dasatinib-product-specific-bioequivalence-guidance",
    "title": "Dasatinib product-specific bioequivalence guidance",
    "category": "Human",
@@ -4875,6 +5515,22 @@
    "document": "Public statement on the use of herbal medicinal products containing toxic, unsaturated pyrrolizidine alkaloids (PAs) including recommendations regarding contamination of herbal medicinal products with pyrrolizidine alkaloids - Revision 1",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/public-statement/public-statement-use-herbal-medicinal-products-containing-toxic-unsaturated-pyrrolizidine-alkaloids-pas-including-recommendations-regarding-contamination-herbal-medicinal-products-pyrrolizidine_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/lapatinib-product-specific-bioequivalence-guidance",
+   "title": "Lapatinib product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic lapatinib tablets, recommending a study in patients for safety reasons. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Lapatinib is a low solubility drug with limited absorption. Bioequivalence study design",
+   "evidence_source": "document",
+   "document": "Lapatinib film-coated tablet 250 mg product-specific bioequivalence guidance - First version",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/lapatinib-film-coated-tablet-250-mg-product-specific-bioequivalence-guidance-first-version_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/palbociclib-product-specific-bioequivalence-guidance",
@@ -5179,6 +5835,38 @@
    "document": "Reflection paper on antimicrobial resistance in the environment: considerations for current and future risk assessment of veterinary medicinal products - First version",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-antimicrobial-resistance-environment-considerations-current-and-future-risk-assessment-veterinary-medicinal-products-first-version_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-aminopenicillins-their-beta-lactamase-inhibitor-combinations-animals-european-union-development-resistance-impact-human-animal-health",
+   "title": "Use of aminopenicillins and their beta-lactamase inhibitor combinations in animals in the European Union: development of resistance and impact on human and animal health",
+   "category": "Veterinary",
+   "stage": "PA",
+   "secondary": "XC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Reviews the use of aminopenicillins in animals, the resistance it causes and its impact on human and animal health, to inform risk profiling. Reviews of antimicrobial classes already used in animals sit in post-authorisation.",
+   "evidence": "The objective of this document is to review available information on the use of aminopenicillins and their beta-lactamase inhibitor combinations in veterinary medicine in the EU",
+   "evidence_source": "document",
+   "document": "Reflection paper on the use of aminopenicillins and their beta-lactamase inhibitor combinations in animals in the European Union: development of resistance and impact on human and animal health - First version",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-aminopenicillins-and-their-beta-lactamase-inhibitor-combinations-animals-european-union-development-resistance-and-impact-human-and-animal-health-first-version_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/quality-safety-assessment-plasma-master-file-pmf-certification-regard-donor-deferral-criteria-sexual-risk-behaviour",
+   "title": "Quality and safety assessment for the plasma master file (PMF) certification with regard to donor deferral criteria for sexual risk behaviour",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets out how differing national donor deferral criteria for sexual risk behaviour are treated when assessing the quality and safety of plasma for plasma master file certification. Plasma master-file content is quality and manufacturing under the rules.",
+   "evidence": "deferral criteria need to be proportionate, based on an assessment of whether the sexual behaviour puts a person at a high risk of acquiring severe infectious diseases",
+   "evidence_source": "document",
+   "document": "CHMP position statement on quality and safety assessment for the Plasma Master File (PMF) certification with regard to donor deferral criteria for sexual risk behaviour",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/position/chmp-position-statement-quality-and-safety-assessment-plasma-master-file-pmf-certification-regard-donor-deferral-criteria-sexual-risk-behaviour_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/regulatory-requirements-vaccines-intended-provide-protection-against-variant-strains-sars-cov-2",
@@ -5629,6 +6317,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-pharmacokinetic-and-clinical-evaluation-modified-release-dosage-forms_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/gefitinib-product-specific-bioequivalence-guidance",
+   "title": "Gefitinib product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic gefitinib tablets, with one single-dose study at the only strength. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Gefitinib is a low solubility drug. Bioequivalence study design single dose in case a BCS biowaiver is not feasible",
+   "evidence_source": "document",
+   "document": "Gefitinib film-coated tablet 250 mg product-specific bioequivalence guidance",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/gefitinib-film-coated-tablet-250-mg-product-specific-bioequivalence-guidance_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ezetimibe-product-specific-bioequivalence-guidance",
    "title": "Ezetimibe product-specific bioequivalence guidance",
    "category": "Human",
@@ -5757,6 +6461,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-investigation-subgroups-confirmatory-clinical-trials_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/sterilisation-medicinal-product-active-substance-excipient-primary-container",
+   "title": "Sterilisation of the medicinal product, active substance, excipient and primary container",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets how to choose and justify the sterilisation method for products, active substances, excipients and containers, and what to document. Sterilisation is manufacturing quality.",
+   "evidence": "Guidance is provided on the selection of appropriate methods of sterilisation for sterile products.",
+   "evidence_source": "document",
+   "document": "Guideline on the sterilisation of the medicinal product, active substance, excipient and primary container",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-sterilisation-medicinal-product-active-substance-excipient-and-primary-container_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/cellular-therapy-module-european-society-blood-marrow-transplantation-ebmt-registry",
    "title": "Cellular therapy module of the European Society for Blood & Marrow Transplantation (EBMT) Registry",
    "category": "Human",
@@ -5805,6 +6525,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/public-statement/public-statement-contamination-herbal-medicinal-productstraditional-herbal-medicinal-products-pyrrolizidine-alkaloids_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/template-information-exchange-preparation-assessment-report-supporting-establishment-european-union-monographs-european-union-list-entries",
+   "title": "Template for information exchange for the preparation of the assessment report supporting the establishment of European Union monographs and European Union list entries",
+   "category": "Herbal",
+   "stage": "MA",
+   "secondary": null,
+   "confidence": "low",
+   "confidence_reason": "limited-source",
+   "food_chain": false,
+   "reasoning": "A template that assessors use to exchange information when preparing the assessment reports behind EU herbal monographs and list entries, which are the basis for registering herbal medicines. Only the title was available, as the document is a Word file and EMA's page has no summary.",
+   "evidence": "Template for information exchange for the preparation of the assessment report supporting the establishment of European Union monographs and European Union list entries",
+   "evidence_source": "document title",
+   "document": "Template for information exchange for the preparation of the assessment report supporting the establishment of European Union monographs and European Union list entries - Revision 2",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/template-form/template-information-exchange-preparation-assessment-report-supporting-establishment-european-union-monographs-and-european-union-list-entries-revision-2_en.doc"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-clinical-documentation-applications-marketing-authorisation-registration-well-established-traditional-herbal-medicinal-products",
    "title": "Non-clinical documentation in applications for marketing authorisation / registration of well-established and traditional herbal medicinal products",
    "category": "Herbal",
@@ -5835,6 +6571,22 @@
    "document": "Octreotide acetate depot powder and solvent for suspension for injection 10 mg, 20 mg and 30 mg product-specific bioequivalence guidance",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/octreotide-acetate-depot-powder-and-solvent-suspension-injection-10-mg-20-mg-and-30-mg-product-specific-bioequivalence-guidance_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/assessment-control-dna-reactive-mutagenic-impurities-veterinary-medicinal-products",
+   "title": "Assessment and control of DNA reactive (mutagenic) impurities in veterinary medicinal products",
+   "category": "Veterinary",
+   "stage": "QM",
+   "secondary": "NC",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Sets how to identify, classify, qualify and limit DNA-reactive impurities in veterinary substances and products to keep cancer risk acceptable. It joins impurity control in manufacture with toxicological assessment, so quality and non-clinical safety are both central.",
+   "evidence": "The purpose of this guideline is to provide a practical framework that is applicable to the identification, categorisation, qualification, and control of these mutagenic impurities",
+   "evidence_source": "document",
+   "document": "Guideline on assessment and control of DNA reactive (mutagenic) impurities in veterinary medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-assessment-and-control-dna-reactive-mutagenic-impurities-veterinary-medicinal-products_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/allergen-products-development-moderate-low-sized-study-populations",
@@ -6253,6 +7005,38 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-quality-non-clinical-and-clinical-aspects-gene-therapy-medicinal-products_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/regulatory-requirements-development-medicinal-products-acute-kidney-injury-aki-scientific-guideline",
+   "title": "Regulatory requirements for the development of medicinal products for Acute Kidney Injury (AKI)",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Gives high-level advice on developing medicines to prevent or treat acute kidney injury, including populations, endpoints and study design. Clinical investigation for a condition is clinical development.",
+   "evidence": "This reflection paper aims to provide high level guidance about developing medicinal products for the prevention and treatment of AKI",
+   "evidence_source": "document",
+   "document": "Reflection paper on regulatory requirements for the development of medicinal products for Acute Kidney Injury (AKI)",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-regulatory-requirements-development-medicinal-products-acute-kidney-injury-aki_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-aminoglycosides-animals-european-union-development-resistance-impact-human-animal-health",
+   "title": "Use of aminoglycosides in animals in the European Union: development of resistance and impact on human and animal health",
+   "category": "Veterinary",
+   "stage": "PA",
+   "secondary": "XC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Reviews the use of aminoglycosides in animals, the resistance it causes and its impact on human health, and recommends risk measures. Reviews of antimicrobial classes already used in animals sit in post-authorisation, and the paper rates food-borne transfer as likely.",
+   "evidence": "the probability of transmission of AG resistance from animals to humans through transfer of zoonotic or commensal food-borne bacteria and/or their mobile genetic elements can be regarded as high",
+   "evidence_source": "document",
+   "document": "Reflection paper on use of aminoglycosides in animals in the European Union: development of resistance and impact on human and animal health",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-aminoglycosides-animals-european-union-development-resistance-and-impact-human-and-animal-health_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/pegylated-liposomal-doxorubicin-hydrochloride-product-specific-bioequivalence-guidance",
    "title": "Pegylated liposomal doxorubicin hydrochloride product-specific bioequivalence guidance",
    "category": "Human",
@@ -6653,6 +7437,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-assessment-clinical-safety-and-efficacy-preparation-eu-herbal-monographs-well-established-and-traditional-herbal-medicinal-products_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/allogenic-mesenchymal-stem-cell-based-products-veterinary-use-specific-questions-tumorigenicity",
+   "title": "Allogenic mesenchymal stem cell-based products for veterinary use: specific questions on tumorigenicity",
+   "category": "Veterinary",
+   "stage": "QM",
+   "secondary": "NC",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Answers questions on the risk that donor stem cell products for animals form tumours, mostly through controls on the cells during expansion and manufacture, with some discussion of animal tumorigenicity studies. Quality controls dominate, with a real safety-testing element.",
+   "evidence": "Nine specific questions for further consideration have been identified relating to quality and safety aspects.",
+   "evidence_source": "document",
+   "document": "Questions and answers on allogenic mesenchymal stem cell-based products for veterinary use: specific questions on tumorigenicity",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/questions-and-answers-allogenic-mesenchymal-stem-cell-based-products-veterinary-use-specific-questions-tumorigenicity_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-development-medicinal-products-treatment-autism-spectrum-disorder-asd",
    "title": "Clinical development of medicinal products for the treatment of autism spectrum disorder (ASD)",
    "category": "Human",
@@ -7037,6 +7837,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-authorisation-veterinary-medicinal-products-containing-potential-persistent-bioaccumulative-and-toxic-pbt-or-very-persistent-and-very-bioaccumulative-vpvb-substances_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/role-pharmacokinetics-development-medicinal-products-paediatric-population",
+   "title": "Role of pharmacokinetics in the development of medicinal products in the paediatric population",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Advises on using pharmacokinetic studies to find doses for children of different ages and on the practical methods for such studies. Paediatric pharmacokinetics is clinical development.",
+   "evidence": "This guideline provides advice on the use of pharmacokinetic studies in paediatric drug development and on methodological issues concerning pharmacokinetic studies in paediatric patients",
+   "evidence_source": "document",
+   "document": "Guideline on the role of pharmacokinetics in the development of medicinal products in the paediatric population",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-role-pharmacokinetics-development-medicinal-products-paediatric-population_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/core-summary-product-characteristics-smpc-package-leaflet-iopamidol-300",
    "title": "Core summary of product characteristics (SmPC) and package leaflet for iopamidol 300",
    "category": "Human",
@@ -7293,6 +8109,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-setting-health-based-exposure-limits-use-risk-identification-manufacture-different-medicinal-products-shared-facilities_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/levodopa-carbidopa-entacapone-product-specific-bioequivalence-guidance",
+   "title": "Levodopa/carbidopa/entacapone product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic levodopa/carbidopa/entacapone tablets, noting the high variability of entacapone. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "the number of studies depends on the composition of the applied products",
+   "evidence_source": "document",
+   "document": "Levodopa/Carbidopa/Entacapone film-coated tablet 200 mg/50 mg/200 mg, 175 mg/43.75 mg/200 mg, 150 mg/37.5 mg/200 mg, 125 mg/31.25 mg/200 mg, 100 mg/25 mg/200 mg, 75 mg/18.75 mg/200 mg and 50 mg/12.5 mg/200 mg product-spe...",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/levodopacarbidopaentacapone-film-coated-tablet-200-mg50-mg200-mg-175-mg4375-mg200-mg-150-mg375-mg200-mg-125-mg3125-mg200-mg-100-mg25-mg200-mg-75-mg1875-mg200-mg-and-50-mg125-mg200-mg-product-spe_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/pazopanib-product-specific-bioequivalence-guidance",
    "title": "Pazopanib product-specific bioequivalence guidance",
    "category": "Human",
@@ -7405,6 +8237,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/paediatric-addendum-chmp-guideline-clinical-investigation-medicinal-products-treatment-acute-heart-failure_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/lenalidomide-product-specific-bioequivalence-guidance",
+   "title": "Lenalidomide product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic lenalidomide capsules, including when a solubility-based biowaiver could apply. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "Lenalidomide is a compound with complete absorption but the available data on solubility does not allow its BCS classification",
+   "evidence_source": "document",
+   "document": "Lenalidomide hard gelatine capsules 2.5, 5, 7.5, 10, 15 and 25mg product-specific bioequivalence guidance",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/lenalidomide-hard-gelatine-capsules-25-5-75-10-15-and-25mg-product-specific-bioequivalence-guidance_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/asenapine-product-specific-bioequivalence-guidance",
    "title": "Asenapine product-specific bioequivalence guidance",
    "category": "Human",
@@ -7485,6 +8333,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-production-and-quality-control-animal-immunoglobulins-and-immunosera-human-use-revision-1_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/potency-testing-cell-based-immunotherapy-medicinal-products-treatment-cancer",
+   "title": "Potency testing of cell-based immunotherapy medicinal products for the treatment of cancer",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains how to develop and validate potency assays for cell-based cancer immunotherapies. Potency testing is part of product specifications and quality control.",
+   "evidence": "Licensed biological medicinal products must meet specifications for appearance, identity, purity, biological activity and/or quantity of the drug substance.",
+   "evidence_source": "document",
+   "document": "Guideline on potency testing of cell based immunotherapy medicinal products for the treatment of cancer - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-potency-testing-cell-based-immunotherapy-medicinal-products-treatment-cancer-revision-1_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-development-medicinal-products-treatment-cystic-fibrosis",
    "title": "Clinical development of medicinal products for the treatment of cystic fibrosis",
    "category": "Human",
@@ -7533,6 +8397,38 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/public-statement-use-herbal-medicinal-products-containing-pulegone-and-menthofuran-revision-1_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-pharmacokinetics-pharmacodynamics-development-antibacterial-medicinal-products",
+   "title": "Use of pharmacokinetics and pharmacodynamics in the development of antibacterial medicinal products",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains how to use exposure-response analyses and microbiology data to pick dose regimens for antibacterial, antimycobacterial and antifungal medicines. Exposure-response work is clinical pharmacology within development.",
+   "evidence": "The focus is on the use of PK-PD analyses to identify potentially efficacious dose regimens",
+   "evidence_source": "document",
+   "document": "Guideline on the use of pharmacokinetics and pharmacodynamics in the development of antimicrobial medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-use-pharmacokinetics-and-pharmacodynamics-development-antimicrobial-medicinal-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/emea-implementation-electronic-submissions-statements-intent",
+   "title": "EMEA implementation of electronic submissions: statements of intent",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "PA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Announces the timetable for moving centralised procedure submissions to electronic-only and eCTD format, for new applications as well as variations and renewals. Dossier format belongs to the marketing authorisation stage.",
+   "evidence": "From 1 July 2008, the EMEA will accept electronic-only submissions, either in eCTD format or non-eCTD format",
+   "evidence_source": "document",
+   "document": "EMEA implementation of electronic-only submissions and eCTD submissions in the centralised procedure: Statement of intent",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/emea-implementation-electronic-only-submissions-and-ectd-submissions-centralised-procedure-statement-intent_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/stem-cell-based-products-veterinary-use-specific-questions-target-animal-safety-be-addressed-ad-hoc-expert-group-veterinary-novel-therapies-advent",
    "title": "Stem cell-based products for veterinary use: specific questions on target animal safety to be addressed by the Ad Hoc Expert Group on Veterinary Novel Therapies (ADVENT)",
    "category": "Veterinary",
@@ -7565,6 +8461,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-guideline-m4-r4-common-technical-document-ctd-registration-pharmaceuticals-human-use-organisation-ctd-step-5_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/preclinical-pharmacological-toxicological-testing-vaccines",
+   "title": "Preclinical pharmacological and toxicological testing of vaccines",
+   "category": "Human",
+   "stage": "NC",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains why the old guidance on preclinical pharmacology and toxicology testing of vaccines was withdrawn in favour of the WHO guideline on non-clinical evaluation. The subject is non-clinical testing of vaccines.",
+   "evidence": "it has been agreed to remove the CPMP guideline on preclinical pharmacological and toxicological testing of vaccines, and to refer to the WHO guideline on nonclinical evaluation of vaccines",
+   "evidence_source": "document",
+   "document": "Questions and answers on the withdrawal of the CPMP Note for guidance on preclinical pharmacological and toxicological testing of vaccines (CPMP/SWP/465)",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/other/questions-and-answers-withdrawal-cpmp-note-guidance-preclinical-pharmacological-and-toxicological-testing-vaccines-cpmpswp465_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-m-4-s-common-technical-document-registration-pharmaceuticals-human-use-safety",
    "title": "ICH: M 4 S: Common technical document for the registration of pharmaceuticals for human use - Safety",
    "category": "Human",
@@ -7579,6 +8491,22 @@
    "document": "ICH: M 4 S: Common technical document for the registration of pharmaceuticals for human use - Safety - Step 5",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-m-4-s-common-technical-document-registration-pharmaceuticals-human-use-safety-step-5_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/practical-guidelines-relating-non-ectd-electronic-submissions",
+   "title": "Practical guidelines relating to non-eCTD electronic submissions",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "PA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Set temporary formatting rules for electronic submissions not in eCTD format in the centralised procedure, until eCTD became mandatory. Dossier format belongs to the marketing authorisation stage.",
+   "evidence": "are intended as a transitory measure to improve the standardisation and quality of all non-eCTD electronic submissions provided in the context of the Centralised Procedure",
+   "evidence_source": "document",
+   "document": "EMEA implementation of electronic-only submission and eCTD submission: Practical guidelines relating to non-eCTD electronic submissions",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/emea-implementation-electronic-only-submission-and-ectd-submission-practical-guidelines-relating-non-ectd-electronic-submissions_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-m-4-e-common-technical-document-registration-pharmaceuticals-human-use-efficacy",
@@ -8093,6 +9021,38 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-viral-safety-plasma-derived-medicinal-products-respect-hepatitis-e-virus_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-cocrystals-active-substances-medicinal-products",
+   "title": "Use of cocrystals of active substances in medicinal products",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "medium",
+   "confidence_reason": "outside-framework",
+   "food_chain": false,
+   "reasoning": "Sets out regulators' thinking on cocrystals of active substances: how they compare with salts and other solid forms, whether they count as the same active substance for abridged applications, and use of master files. It mixes solid-state quality with classification questions for applications.",
+   "evidence": "This reflection paper is intended to reflect the current thinking of the CHMP/CVMP regarding different aspects concerning the use of cocrystals of active substances in medicinal products",
+   "evidence_source": "document",
+   "document": "Reflection paper on the use of cocrystals of active substances in medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-cocrystals-active-substances-medicinal-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/assessment-cardiovascular-safety-profile-medicinal-products",
+   "title": "Assessment of cardiovascular safety profile of medicinal products",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Recommends what cardiovascular safety data, including outcome studies, new long-term treatments for cardiovascular and metabolic diseases should have by the time of the application. This is clinical investigation for a group of conditions.",
+   "evidence": "This paper aims to clarify the requirements for these medicinal products at the time of assessment of the marketing authorisation application with respect to data needed for the evaluation of the cardiovascular safety profile",
+   "evidence_source": "document",
+   "document": "Reflection paper on assessment of cardiovascular safety profile of medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-assessment-cardiovascular-safety-profile-medicinal-products_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-investigation-medicinal-products-treatment-acute-heart-failure",
    "title": "Clinical investigation of medicinal products for the treatment of acute heart failure",
    "category": "Human",
@@ -8141,6 +9101,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-microbiological-aspects-herbal-medicinal-products-and-traditional-herbal-medicinal-products_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/adventitious-agent-safety-urine-derived-medicinal-products",
+   "title": "Adventitious agent safety of urine-derived medicinal products",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Covers how to make medicines derived from human urine safe from viruses, including inactivation and removal steps and their validation. Viral safety through manufacturing is a quality matter.",
+   "evidence": "Incorporation of effective steps for virus inactivation/removal is considered a key measure towards virus safety",
+   "evidence_source": "document",
+   "document": "Guideline adventitious agent safety of urine-derived medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-adventitious-agent-safety-urine-derived-medicinal-products_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/removal-target-animal-batch-safetytest-tabst-european-pharmacopoeia-monographs",
    "title": "Removal of the target animal batch safetytest (TABST) from European Pharmacopoeia monographs",
    "category": "Veterinary",
@@ -8155,6 +9131,22 @@
    "document": "Guideline on data requirements for removing the target animal batch safety test for immunological veterinary medicinal products in the European Union - Obsolete",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-data-requirements-removing-target-animal-batch-safety-test-immunological-veterinary-medicinal-products-european-union-obsolete_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/imatinib-product-specific-bioequivalence-guidance",
+   "title": "Imatinib product-specific bioequivalence guidance",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Product-specific bioequivalence guidance for generic imatinib capsules and tablets, including when a solubility-based biowaiver could apply. Bioequivalence evidence supports the generic marketing authorisation application.",
+   "evidence": "imatinib is a compound with complete absorption, but the available data on solubility does not allow its BCS classification",
+   "evidence_source": "document",
+   "document": "Imatinib hard capsules 50 and 100 mg, film-coated tablets 100 and 400 mg product-specific bioequivalence guidance",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/imatinib-hard-capsules-50-and-100-mg-film-coated-tablets-100-and-400-mg-product-specific-bioequivalence-guidance_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/carglumic-acid-product-specific-bioequivalence-guidance",
@@ -8269,6 +9261,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-clinical-investigation-medicinal-products-treatment-systemic-lupus-erythematosus-and-lupus-nephritis_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/data-requirements-intravenous-iron-based-nano-colloidal-products-developed-reference-innovator-medicinal-product",
+   "title": "Data requirements for intravenous iron-based nano-colloidal products developed with reference to an innovator medicinal product",
+   "category": "Human;Herbal",
+   "stage": "MA",
+   "secondary": "QM",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets out the quality, non-clinical and pharmacokinetic comparisons needed to show that an intravenous iron product is similar to the innovator it copies. Data requirements for an application referring to a reference product belong to marketing authorisation, with quality comparison at the core.",
+   "evidence": "This reflection paper is intended to assist in the generation of relevant quality, non-clinical and PK clinical comparative data to support a marketing authorisation",
+   "evidence_source": "document",
+   "document": "Reflection paper on the data requirements for intravenous iron-based nano-colloidal products developed with reference to an innovator medicinal product",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-data-requirements-intravenous-iron-based-nano-colloidal-products-developed-reference-innovator-medicinal-product_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/paediatric-addendum-guideline-clinical-investigation-medicinal-products-treatment-hypertension",
    "title": "Paediatric addendum to the guideline on clinical investigation on medicinal products in the treatment of hypertension",
    "category": "Human",
@@ -8283,6 +9291,22 @@
    "document": "Paediatric addendum to the note for guidance on the clinical investigation on medicinal products in the treatment of hypertension",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/paediatric-addendum-note-guidance-clinical-investigation-medicinal-products-treatment-hypertension_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-clinical-clinical-development-similar-biological-medicinal-products-containing-recombinant-human-insulin-insulin-analogues",
+   "title": "Non-clinical and clinical development of similar biological medicinal products containing recombinant human insulin and insulin analogues",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the non-clinical and clinical studies, such as clamp studies and immunogenicity, needed to show that an insulin product is biosimilar to its reference. Biosimilarity is marketing authorisation, with clinical development secondary.",
+   "evidence": "This product-class specific guideline presents the current view of the CHMP on the non-clinical and clinical requirements for demonstration of biosimilarity of two recombinant insulin-containing medicinal products.",
+   "evidence_source": "document",
+   "document": "Guideline on non-clinical and clinical development of similar biological medicinal products containing recombinant human insulin and insulin analogues - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-non-clinical-and-clinical-development-similar-biological-medicinal-products-containing-recombinant-human-insulin-and-insulin-analogues-revision-1_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/core-summary-product-characteristics-smpc-package-leaflet-99mo-99mtc-generator",
@@ -8397,6 +9421,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-risk-antimicrobial-resistance-transfer-companion-animals_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/risk-characterisation-assessment-maximum-residue-limits-mrl-biocides",
+   "title": "Risk characterisation and assessment of maximum residue limits (MRL) for biocides",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Sets the data and approach for evaluating maximum residue limits for active substances in biocides used in animal husbandry. MRL evaluation as a procedure is marketing authorisation under the rules, with food-chain relevance.",
+   "evidence": "It provides guidance on the type of data required in relation to the dietary risk assessment and MRL evaluation",
+   "evidence_source": "page summary",
+   "document": "Guideline on risk characterisation and assessment of maximum residue limits (MRL) for biocides",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-risk-characterisation-and-assessment-maximum-residue-limits-mrl-biocides_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-m2-electronic-common-technical-document-ectd-file-format-criteria",
    "title": "ICH M2 Electronic common technical document (eCTD) - file format criteria",
    "category": "Human",
@@ -8427,6 +9467,22 @@
    "document": "Guideline on similar biological medicinal products containing biotechnology-derived proteins as active substance: non-clinical and clinical issues - Revision 1",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-similar-biological-medicinal-products-containing-biotechnology-derived-proteins-active-substance-non-clinical-and-clinical-issues-revision-1_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/assessment-risk-transmission-animal-spongiform-encephalopathy-agents-master-seed-materials-used-production-veterinary-vaccines",
+   "title": "Assessment of the risk of transmission of animal spongiform encephalopathy agents by master seed materials used in the production of veterinary vaccines",
+   "category": "Veterinary",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the factors for assessing the risk that master and working seeds used to make veterinary vaccines carry spongiform encephalopathy agents. Safety of starting materials is manufacturing quality; EMA marks it obsolete.",
+   "evidence": "This paper considers the factors that should be addressed when assessing the risk posed by established seed materials so that a systematic and consistent risk assessment can be made.",
+   "evidence_source": "document",
+   "document": "Position paper on assessment of the risk of transmission of animal spongiform encephalopathy agents by master seed materials used in the production of veterinary vaccines - Obsolete",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/position-paper-assessment-risk-transmission-animal-spongiform-encephalopathy-agents-master-seed-materials-used-production-veterinary-vaccines-obsolete_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/evaluation-bovine-spongiform-encephalopathies-bse-risk-use-materials-bovine-origin-or-during-manufacture-vaccines",
@@ -8573,6 +9629,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-quality-oral-modified-release-products_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/transferring-quality-control-methods-validated-collaborative-trials-product-laboratory-specific-context",
+   "title": "Transferring quality control methods validated in collaborative trials to a product/laboratory specific context",
+   "category": "Veterinary",
+   "stage": "QM",
+   "secondary": "XC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Proposes guidance on how data from collaborative validation studies can support the product-specific validation of animal-sparing quality control tests. Batch control test methods are quality, with a 3Rs aim.",
+   "evidence": "This document proposes the development of guidance on how published data from the collaborative study can be used to support laboratory and product specific validation of 3Rs",
+   "evidence_source": "page summary",
+   "document": "Concept paper on transferring quality control methods validated in collaborative trials to a product / laboratory specific context",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-transferring-quality-control-methods-validated-collaborative-trials-product-laboratory-specific-context_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-investigation-medicinal-products-prevention-stroke-systemic-embolic-events-patients-non-valvular-atrial-fibrillation",
    "title": "Clinical investigation of medicinal products for prevention of stroke and systemic embolic events in patients with non-valvular atrial fibrillation",
    "category": "Human",
@@ -8685,6 +9757,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-quality-essential-oils-active-substances-herbal-medicinal-productstraditional-herbal-medicinal-products_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/process-validation-manufacture-biotechnology-derived-active-substances-data-be-provided-regulatory-submission",
+   "title": "Process validation for the manufacture of biotechnology-derived active substances and data to be provided in the regulatory submission",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the process characterisation and verification data needed to show that a biotechnology active substance process is validated, in an application or variation. Process validation is quality and manufacturing, with the submission as secondary.",
+   "evidence": "This document provides guidance on the data to be included in a regulatory submission to demonstrate that the active substance manufacturing process is in a validated state.",
+   "evidence_source": "document",
+   "document": "Guideline on process validation for the manufacture of biotechnology-derived active substances and data to be provided in the regulatory submission",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-process-validation-manufacture-biotechnology-derived-active-substances-and-data-be-provided-regulatory-submission_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-development-medicinal-products-intended-treatment-chronic-primary-immune-thrombocytopenia",
    "title": "Clinical development of medicinal products intended for the treatment of chronic primary immune thrombocytopenia",
    "category": "Human",
@@ -8749,6 +9837,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-process-validation-finished-products-information-and-data-be-provided-regulatory-submissions-revision-1_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-pleuromutilins-food-producing-animals-european-union-development-resistance-impact-human-animal-health",
+   "title": "Use of pleuromutilins in food-producing animals in the European Union: development of resistance and impact on human and animal health",
+   "category": "Veterinary",
+   "stage": "PA",
+   "secondary": "XC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Reviews resistance from the use of pleuromutilins, mainly in pigs, and its impact on human and animal health, with recommendations for new applications and post-authorisation procedures. Reviews of antimicrobial classes already used in animals sit in post-authorisation.",
+   "evidence": "recommendations are for consideration by Competent Authorities and applicants when considering new applications and post-authorisation procedures",
+   "evidence_source": "document",
+   "document": "Reflection paper on use of pleuromutilins in food-producing animals in the European Union: development of resistance and impact on human and animal health (Rev.1)",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-pleuromutilins-food-producing-animals-european-union-development-resistance-and-impact-human-and-animal-health-rev1_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-q4b-annex-6-uniformity-dosage-unites-general-chapter",
    "title": "ICH Q4B Annex 6 Uniformity of dosage unites general chapter",
    "category": "Human",
@@ -8779,6 +9883,22 @@
    "document": "ICH guideline S10 on photosafety evaluation of pharmaceuticals - Step 5",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/ich-guideline-s10-photosafety-evaluation-pharmaceuticals-step-5_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/development-block-copolymer-micelle-medicinal-products",
+   "title": "Development of block-copolymer-micelle medicinal products",
+   "category": "Human;Herbal",
+   "stage": "QM",
+   "secondary": "NC",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Gives basic points on developing block-copolymer micelle products, covering how they are made and characterised as well as non-clinical and early clinical studies. Pharmaceutical development is the largest part, but it spans several stages.",
+   "evidence": "This paper provides basic information for the pharmaceutical development, and non-clinical and early clinical studies of block-copolymer micelle drug products",
+   "evidence_source": "document",
+   "document": "Joint MHLW/EMA reflection paper on the development of block copolymer micelle medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/joint-mhlwema-reflection-paper-development-block-copolymer-micelle-medicinal-products_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/core-summary-product-characteristics-smpc-package-leaflet-technetium-99mtc-sestamibi",
@@ -8829,6 +9949,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/public-statement/routes-administration-vaccines-poultry_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/injection-site-residues-considerations-risk-assessment-residue-surveillance",
+   "title": "Injection-site residues: considerations for risk assessment and residue surveillance",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Discusses how to set residue limits and reference values for injection-site muscle, where residues can be far higher than elsewhere in the carcass, and how this affects surveillance. Injection-site residues and MRL approaches are marketing authorisation under the rules.",
+   "evidence": "these differing levels of residues in a single tissue type make setting an appropriate MRL very challenging",
+   "evidence_source": "document",
+   "document": "Draft reflection paper on injection-site residues: considerations for risk assessment and residue surveillance (revision 1)",
+   "document_status": "Draft: consultation closed",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/draft-reflection-paper-injection-site-residues-considerations-risk-assessment-and-residue-surveillance-revision-1_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-q4b-annex-12-analytical-sieving",
    "title": "ICH Q4B Annex 12 Analytical sieving",
    "category": "Human",
@@ -8843,6 +9979,22 @@
    "document": "ICH guideline Q4B annex 12 to note for evaluation and recommendation of pharmacopoeial texts for use in the ICH regions on analytical sieving - general chapter - Step 5",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-guideline-q4b-annex-12-note-evaluation-and-recommendation-pharmacopoeial-texts-use-ich-regions-analytical-sieving-general-chapter-step-5_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/surface-coatings-general-issues-consideration-regarding-parenteral-administration-coated-nanomedicine-products",
+   "title": "Surface coatings: general issues for consideration regarding parenteral administration of coated nanomedicine products",
+   "category": "Human;Herbal",
+   "stage": "QM",
+   "secondary": "NC",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Raises points to consider for coated nanomedicines given by injection, chiefly characterising and controlling the coating, along with its effects in non-clinical and clinical studies. Product characterisation is the main thread, but it spans several stages.",
+   "evidence": "Consideration of quality, non-clinical and clinical data will play an important role in the definition of the critical product characteristics of a coated nanomedicine",
+   "evidence_source": "document",
+   "document": "Reflection paper on surface coatings: general issues for consideration regarding parenteral administration of coated nanomedicine products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-surface-coatings-general-issues-consideration-regarding-parenteral-administration-coated-nanomedicine-products_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/management-clinical-risks-deriving-insertional-mutagenesis",
@@ -8907,6 +10059,38 @@
    "document": "Guideline on the use of starting materials and intermediates collected from different sources in the manufacturing of non-recombinant biological medicinal products",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-use-starting-materials-and-intermediates-collected-different-sources-manufacturing-non-recombinant-biological-medicinal-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/quality-biological-active-substances-produced-transgene-expression-animals",
+   "title": "Quality of biological active substances produced by transgene expression in animals",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Covers quality issues in using transgenic animals to make therapeutic proteins, including choosing and controlling production animals and freedom from adventitious agents. This is quality and manufacturing.",
+   "evidence": "The guideline addresses the use of transgenic animals as a manufacturing technology for recombinant therapeutic proteins.",
+   "evidence_source": "document",
+   "document": "Guideline on quality of biological active substances produced by transgene expression in animals",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-quality-biological-active-substances-produced-transgene-expression-animals_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/potential-medication-errors-context-benefit-risk-balance-risk-minimisation-measures",
+   "title": "Potential medication errors in the context of benefit risk balance and risk minimisation measures",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "PA",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Explains how the risk of medication errors should be weighed when a new product or change differs from an established product with the same active substance, and what risk-reduction measures may be needed. It applies to new applications and to changes during the product's life.",
+   "evidence": "This position paper focuses on the impact of potential medication errors on the benefit-risk balance of medicinal products introducing changes in relation to an authorised/established product containing the same active substance",
+   "evidence_source": "document",
+   "document": "Position paper on potential medication errors in the context of benefit-risk balance and risk-minimisation measures",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/position-paper-potential-medication-errors-context-benefit-risk-balance-and-risk-minimisation-measures_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-bovine-serum-manufacture-human-biological-medicinal-products",
@@ -8987,6 +10171,22 @@
    "document": "Reflection paper on immune-tolerance induction in haemophilia-A patients with inhibitors",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-immune-tolerance-induction-haemophilia-patients-inhibitors_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/data-requirements-intravenous-liposomal-products-developed-reference-innovator-liposomal-product",
+   "title": "Data requirements for intravenous liposomal products developed with reference to an innovator liposomal product",
+   "category": "Human;Herbal",
+   "stage": "MA",
+   "secondary": "QM",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets out the quality, non-clinical and clinical data needed to show that an intravenous liposomal product is comparable to the innovator it refers to. Data requirements for such an application belong to marketing authorisation, with quality comparison at the core.",
+   "evidence": "This reflection paper is intended to assist in the generation of relevant quality, non-clinical and clinical data to support a marketing authorisation of intravenous liposomal products",
+   "evidence_source": "document",
+   "document": "Reflection paper on the data requirements for intravenous liposomal products developed with reference to an innovator liposomal product - Revision 2",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-data-requirements-intravenous-liposomal-products-developed-reference-innovator-liposomal-product-revision-2_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/vich-gl50-harmonisation-criteria-waive-target-animal-batch-safety-testing-inactivated-vaccines-veterinary-use",
@@ -9469,6 +10669,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-non-clinical-and-clinical-development-oral-and-topical-hiv-pre-exposure-prophylaxis-prep_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/risk-mitigation-measures-related-environmental-risk-assessment-veterinary-medicinal-products",
+   "title": "Risk-mitigation measures related to the environmental risk assessment of veterinary medicinal products",
+   "category": "Veterinary",
+   "stage": "NC",
+   "secondary": "PA",
+   "confidence": "medium",
+   "confidence_reason": "policy-paper",
+   "food_chain": false,
+   "reasoning": "Reviews whether the environmental risk-mitigation measures written into the product information of authorised veterinary medicines are adequate. It follows from environmental risk assessment but looks at existing authorisations, and what it leads to is open.",
+   "evidence": "This reflection paper provides a critical review of the adequacy/appropriateness of risk mitigation measures included in current marketing authorisations of veterinary medicinal products",
+   "evidence_source": "document",
+   "document": "Reflection paper on risk mitigation measures related to the environmental risk assessment of veterinary medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-risk-mitigation-measures-related-environmental-risk-assessment-veterinary-medicinal-products_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-quality-implementation-working-group-points-consider-ich-q8-q9-q10-guidelines",
    "title": "ICH Quality Implementation Working Group: points to consider for ICH Q8/Q9/Q10 guidelines",
    "category": "Human",
@@ -9531,6 +10747,22 @@
    "document": "Reflection paper on design modifications of gene therapy medicinal products during development",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-design-modifications-gene-therapy-medicinal-products-during-development_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-pharmacogenetic-methodologies-pharmacokinetic-evaluation-medicinal-products",
+   "title": "Use of pharmacogenetic methodologies in the pharmacokinetic evaluation of medicinal products",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains when and how to study the effect of genetic differences in drug-handling enzymes and transporters on drug levels, and how to turn the results into dosing advice. Pharmacogenetics in pharmacokinetics is clinical development.",
+   "evidence": "The aim of this guideline is to clarify the requirements related to the use of pharmacogenetics in the pharmacokinetic evaluation of medicinal products",
+   "evidence_source": "document",
+   "document": "Guideline on the use of pharmacogenetic methodologies in the pharmacokinetic evaluation of medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-use-pharmacogenetic-methodologies-pharmacokinetic-evaluation-medicinal-products_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/warning-transmissible-agents-summary-product-characteristics-package-leaflets-plasma-derived-medicinal-products",
@@ -9629,6 +10861,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-guideline-e2f-development-safety-update-report-step-5_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/quality-aspects-isolation-candidate-influenza-vaccine-viruses-cell-culture",
+   "title": "Quality aspects on the isolation of candidate influenza vaccine viruses in cell culture",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets quality recommendations for the cells and conditions used to isolate candidate influenza vaccine viruses up to the master seed. Starting-material quality is quality and manufacturing.",
+   "evidence": "This Guideline lays down the quality recommendations for cells used to isolate candidate influenza vaccine viruses, the conditions under which the viruses are isolated and the subsequent passage of the viruses",
+   "evidence_source": "document",
+   "document": "Guideline on quality aspects on the isolation of candidate influenza vaccine viruses in cell culture",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-quality-aspects-isolation-candidate-influenza-vaccine-viruses-cell-culture_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/treatment-premenstrual-dysphoric-disorder",
    "title": "Treatment of premenstrual dysphoric disorder",
    "category": "Human",
@@ -9643,6 +10891,22 @@
    "document": "Guideline on the treatment of premenstrual dysphoric disorder (PMDD)",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-treatment-premenstrual-dysphoric-disorder-pmdd_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/plasma-derived-medicinal-products",
+   "title": "Plasma-derived medicinal products",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Covers collection of starting plasma, manufacture, process validation, quality control and virus safety of plasma-derived products. This is quality and manufacturing.",
+   "evidence": "This guideline provides guidance for the collection of starting material, the manufacturing and the quality control of plasma-derived medicinal products.",
+   "evidence_source": "document",
+   "document": "Guideline on plasma-derived medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-plasma-derived-medicinal-products_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/methodological-issues-pharmacogenomic-biomarkers-relation-clinical-development-patient-selection",
@@ -9899,6 +11163,22 @@
    "document": "Guideline on missing data in confirmatory clinical trials",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-missing-data-confirmatory-clinical-trials_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/addendum-note-guidance-antiarrhythmics-atrial-fibrillation-atrial-flutter",
+   "title": "Addendum to the note for guidance on antiarrhythmics on atrial fibrillation and atrial flutter",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Gives guidance on the clinical trials needed for new medicines to treat atrial fibrillation and flutter, covering rhythm control, rate control and cardioversion. Clinical investigation for a condition is clinical development.",
+   "evidence": "This guideline is intended to provide guidance for the evaluation of new medicinal products or drugs used in the antiarrhythmic treatment of atrial fibrillation",
+   "evidence_source": "document",
+   "document": "Addendum to the Guideline on antiarrhythmics on atrial fibrillation and atrial flutter",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/addendum-guideline-antiarrhythmics-atrial-fibrillation-and-atrial-flutter_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-q4b-annex-11-capillary-electrophoresis",
@@ -10477,6 +11757,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-guideline-q4b-annex-8-evaluation-and-recommendation-pharmacopoeial-texts-use-ich-regions-sterility-test-general-chapter-step-5_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-clinical-clinical-development-similar-biological-medicinal-products-containing-recombinant-interferon-alpha-or-pegylated-recombinant-interferon-alpha",
+   "title": "Non-clinical and clinical development of similar biological medicinal products containing recombinant interferon alpha  or pegylated recombinant interferon alpha",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets out non-clinical and clinical data to show that an interferon alfa product is comparable to one already authorised. Biosimilarity is marketing authorisation, with clinical development secondary.",
+   "evidence": "This product specific reflection paper presents the current view of the CHMP on the non-clinical and clinical data for demonstration of comparability of two recombinant, non-pegylated, Interferon alfa containing medicinal products",
+   "evidence_source": "document",
+   "document": "Reflection paper: Non-clinical and clinical development of similar medicinal products containing recombinant Interferon Alfa",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-non-clinical-and-clinical-development-similar-medicinal-products-containing-recombinant-interferon-alfa_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-evaluation-direct-acting-antiviral-agents-intended-treatment-chronic-hepatitis-c",
    "title": "Clinical evaluation of direct acting antiviral agents intended for treatment of chronic hepatitis C",
    "category": "Human",
@@ -10525,6 +11821,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/vich-gl33-safety-studies-veterinary-drug-residues-human-food-general-approach-testing-step-7_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/meticillin-resistant-staphylococcus-aureus-food-producing-companion-animals-european-union-epidemiology-control-options-human-animal-health",
+   "title": "Meticillin-resistant Staphylococcus aureus in food-producing and companion animals in the European Union: epidemiology and control options for human and animal health",
+   "category": "Veterinary",
+   "stage": "PA",
+   "secondary": "XC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Reviews how antimicrobial use in farm and companion animals affects MRSA and proposes control options, in the manner of the reflection papers on authorised antimicrobials. Food is not flagged because the paper says the human risk comes from direct contact with animals rather than food.",
+   "evidence": "The major public health significance is focused on direct contact with living animals and not on animal-derived food products.",
+   "evidence_source": "document",
+   "document": "Reflection paper on MRSA in food producing and companion animals in the European Union: epidemiology and control options for human and animal health",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-mrsa-food-producing-and-companion-animals-european-union-epidemiology-and-control-options-human-and-animal-health_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-clinical-clinical-development-similar-biological-medicinal-products-containing-low-molecular-weight-heparins",
    "title": "Non-clinical and clinical development of similar biological medicinal products containing low-molecular-weight heparins",
    "category": "Human",
@@ -10539,6 +11851,22 @@
    "document": "Guideline on non-clinical and clinical development of similar biological medicinal products containing low-molecular-weight-heparins - Revision 1",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-non-clinical-and-clinical-development-similar-biological-medicinal-products-containing-low-molecular-weight-heparins-revision-1_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-third-fourth-generation-cephalosporins-food-producing-animals-european-union-development-resistance-impact-human-animal-health",
+   "title": "Use of third- and fourth-generation cephalosporins in food-producing animals in the European Union: development of resistance and impact on human and animal health",
+   "category": "Veterinary",
+   "stage": "PA",
+   "secondary": "XC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Reviews how use of third- and fourth-generation cephalosporins in food-producing animals drives resistance and its impact on human health, with recommendations on use. Reviews of antimicrobial classes already used in animals sit in post-authorisation.",
+   "evidence": "The objective of this document is to critically review recent information on the use of cephalosporins of the 3rd and 4th generation in food producing animals in the EU",
+   "evidence_source": "document",
+   "document": "Revised reflection paper on the use of third- and fourth-generation cephalosporins in food-producing animals in the European Union: Development of resistance and impact on human and animal health",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/revised-reflection-paper-use-third-and-fourth-generation-cephalosporins-food-producing-animals-european-union-development-resistance-and-impact-human-and-animal-health_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/dossier-structure-content-pandemic-influenza-vaccine-marketing-authorisation-application",
@@ -10685,6 +12013,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-assessment-bioavailability-bound-residues-food-commodities-animal-origin-context-council-regulation-eec-no-237790_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/new-approach-developed-joint-food-agriculture-organization-world-health-organization-expert-committee-food-additives-exposure-maximum-residue-limit-assessment-residues-veterinary-medicinal-products",
+   "title": "New approach developed by the Joint Food and Agriculture Organization/World Health Organization Expert Committee on Food Additives for exposure and maximum residue limit assessment of residues of veterinary medicinal products",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "medium",
+   "confidence_reason": "policy-paper",
+   "food_chain": true,
+   "reasoning": "Describes the international expert committee's new way of estimating dietary intake of residues for setting residue limits, and gives the committee's view on adopting it. It concerns the MRL risk-assessment approach, but whether it changes EU practice is left open.",
+   "evidence": "This document describes the new approach of the Joint FAO/WHO Expert Committee on Food Additives (JECFA) for the estimation of chronic dietary intake for use in MRL assessments for veterinary drugs",
+   "evidence_source": "page summary",
+   "document": "Reflection paper on the new approach developed by JECFA for exposure and MRL assessment of residues of VMP",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-new-approach-developed-jecfa-exposure-and-mrl-assessment-residues-vmp_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/vich-gl44-target-animal-safety-veterinary-live-inactivated-vaccines",
    "title": "VICH GL44 Target animal safety for veterinary live and inactivated vaccines",
    "category": "Veterinary",
@@ -10763,6 +12107,22 @@
    "document": "Guideline on the development of medicinal products for the treatment of post-traumatic stress disorder (PTSD)",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-development-medicinal-products-treatment-post-traumatic-stress-disorder-ptsd_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/quality-biological-active-substances-produced-stable-transgene-expression-higher-plants",
+   "title": "Quality of biological active substances produced by stable transgene expression in higher plants",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Covers quality and adventitious-agent safety of biological active substances made in genetically modified plants. This is quality and manufacturing.",
+   "evidence": "The quality issues (including adventitious agent safety evaluation considerations) affecting biological active substances1 produced by the expression of one or more transgenes stably located in the nuclear or plastid genomes of higher plants",
+   "evidence_source": "document",
+   "document": "Guideline on the quality of biological active substances produced by stable transgene expression in higher plants",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-quality-biological-active-substances-produced-stable-transgene-expression-higher-plants_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/markers-used-quantitative-qualitative-analysis-herbal-medicinal-products-traditional-herbal-medicinal-products",
@@ -10957,6 +12317,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-pharmacogenomics-oncology_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/water-injection-prepared-reverse-osmosis",
+   "title": "Water for injection prepared by reverse osmosis",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains why reverse osmosis was not then accepted for making water for injections in Europe and invites discussion. Manufacturing materials are quality; the later water guideline has since changed the position.",
+   "evidence": "This paper outlines why it is currently not considered acceptable to use reverse osmosis for the production of water for injections",
+   "evidence_source": "document",
+   "document": "Reflection paper on water for injection prepared by reverse osmosis",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-water-injection-prepared-reverse-osmosis_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/need-non-clinical-testing-juvenile-animals-human-pharmaceuticals-paediatric-indications",
    "title": "Need for non-clinical testing in juvenile animals on human pharmaceuticals for paediatric indications",
    "category": "Human",
@@ -11149,6 +12525,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-15-definitions-genomic-biomarkers-pharmacogenomics-pharmacogenetics-genomic-data-and-sample-coding-categories-step-4_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/risks-associated-furocoumarins-contained-preparations-angelica-archangelica-l",
+   "title": "Risks associated with furocoumarins contained in preparations of Angelica archangelica L.",
+   "category": "Human;Herbal",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Assesses the risk of skin reactions to light from furocoumarins in angelica preparations and sets exposure levels below which no concern arises, for use by authorities and applicants. It rests on toxicology but is written for assessing and preparing herbal applications.",
+   "evidence": "The assessment may be used by national competent authorities when evaluating the safety of herbal medicinal products containing preparations of Angelica archangelica L.",
+   "evidence_source": "document",
+   "document": "Final reflection paper on the risks associated with Furocoumarins contained in preparations of Angelica archangelica L.",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/final-reflection-paper-risks-associated-furocoumarins-contained-preparations-angelica-archangelica-l_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/methodological-issues-confirmatory-clinical-trials-planned-adaptive-design",
    "title": "Methodological issues in confirmatory clinical trials planned with an adaptive design",
    "category": "Veterinary",
@@ -11229,6 +12621,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-quality-non-clinical-and-clinical-issues-related-development-recombinant-adeno-associated-viral-vectors_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/reporting-results-population-pharmacokinetic-analyses",
+   "title": "Reporting the results of population pharmacokinetic analyses",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets out what a population pharmacokinetic report should contain so that assessors can check the model and its conclusions. Modelling and pharmacokinetic analysis belong to clinical development.",
+   "evidence": "The aim of this guideline is to detail what the European regulatory assessors look for in a report of population PK analyses",
+   "evidence_source": "document",
+   "document": "Guideline on reporting the results of population pharmacokinetic analyses",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-reporting-results-population-pharmacokinetic-analyses_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/excipients-dossier-application-marketing-authorisation-medicinal-product",
    "title": "Excipients in the dossier for application for marketing authorisation of a medicinal product",
    "category": "Human",
@@ -11275,6 +12683,22 @@
    "document": "Guiding principles: Processing joint Food and Drug Administration / European Medicines Agency voluntary genomic data submissions (VGDSs) within the framework of the confidentiality arrangement",
    "document_status": null,
    "document_url": "https://www.ema.europa.eu/en/documents/other/guiding-principles-processing-joint-food-and-drug-administration-european-medicines-agency-voluntary-genomic-data-submissions-vgdss-within-framework-confidentiality-arrangement_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-clinical-studies-required-first-clinical-use-gene-therapy-medicinal-products",
+   "title": "Non-clinical studies required before first clinical use of gene therapy medicinal products",
+   "category": "Human",
+   "stage": "NC",
+   "secondary": "CD",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Defines the non-clinical studies needed before gene therapy products are first given to people. This is non-clinical development, supporting the first clinical trials.",
+   "evidence": "The focus of this document is on the non-clinical studies that are required before the first use of a GTMP in human subjects.",
+   "evidence_source": "document",
+   "document": "Guideline on the non-clinical studies required before first clinical use of gene therapy medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-non-clinical-studies-required-first-clinical-use-gene-therapy-medicinal-products_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/clinical-trials-haematopoietic-growth-factors-prophylaxis-infection-following-myelosuppressive-or-myeloablative-therapy",
@@ -11341,6 +12765,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/vich-gl10-impurities-new-veterinary-drug-substances-step-7-after-revision-step-9_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-fluoroquinolones-food-producing-animals-european-union-development-resistance-impact-human-animal-health",
+   "title": "Use of (fluoro)quinolones in food-producing animals in the European Union: development of resistance and impact on human and animal health",
+   "category": "Veterinary",
+   "stage": "PA",
+   "secondary": "XC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Reviews how use of authorised (fluoro)quinolones in food-producing animals drives resistance and what that means for human and animal health. Reviews of antimicrobial classes already used in animals sit in post-authorisation.",
+   "evidence": "The objective of this document is to critically review recent information on the use of (fluoro)quinolones (older generation quinolones as well as fluoroquinolones) in food-producing animals",
+   "evidence_source": "document",
+   "document": "Public statement on the use of (fluoro)quinolones in food-producing animals in the European Union: development of resistance and impact on human and animal health",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/public-statement/public-statement-use-fluoroquinolones-food-producing-animals-european-union-development-resistance-and-impact-human-and-animal-health_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/scientific-requirements-environmental-risk-assessment-gene-therapy-medicinal-products",
    "title": "Scientific requirements for the environmental risk assessment of gene-therapy medicinal products",
    "category": "Human",
@@ -11403,6 +12843,22 @@
    "document": "Guideline on influenza vaccines prepared from viruses with the potential to cause a pandemic and intended for use outside of the core dossier context",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-influenza-vaccines-prepared-viruses-potential-cause-pandemic-and-intended-use-outside-core-dossier-context_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/thiomersal-implementation-warning-statement-relating-sensitisation",
+   "title": "Thiomersal: implementation of the warning statement relating to sensitisation",
+   "category": "Human",
+   "stage": "MA",
+   "secondary": "PA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Gives the warning wording on sensitisation to use in the summary of product characteristics and leaflet of medicines, mainly vaccines, that contain thiomersal. Product information belongs to the marketing authorisation and is kept up to date after approval.",
+   "evidence": "The CHMP recommends the following statement for all medicinal products containing thiomersal",
+   "evidence_source": "document",
+   "document": "CHMP position paper on thiomersal implementation of the warning statement relating to sensitisation",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/chmp-position-paper-thiomersal-implementation-warning-statement-relating-sensitisation_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/gender-differences-cardiovascular-diseases",
@@ -11963,6 +13419,22 @@
    "document": "Draft concept paper on the impact of lung and heart immaturity when investigating medicinal products intended for neonatal use",
    "document_status": "Draft: consultation closed",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/draft-concept-paper-impact-lung-and-heart-immaturity-when-investigating-medicinal-products-intended-neonatal-use_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-clinical-testing-inadvertent-germline-transmission-gene-transfer-vectors",
+   "title": "Non-clinical testing for inadvertent germline transmission of gene transfer vectors",
+   "category": "Human",
+   "stage": "NC",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Gives guidance on animal studies to test whether gene transfer vectors reach the germline, to support clinical development. Non-clinical testing is non-clinical development.",
+   "evidence": "With new gene transfer technologies allowing higher vector titres and using new vector types and in vivo strategies, it is important to appropriately assess if there is a risk of inadvertent germline transmission.",
+   "evidence_source": "document",
+   "document": "Guideline on non-clinical testing for inadvertent germline transmission of gene transfer vectors",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-non-clinical-testing-inadvertent-germline-transmission-gene-transfer-vectors_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/core-summary-product-characteristics-human-plasma-derived-von-willebrand-factor",
@@ -12637,6 +14109,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-core-spc-human-plasma-coagulation-factor-vii-products-cpmpbpwg204801_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/first-cases-bse-usa-canada-risk-assessment-ruminant-materials-originating-usa-canada",
+   "title": "First cases of BSE in USA and Canada: risk assessment of ruminant materials originating from USA and Canada",
+   "category": "Human",
+   "stage": "PA",
+   "secondary": "QM",
+   "confidence": "medium",
+   "confidence_reason": "spans-stages",
+   "food_chain": false,
+   "reasoning": "Assesses whether the first BSE cases in the USA and Canada make authorised medicines that use ruminant materials from there unsafe, and what this means for compliance. It is a review of products on the market, about the safety of starting materials.",
+   "evidence": "The primary aim of this assessment was to evaluate if these BSE cases would create a public health risk",
+   "evidence_source": "document",
+   "document": "First cases of bovine spongiform encephalopathy in the United States (USA) and Canada: Risk assessment of ruminant materials originating from the USA and Canada",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/first-cases-bovine-spongiform-encephalopathy-united-states-usa-and-canada-risk-assessment-ruminant-materials-originating-usa-and-canada_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/definition-substances-capable-pharmacological-action-context-council-directive-2001-82-ec-amended-particular-reference-excipients-manufacturing-materials",
    "title": "Definition of substances capable of pharmacological action in the context of Council Directive 2001/82/EC as amended, with particular reference to excipients and manufacturing materials",
    "category": "Veterinary",
@@ -12731,6 +14219,22 @@
    "document": "VICH GL37: Safety of veterinary drugs in human food repeat-dose (Chronic) toxicity testing - Step 7",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/vich-gl37-safety-veterinary-drugs-human-food-repeat-dose-chronic-toxicity-testing-step-7_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/development-chmp-guideline-dosing-delivery-injectable-liquids",
+   "title": "Development of CHMP guideline on dosing delivery of injectable liquids",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Plans guidance on how syringes for injectable liquids are graduated and how accurately they deliver a dose, and possibly the injectability of suspensions. Dosing accuracy of the product and its device is a quality matter.",
+   "evidence": "It primarily focuses on the manner of graduation of (multidose) syringes and the graduation scale",
+   "evidence_source": "document",
+   "document": "Concept paper on the development of a committee for medicinal products for human use (CHMP) guideline on dosing delivery of injectable liquids",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-development-committee-medicinal-products-human-use-chmp-guideline-dosing-delivery-injectable-liquids_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-m4e-common-technical-document-registration-pharmaceuticals-human-use-efficacy-questions-answers",
@@ -12843,6 +14347,22 @@
    "document": "VICH GL27: Guidance on the pre-approval information for registration of new veterinary medicinal products for food producing animals with respect to antimicrobial resistance - Step 7",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/vich-gl27-guidance-pre-approval-information-registration-new-veterinary-medicinal-products-food-producing-animals-respect-antimicrobial-resistance-step-7_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/summary-requirements-active-substances-quality-part-dossier",
+   "title": "Summary of requirements for active substances in the quality part of the dossier",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Summarises the data on chemical and herbal active substances required in the quality part of the dossier, depending on whether they are new, existing or in a pharmacopoeia. Active-substance quality data are quality.",
+   "evidence": "This document provides guidance on the data to be included for chemical and herbal active substances in the quality part of the dossier.",
+   "evidence_source": "page summary",
+   "document": "Guideline on summary of requirements for active substances in the quality part of the dossier - Revision 1",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-summary-requirements-active-substances-quality-part-dossier-revision-1_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/stability-testing-existing-active-ingredients-related-finished-products",
@@ -12993,7 +14513,7 @@
    "title": "ICH M4S Common technical document for the registration of pharmaceuticals for human use - safety",
    "category": "Human",
    "stage": "MA",
-   "secondary": null,
+   "secondary": "NC",
    "confidence": "high",
    "confidence_reason": null,
    "food_chain": false,
@@ -13117,6 +14637,38 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/position-paper-maximum-use-shelf-life-medicated-drinking-water_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/terminology-pharmacogenetics",
+   "title": "Terminology in pharmacogenetics",
+   "category": "Human",
+   "stage": "CD",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Defines terms for how genetic samples and data in clinical trials are coded and linked to participants, so protocols describe privacy protection clearly. Although it is terminology, it applies only to the conduct of clinical trials.",
+   "evidence": "This position paper focuses on a specific set of critical terms that are frequently used in protocols for pharmacogenetic testing",
+   "evidence_source": "document",
+   "document": "Position paper on terminology in pharmacoGenetics",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/position-paper-terminology-pharmacogenetics_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/establishment-maximum-residue-limits-milk-considering-daily-intake-children",
+   "title": "Establishment of maximum residue limits for milk considering the daily intake by children",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Considers whether the system for setting maximum residue limits in milk adequately protects children, who drink more milk for their body weight. This is MRL policy, which the rules place in marketing authorisation with food-chain relevance.",
+   "evidence": "This document discusses the current system for the establishment of maximum residue limits for milk in the context of exposure in children",
+   "evidence_source": "page summary",
+   "document": "Position paper on the establishment of MRLs for milk considering the daily intake by children",
+   "document_status": null,
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/position-paper-establishment-mrls-milk-considering-daily-intake-children_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/re-establishment-working-seeds-working-cell-banks-using-tse-compliant-materials",
    "title": "Re-establishment of working seeds and working cell banks using TSE compliant materials",
    "category": "Human",
@@ -13195,6 +14747,38 @@
    "document": "Guideline on EU requirements for batches with maximum and minimum titre or batch potency for developmental safety and efficacy studies - Obsolete",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-eu-requirements-batches-maximum-minimum-titre-or-batch-potency-developmental-safety-efficacy-studies-obsolete_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-remunerated-remunerated-donors-safety-supply-plasma-derived-medicinal-products",
+   "title": "Non-remunerated and remunerated donors: safety and supply of plasma-derived medicinal products",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "States the regulators' view that paid and unpaid plasma donors both contribute to safe supply, because safety rests on controls during collection, manufacture and batch testing. The subject is the safety of plasma starting material, so quality and manufacturing.",
+   "evidence": "The safety of plasma-derived medicinal products is optimised by the stepwise application, in the course of collection, manufacture and batch release testing, of a number of complementary measures, which are under regulatory control.",
+   "evidence_source": "document",
+   "document": "CPMP position statement on non-remunerated and remunerated donors: safety and supply of plasma-derived medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/cpmp-position-statement-non-remunerated-and-remunerated-donors-safety-and-supply-plasma-derived-medicinal-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/risk-regulatory-assessment-lactose-other-products-prepared-using-calf-rennet",
+   "title": "Risk and regulatory assessment of lactose and other products prepared using calf rennet",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "medium",
+   "confidence_reason": "outside-framework",
+   "food_chain": false,
+   "reasoning": "Assesses the BSE risk of lactose made with calf rennet and whether it can be exempted from the TSE guidance. It is a scope decision about an excipient's starting materials, which is mainly a quality matter.",
+   "evidence": "to consider whether there is scientific and regulatory justification to exempt lactose prepared using calf rennet",
+   "evidence_source": "document",
+   "document": "Public report on risk and regulatory assessment of lactose and other products prepared using calf rennet",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/public-report-risk-and-regulatory-assessment-lactose-and-other-products-prepared-using-calf-rennet_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/vich-gl25-biologicals-testing-residual-formaldehyde",
@@ -13309,6 +14893,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/note-guidance-clinical-investigation-plasma-derived-antithrombin-products_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/non-clinical-assessment-carcinogenic-potential-human-insulin-analogues",
+   "title": "Non-clinical assessment of the carcinogenic potential of human insulin analogues",
+   "category": "Human",
+   "stage": "NC",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the general approach to testing new insulin analogues for mitogenic and carcinogenic potential using laboratory and animal assays. Carcinogenicity assessment is non-clinical development.",
+   "evidence": "This Points to Consider Document provides general guidance to industry and regulators on the general approach to the assessment of potential carcinogenicity of new insulin analogues.",
+   "evidence_source": "document",
+   "document": "Points to consider document on the non-clinical assessment of the carcinogenic potential of insulin analogues",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/points-consider-document-non-clinical-assessment-carcinogenic-potential-insulin-analogues_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/coordinating-investigator-signature-clinical-study-reports",
    "title": "Coordinating investigator signature of clinical study reports",
    "category": "Human",
@@ -13355,6 +14955,22 @@
    "document": "ICH: S 7 A: Safety pharmacology studies for human pharmaceuticals - Step 5",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-s-7-safety-pharmacology-studies-human-pharmaceuticals-step-5_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/start-shelf-life-finished-dosage-form-annex-note-guidance-manufacture-finished-dosage-form",
+   "title": "Start of shelf-life of the finished dosage form (Annex to the note for guidance on the manufacture of the finished dosage form)",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Explains from what point the shelf-life of a production batch is counted, relative to the manufacture of the finished product. Shelf-life setting in manufacture is quality.",
+   "evidence": "This document assists with establishing the expiration period of a production bath of a medicinal product.",
+   "evidence_source": "page summary",
+   "document": "Note for guidance on start of shelf-life of the finished dosage form (annex to note for guidance on the manufacture of the finished dosage form)",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/note-guidance-start-shelf-life-finished-dosage-form-annex-note-guidance-manufacture-finished-dosage-form_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/application-1-meta-analyses-2-one-pivotal-study",
@@ -13467,6 +15083,22 @@
    "document": "Concept paper on the development of a committee for proprietary medicinal products (CPMP) points to consider on stability and traceability requirements for vaccine intermediates",
    "document_status": null,
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/concept-paper-development-committee-proprietary-medicinal-products-cpmp-points-consider-stability-and-traceability-requirements-vaccine-intermediates_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/risk-analysis-approach-residues-vmps-food-animal-origin",
+   "title": "Risk-analysis approach for residues of VMPs in food of animal origin",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Sets out the risk-analysis approach used to establish maximum residue limits for veterinary medicines in food of animal origin. The rules place the MRL risk-analysis approach in marketing authorisation.",
+   "evidence": "This document outlines the current risk assessment approach for the establishment of maximum residue levels",
+   "evidence_source": "page summary",
+   "document": "Note for guidance on the risk analysis approach for residues of veterinary medicinal products in food of animal origin",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/note-guidance-risk-analysis-approach-residues-veterinary-medicinal-products-food-animal-origin_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-e10-choice-control-group-clinical-trials",
@@ -13645,6 +15277,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/vich-gl5-stability-testing-photostability-testing-new-veterinary-drug-substances-and-medicinal-products-step-7-consensus-guideline_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/background-cpmp-position-paper-selective-serotonin-uptake-inhibitors-ssris-dependency-withdrawal-reactions",
+   "title": "Background to the CPMP Position Paper on selective serotonin uptake inhibitors (SSRIs) and dependency/withdrawal reactions",
+   "category": "Human",
+   "stage": "PA",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Reviews the evidence on dependence and withdrawal reactions with marketed antidepressants of the SSRI class and recommends common warning wording for their product information. A safety review of products on the market is post-authorisation work.",
+   "evidence": "The following principles for harmonised wording relating to withdrawal reactions in the Summaries of Product Characteristics (SPC) of the Selective Serotonin Reuptake Inhibitors (SSRIs) are recommended",
+   "evidence_source": "document",
+   "document": "Background to the CPMP position paper on selective serotonin uptake inhibitors (SSRIs) and dependency/withdrawal reactions",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/background-cpmp-position-paper-selective-serotonin-uptake-inhibitors-ssris-and-dependencywithdrawal-reactions_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/endpoints-clinical-studies-haematopoietic-growth-factors-mobilisation-autologous-stem-cells",
    "title": "Endpoints in clinical studies with haematopoietic growth factors for mobilisation of autologous stem cells",
    "category": "Human",
@@ -13755,6 +15403,22 @@
    "document": "ICH: Q 6 B: Test procedures and acceptance criteria for biotechnological/biological products - Step 5",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-q-6-b-test-procedures-and-acceptance-criteria-biotechnologicalbiological-products-step-5_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/plasma-derived-medicinal-products-alt-testing",
+   "title": "Plasma-derived medicinal products: ALT testing",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Assesses whether screening plasma donors with the ALT liver enzyme test adds to the viral safety of plasma-derived products. Donor screening of starting material is quality and manufacturing.",
+   "evidence": "As such it is a surrogate test for the presence of viruses that cause liver cell damage.",
+   "evidence_source": "document",
+   "document": "Position Paper on Plasma-Derived Medicinal Products: Alt Testing (Corrigendum, Sept. 1999)",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/position-paper-plasma-derived-medicinal-products-alt-testing-corrigendum-sept-1999_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/explanatory-note-withdrawal-note-guidance-harmonisation-requirements-influenza-vaccines",
@@ -13981,6 +15645,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/note-guidance-maximum-shelf-life-sterile-products-human-use-after-first-opening-or-following-reconstitution_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/establishment-maximum-residue-limits-salmonidae-other-fin-fish",
+   "title": "Establishment of maximum residue limits for Salmonidae and other fin fish",
+   "category": "Veterinary",
+   "stage": "MA",
+   "secondary": "NC",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": true,
+   "reasoning": "Reviews the technical data needed to set maximum residue limits for substances used in salmon and other farmed fish. Data requirements for MRL applications are marketing authorisation under the rules.",
+   "evidence": "This document aims to review the technical data requirements for setting maximum residue limits for products used in salmonidae and other fin fish",
+   "evidence_source": "page summary",
+   "document": "Note for guidance on the establishment of maximum residue limits for Salmonidae and other fin fish",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/note-guidance-establishment-maximum-residue-limits-salmonidae-and-other-fin-fish_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-q1c-stability-testing-requirements-new-dosage-forms",
    "title": "ICH Q1C Stability testing: requirements for new dosage forms",
    "category": "Human",
@@ -14011,6 +15691,22 @@
    "document": "Position paper on the genotoxic and carcinogenic potential of phenolphthalein",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/position/position-paper-genotoxic-and-carcinogenic-potential-phenolphthalein_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/production-tallow-derivatives-use-pharmaceuticals",
+   "title": "Production of tallow derivatives for use in pharmaceuticals",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets manufacturing conditions for tallow derivatives such as glycerol and magnesium stearate so that they carry no risk of BSE. Excipient manufacture and starting material safety are quality matters.",
+   "evidence": "Tallow used as the starting material for the manufacture of tallow derivatives should be produced by a method at least as robust as those referred to in Commission Decision",
+   "evidence_source": "document",
+   "document": "Position paper on production of Tallow derivatives for use in pharmaceuticals",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/position-paper-production-tallow-derivatives-use-pharmaceuticals_en.pdf"
   },
   {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-s6-r1-preclinical-safety-evaluation-biotechnology-derived-pharmaceuticals",
@@ -14205,6 +15901,22 @@
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/international-conference-harmonisation-technical-requirements-registration-pharmaceuticals-human-use-topic-e-2-clinical-safety-data-management-definitions-and-standards-expedited-reporting-step_en.pdf"
   },
   {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/production-quality-control-medicinal-products-derived-recombinant-dna-technology",
+   "title": "Production and quality control of medicinal products derived by recombinant DNA technology",
+   "category": "Human",
+   "stage": "QM",
+   "secondary": null,
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Early quality guidance on producing and controlling recombinant DNA products, covering cell banks, fermentation, purification, potency and purity; it has since been superseded by ICH quality guidelines. This is quality and manufacturing.",
+   "evidence": "Sufficient quantities of medicinal products which were previously difficult to prepare from natural sources can now be produced using such recombinant DNA (rDNA) technology.",
+   "evidence_source": "document",
+   "document": "Production and quality control of medicinal products derived by recombinant dna technology",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/production-and-quality-control-medicinal-products-derived-recombinant-dna-technology_en.pdf"
+  },
+  {
    "url": "https://www.ema.europa.eu/en/scientific-guidelines/gene-therapy-product-quality-aspects-production-vectors-genetically-modified-somatic-cells",
    "title": "Gene therapy product quality aspects in the production of vectors and genetically modified somatic cells",
    "category": "Human",
@@ -14331,6 +16043,54 @@
    "document": "Note for guidance: Investigation of chiral active substances",
    "document_status": "Adopted",
    "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/note-guidance-investigation-chiral-active-substances_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/local-tolerance-intramammary-preparations-cows",
+   "title": "Local tolerance of intramammary preparations in cows",
+   "category": "Veterinary",
+   "stage": "CD",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Describes a trial in cows, using udder cell counts, milk appearance and yield, to show that an intramammary product is tolerated locally. A tolerance study in the target species belongs to clinical development.",
+   "evidence": "The objective of this note for guidance is to provide guidance for the determination of local tolerance of intramammary preparations intended for use in both lactating and non-lactating cows.",
+   "evidence_source": "document",
+   "document": "Local tolerance of intramammary preparations in cows",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/local-tolerance-intramammary-preparations-cows_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/use-ionizing-radiation-manufacture-medicinal-products",
+   "title": "Use of ionizing radiation in the manufacture of medicinal products",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets the information applicants must give when ionising radiation is used to sterilise or decontaminate materials or products, including validation of the irradiation process. That is manufacturing quality.",
+   "evidence": "This note for guidance is intended for applicants wishing to use ionising radiation in the manufacture of medicinal products.",
+   "evidence_source": "document",
+   "document": "The use of ionising radiation in the manufacture of medicinal products",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/use-ionising-radiation-manufacture-medicinal-products_en.pdf"
+  },
+  {
+   "url": "https://www.ema.europa.eu/en/scientific-guidelines/specifications-control-tests-finished-product",
+   "title": "Specifications and control tests on the finished product",
+   "category": "Human;Veterinary",
+   "stage": "QM",
+   "secondary": "MA",
+   "confidence": "high",
+   "confidence_reason": null,
+   "food_chain": false,
+   "reasoning": "Sets which specifications and control tests on the finished product, such as identity, assay, purity and dissolution, the application must describe. Finished-product control is quality.",
+   "evidence": "It provides guidance on the information to be included in the marketing authorisation application on specifications and control test on the finished product.",
+   "evidence_source": "page summary",
+   "document": "Specifications and control tests on the finished product",
+   "document_status": "Adopted",
+   "document_url": "https://www.ema.europa.eu/en/documents/scientific-guideline/specifications-and-control-tests-finished-product_en.pdf"
   }
  ]
 }
