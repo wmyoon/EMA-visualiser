@@ -102,7 +102,8 @@ export function webglAvailable() {
 export function createScene({ canvas, overlay, count, describe, onHover, onSelect, onUserMove }) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(FOV, 1, 1, 2000);
+  const camera = new THREE.PerspectiveCamera(FOV, 1, 1, 8000);
+  let fov = FOV; // a layout may ask for a longer lens (see setLayout)
 
   let width = 1;
   let height = 1;
@@ -249,7 +250,7 @@ export function createScene({ canvas, overlay, count, describe, onHover, onSelec
   });
 
   function homePose() {
-    const tan = Math.tan((FOV * Math.PI) / 360);
+    const tan = Math.tan((fov * Math.PI) / 360);
     const clear = Math.max(0.4, 1 - (pad.top + pad.bottom) / height);
     const usable = Math.max(0.35, (width - insetGoal - leftPad()) / height);
     const dist = Math.max(layout.fit.h / (tan * clear), layout.fit.w / (tan * usable)) * 1.03;
@@ -490,7 +491,7 @@ export function createScene({ canvas, overlay, count, describe, onHover, onSelec
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      uniforms.uPx.value = (height * dpr) / (2 * Math.tan((FOV * Math.PI) / 360));
+      uniforms.uPx.value = (height * dpr) / (2 * Math.tan((fov * Math.PI) / 360));
       uniforms.uMinPx.value = 3.4 * dpr;
       uniforms.uMaxPx.value = 19 * dpr;
       uniforms.uDpr.value = dpr;
@@ -535,6 +536,20 @@ export function createScene({ canvas, overlay, count, describe, onHover, onSelec
     setLayout(next, { order, animate = true, intro = false } = {}) {
       const first = !layout;
       layout = next;
+      // A layout that is read for lengths (a timeline) asks for a long, nearly orthographic lens, so
+      // equal lengths look equal anywhere on screen. Swap lenses without a visible jump: move the
+      // camera back or forward by the same factor, so the picture is unchanged before it flies home.
+      const wantFov = next.fov ?? FOV;
+      if (wantFov !== fov) {
+        const k = Math.tan((fov * Math.PI) / 360) / Math.tan((wantFov * Math.PI) / 360);
+        fov = wantFov;
+        rig.cur.dist *= k;
+        rig.goal.dist *= k;
+        rig.limits = { min: 8 * (FOV / fov), max: 600 * (FOV / fov) };
+        camera.fov = fov;
+        camera.updateProjectionMatrix();
+        uniforms.uPx.value = (height * dpr) / (2 * Math.tan((fov * Math.PI) / 360));
+      }
       to.set(next.positions);
       if (order) delay.set(order);
 

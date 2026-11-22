@@ -23,6 +23,7 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
  * @property {{w:number,h:number,left?:number}} fit  half-extents of the silhouette from the home view,
  *                                              plus px to keep clear on the left for row labels
  * @property {{phi:number,theta:number}} view home camera angles (polar from +Y, azimuth)
+ * @property {number} [fov]  vertical field of view in degrees; a small one gives a nearly orthographic view
  */
 
 /** Which record fields carry each date basis. Labels come from the dataset. */
@@ -405,6 +406,10 @@ function lifecycle(records, basis, out, by) {
   // Phase rule along the back, with ticks at the boundaries.
   seg(xOf(0), 0, zBack - 10.6, xOf(plan.end), 0, zBack - 10.6);
   for (const ph of [...plan.phases, { from: plan.end }]) seg(xOf(ph.from), 0, zBack - 11.2, xOf(ph.from), 0, zBack - 10.0);
+  // The same time rule along the front, so a bar's start and end can be read without tracing back.
+  seg(xOf(0), 0, zFront + 2.2, xOf(plan.end), 0, zFront + 2.2);
+  for (const ph of [...plan.phases, { from: plan.end }]) seg(xOf(ph.from), 0, zFront + 1.6, xOf(ph.from), 0, zFront + 2.8);
+  for (const m of plan.milestones) seg(xOf(m.at), 0, zFront + 1.9, xOf(m.at), 0, zFront + 2.5);
 
   /** @type {Label[]} */
   const labels = [];
@@ -421,7 +426,10 @@ function lifecycle(records, basis, out, by) {
     labels,
     center: [0, top * 0.3, (zBack - 14.5 + zFront) / 2],
     fit: { w: (plan.end * UNIT) / 2 + 3, h: (zFront - zBack + 15) / 2 * 0.85 + top * 0.4, left: 10 + 6.6 * Math.max(...lanes.map((l) => l.label.length + 6)) },
-    view: { phi: 0.62, theta: 0 },
+    // Read like a 2D Gantt chart: a long lens (nearly orthographic), so time is not foreshortened
+    // anywhere on screen, looking down at the plane of bars; orbit to see the stacks.
+    view: { phi: 0.5, theta: 0 },
+    fov: 9,
   };
 }
 

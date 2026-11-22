@@ -195,7 +195,7 @@ export default {
       rankOf: (r) => CONF_ORDER[r.stage?.confidence] ?? 3,
       rest: 'Not yet assessed',
       caption: () =>
-        'A medicine’s life from left to right, in EMA’s three phases, with its milestones as gates (not to scale). Each stage is a bar over the part of the life it applies to; its guidelines stack on it, nearer the stage they also serve.',
+        'A Gantt chart of a medicine’s life, left to right through EMA’s three phases, with milestones as gates (schematic, not to scale). Each stage is a bar over the part of the life it applies to. Its guidelines sit on it, nearer the stage they also serve; stack height shows how much guidance there is. Orbit to see the heights; reset to read it flat.',
     },
   ],
 
