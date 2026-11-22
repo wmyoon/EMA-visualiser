@@ -54,11 +54,11 @@ Security; sharing it widely would need an Apple Developer ID and notarisation.
 
 | | |
 |---|---|
-| **Arrangements** | *Spiral*: one turn per year, January at the top, stacks where records share a few days. *Skyline*: one column per year, with rows by audience (guidelines) or outcome (medicines). *Clusters*: guidelines by subject or disease area; medicines by ATC class. |
+| **Arrangements** | *Spiral*: one turn per year, January at the top, stacks where records share a few days. *Skyline*: one column per year, with rows by audience (guidelines) or outcome (medicines). *Clusters*: guidelines by subject or disease area; medicines by ATC class. *Lifecycle* (guidelines): EMA's three lifecycle stages from left to right, with the topics that span them in front; see below. |
 | **Two date bases** | Place by the record's primary date or by its last update. The year filter follows the same choice. |
 | **Colour** | Guidelines: audience or update age. Medicines: status, type (generic, biosimilar, orphan), audience or update age. |
 | **Search and filter** | Free-text search, chips with live counts, and a year range. Matches re-seat at the base of each stack so a filter reads as a bar inside the full bar. |
-| **Detail card** | Dates, a lifetime bar, the EMA link, and related records. For a guideline: the guidelines that reference it and the ones it refers to, also drawn as arcs on the map. For a medicine: every dated milestone and other medicines with the same active substance. Minimise it (`M` or the ⌄ button) to a bar at the bottom of the map: the record stays selected, its arcs stay drawn and the map takes the full width. |
+| **Detail card** | Dates, a lifetime bar, the EMA link, and related records. For a guideline: the guidelines that reference it and the ones it refers to, also drawn as arcs on the map. For a medicine: every dated milestone and other medicines with the same active substance. Minimise it (`M` or the ⌄ button) to a bar at the bottom of the map: the record stays selected, its arcs stay drawn and the map takes the full width. A guideline's card also shows its regulatory stage, the reasoning, and the quote from its document that supports it. |
 | **Deep links** | `#g-<id>` selects a guideline, `#m-<id>` a medicine, `#medicines` opens that dataset. |
 
 Controls: drag to orbit, scroll or pinch to zoom toward the pointer, right-drag
@@ -114,6 +114,45 @@ opinion, the opinion date. Where EMA gives none of these (about 320 medicines,
 mostly veterinary), the date its EMA page was first published is used, and the
 detail card says so. Those page dates cluster in 2017–2018, when the pages were
 republished, so that bump in the veterinary timeline is not a real surge.
+
+## Regulatory stage of each guideline
+
+EMA describes a medicine's life in three stages, *Research and development*,
+*Marketing authorisation* and *Post-authorisation*, plus *topics that span the
+product lifecycle*
+([human](https://www.ema.europa.eu/en/human-regulatory-overview),
+[veterinary](https://www.ema.europa.eu/en/veterinary-regulatory-overview)).
+Each guideline has been assessed into one of six finer stages that sit inside
+that framework:
+
+| EMA stage | Stages assessed |
+|---|---|
+| Research and development | Non-clinical development; Clinical development |
+| Marketing authorisation | Marketing authorisation |
+| Post-authorisation | Post-authorisation |
+| Topics that span the lifecycle | Quality and manufacturing; Cross-cutting |
+
+Quality and manufacturing sits with the spanning topics because quality is
+built in development, filed in the dossier and maintained through GMP and
+variations, and EMA lists compliance among the spanning topics.
+
+Each assessment records a primary stage, an optional secondary stage, a
+confidence (with a reason when it is not high), whether it concerns the human
+food chain (veterinary residues, maximum residue limits, withdrawal periods,
+antimicrobial resistance through food), one to three sentences of reasoning,
+and a quote from the guideline's current document, checked word for word.
+They were made by reading each document under the rules in
+[`scripts/stages/RULES.md`](scripts/stages/RULES.md). They are this project's
+judgements, not an EMA classification.
+
+The results are in `data/guideline-stages.json` (read by the app) and
+`data/guideline-stages.csv` (for spreadsheets). In the app: the *Lifecycle*
+arrangement, the *Stage* and *Food chain* filters, the *Confidence* colouring,
+and the card's *Regulatory stage* section.
+
+To redo them: `npm run download-guidelines`, then record assessments with
+`scripts/stages/digest.py` and `scripts/stages/record.py` (see RULES.md), then
+`npm run build-stages`.
 
 ## Refresh the data
 

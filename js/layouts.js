@@ -12,7 +12,7 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
  * @typedef {Object} Label
  * @property {string} text
  * @property {string} [sub]   secondary line (a count, for example)
- * @property {'axis'|'minor'|'lane'|'group'} kind
+ * @property {'axis'|'minor'|'lane'|'group'|'stage'} kind
  * @property {[number,number,number]} at
  *
  * @typedef {Object} Layout
@@ -298,15 +298,143 @@ function clusters(records, basis, out, by) {
   };
 }
 
+/* ------------------------------ lifecycle ------------------------------ */
+
+/**
+ * EMA's lifecycle as a floor plan: one column per lifecycle stage from left to
+ * right, each holding a block of dots per assessed stage, and a band in front
+ * for the topics that span the lifecycle. Inside a block, dots sit nearer the
+ * side of the stage they also serve (their secondary stage), so a block's
+ * left and right edges show what it shares with its neighbours.
+ *
+ * @param {{plan:{columns:{label:string, blocks:{id:string,label:string}[]}[], band:{label:string, blocks:{id:string,label:string}[]}},
+ *          keyOf:(r:any)=>string|null, pullOf:(r:any)=>string|null, rankOf:(r:any)=>number, rest:string}} by
+ */
+function lifecycle(records, basis, out, by) {
+  const STEP = 1.05; // dot spacing
+  const GAP_BLOCK = 2.6; // between blocks of one stage
+  const GAP_COL = 7; // between EMA stages: room for the arrow
+  const positions = new Float32Array(records.length * 3);
+
+  /** @type {Map<string, any[]>} */
+  const members = new Map();
+  for (const r of records) {
+    const key = by.keyOf(r) ?? 'none';
+    if (!members.has(key)) members.set(key, []);
+    members.get(key).push(r);
+  }
+  const count = (id) => members.get(id)?.length ?? 0;
+  const restBlock = count('none') ? [{ id: 'none', label: by.rest }] : [];
+  const allBlocks = [...by.plan.columns.flatMap((c) => c.blocks), ...by.plan.band.blocks, ...restBlock];
+  const rows = Math.max(6, Math.round(Math.sqrt(Math.max(...allBlocks.map((b) => count(b.id)), 1) / 2.2)));
+  const width = (id) => Math.max(1, Math.ceil(count(id) / rows)) * STEP;
+  const depth = rows * STEP;
+
+  /** @type {Map<string,{x0:number,w:number,zc:number}>} */
+  const place = new Map();
+  let x = 0;
+  const cols = by.plan.columns.map((c) => {
+    const x0 = x;
+    c.blocks.forEach((b, k) => {
+      if (k) x += GAP_BLOCK;
+      place.set(b.id, { x0: x, w: width(b.id), zc: 0 });
+      x += width(b.id);
+    });
+    const col = { ...c, x0, x1: x };
+    x += GAP_COL;
+    return col;
+  });
+  const topWidth = x - GAP_COL;
+  const zBand = depth + 9;
+  const bandBlocks = [...by.plan.band.blocks, ...restBlock];
+  const bandWidth = bandBlocks.reduce((s, b) => s + width(b.id), 0) + GAP_BLOCK * (bandBlocks.length - 1);
+  x = (topWidth - bandWidth) / 2;
+  for (const b of bandBlocks) {
+    place.set(b.id, { x0: x, w: width(b.id), zc: zBand });
+    x += width(b.id) + GAP_BLOCK;
+  }
+  const shift = -topWidth / 2;
+  const centreOf = (id) => {
+    const p = place.get(id);
+    return p ? p.x0 + p.w / 2 : null;
+  };
+
+  for (const b of allBlocks) {
+    const list = members.get(b.id);
+    if (!list) continue;
+    const p = place.get(b.id);
+    const own = centreOf(b.id);
+    const pull = (r) => {
+      const target = centreOf(by.pullOf(r));
+      return target == null ? 0 : Math.sign(target - own) * (1 + Math.abs(target - own) / 1000);
+    };
+    list
+      .slice()
+      .sort((a, c) => pull(a) - pull(c) || by.rankOf(a) - by.rankOf(c) || c[basis.ms] - a[basis.ms] || a.i - c.i)
+      .forEach((r, j) => {
+        const col = Math.floor(j / rows);
+        const row = j % rows;
+        const px = p.x0 + (col + 0.5) * STEP;
+        const pz = p.zc - depth / 2 + (row + 0.5) * STEP;
+        const u = (px - (p.x0 + p.w / 2)) / Math.max(p.w / 2, depth / 2);
+        const v = (pz - p.zc) / (depth / 2);
+        positions[r.i * 3] = px + shift;
+        positions[r.i * 3 + 1] = 0.35 + 0.9 * Math.max(0, 1 - (u * u + v * v) / 2);
+        positions[r.i * 3 + 2] = pz;
+      });
+  }
+
+  const lines = [];
+  const rect = (x0, x1, z0, z1) => {
+    lines.push(x0, 0, z0, x1, 0, z0, x1, 0, z0, x1, 0, z1, x1, 0, z1, x0, 0, z1, x0, 0, z1, x0, 0, z0);
+  };
+  const PAD = 1.2;
+  /** @type {Label[]} */
+  const labels = [];
+  const total = (blocks) => String(blocks.reduce((s, b) => s + count(b.id), 0));
+  cols.forEach((c, k) => {
+    rect(c.x0 - PAD + shift, c.x1 + PAD + shift, -depth / 2 - PAD, depth / 2 + PAD);
+    labels.push({ text: c.label, sub: total(c.blocks), kind: 'stage', at: [(c.x0 + c.x1) / 2 + shift, 0, -depth / 2 - 4.6] });
+    if (c.blocks.length > 1) {
+      for (const b of c.blocks) labels.push({ text: b.label, sub: String(count(b.id)), kind: 'group', at: [centreOf(b.id) + shift, 0, -depth / 2 - PAD - 1.2] });
+    }
+    if (k < cols.length - 1) {
+      // an arrow on to the next stage
+      const mx = c.x1 + GAP_COL / 2 + shift;
+      lines.push(mx - 0.9, 0, -1.3, mx + 0.7, 0, 0, mx + 0.7, 0, 0, mx - 0.9, 0, 1.3);
+    }
+  });
+  rect(-topWidth / 2 - PAD, topWidth / 2 + PAD, zBand - depth / 2 - PAD, zBand + depth / 2 + PAD);
+  labels.push({ text: by.plan.band.label, sub: total(by.plan.band.blocks), kind: 'stage', at: [0, 0, zBand + depth / 2 + 4.6] });
+  for (const b of bandBlocks) {
+    labels.push({ text: b.label, sub: String(count(b.id)), kind: 'group', at: [centreOf(b.id) + shift, 0, zBand + depth / 2 + PAD + 0.6] });
+  }
+
+  const zMin = -depth / 2 - 6.5; // stage headers behind the columns
+  const zMax = zBand + depth / 2 + 6.5; // band header in front
+  return {
+    positions,
+    lines: new Float32Array(lines),
+    labels,
+    center: [0, 0.4, (zMin + zMax) / 2],
+    fit: { w: topWidth / 2 + 4, h: ((zMax - zMin) / 2) * 0.95 },
+    view: { phi: 0.5, theta: 0 },
+  };
+}
+
 /**
  * @typedef {Object} LayoutSpec  how a dataset wants one arrangement built
- * @property {'spiral'|'skyline'|'clusters'} kind
+ * @property {'spiral'|'skyline'|'clusters'|'lifecycle'} kind
  * @property {(r:any)=>number} [rank]  order inside a stack, so colour bands line up
  * @property {{id:string,label:string}[]} [lanes]  skyline rows, back first
  * @property {(r:any)=>string} [laneOf]
  * @property {(r:any)=>string} [keyOf]  cluster a record belongs to
  * @property {{id:string,short:string}[]} [defs]  the clusters, in display order
  * @property {string} [last]  catch-all cluster, placed at the edge
+ * @property {object} [plan]  lifecycle: EMA's stages as columns and a band, with the blocks in each
+ * @property {(r:any)=>string|null} [pullOf]  lifecycle: the block a dot leans towards
+ * @property {(r:any)=>number} [rankOf]  lifecycle: order inside a block after the lean
+ * @property {string} [rest]  lifecycle: label for records with no block
  */
 
 /**
@@ -325,5 +453,8 @@ export function computeLayout(spec, records, basisId, mask) {
   const rank = spec.rank ?? (() => 0);
   if (spec.kind === 'skyline') return skyline(records, basis, extent, out, rank, { lanes: spec.lanes, laneOf: spec.laneOf });
   if (spec.kind === 'clusters') return clusters(records, basis, out, { keyOf: spec.keyOf, defs: spec.defs, last: spec.last });
+  if (spec.kind === 'lifecycle') {
+    return lifecycle(records, basis, out, { plan: spec.plan, keyOf: spec.keyOf, pullOf: spec.pullOf ?? (() => null), rankOf: spec.rankOf ?? (() => 0), rest: spec.rest ?? 'Other' });
+  }
   return spiral(records, basis, extent, out, rank);
 }

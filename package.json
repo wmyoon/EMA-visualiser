@@ -11,7 +11,8 @@
     "update-links": "node scripts/update-links.mjs",
     "vendor": "node scripts/vendor.mjs",
     "build:mac": "bash macos/build.sh",
-    "download-guidelines": "node scripts/download-guidelines.mjs"
+    "download-guidelines": "node scripts/download-guidelines.mjs",
+    "build-stages": "node scripts/stages/build.mjs"
   },
   "engines": { "node": ">=20" }
 }

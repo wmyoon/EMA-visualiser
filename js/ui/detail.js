@@ -86,6 +86,42 @@ export function mountDetail({ dataset, records, extent, snapshotMs, actions }) {
     return h('section', { class: 'detail__section' }, h('h3', { class: 'related__title', text: text.label }), body, text.body.length > 260 ? more : null);
   }
 
+  /** Where the record sits in the regulatory process, with the reasoning and the quote behind it. */
+  function assessment(a) {
+    const head = h('h3', { class: 'related__title', text: a.title });
+    if (a.empty) return h('section', { class: 'detail__section assess' }, head, h('p', { class: 'related__empty', text: a.empty }));
+    const src = a.source;
+    return h(
+      'section',
+      { class: 'detail__section assess', 'aria-label': a.title },
+      head,
+      h(
+        'p',
+        { class: 'assess__path', title: a.pathHint },
+        ...a.path.flatMap((part, i) => (i ? [h('span', { class: 'assess__sep', 'aria-hidden': 'true', text: '›' }), h('strong', { text: part })] : [h('span', { text: part })])),
+      ),
+      a.facts.length ? h('dl', { class: 'facts' }, ...a.facts.flatMap(([key, value]) => [h('dt', { text: key }), h('dd', { text: value })])) : null,
+      h('p', { class: 'assess__reason', text: a.reasoning }),
+      h(
+        'figure',
+        { class: 'assess__quote' },
+        h('blockquote', { text: `“${a.evidence}”` }),
+        h(
+          'figcaption',
+          {},
+          ...(src.document
+            ? [
+                `${src.label} `,
+                src.url && isEmaUrl(src.url) ? h('a', { href: src.url, target: '_blank', rel: 'noopener noreferrer', text: src.document }) : h('span', { text: src.document }),
+                src.status ? ` (${src.status})` : null,
+              ]
+            : [src.label]),
+        ),
+      ),
+      h('p', { class: 'related__note', text: a.note }),
+    );
+  }
+
   /** A titled list of records, each one a button that opens it. Long lists start folded. */
   function recordList(list, go, rerender) {
     const open = expanded.has(list.id) || list.items.length <= SHORT + 1;
@@ -204,6 +240,7 @@ export function mountDetail({ dataset, records, extent, snapshotMs, actions }) {
         d.facts?.length
           ? h('dl', { class: 'facts' }, ...d.facts.flatMap(([key, value]) => [h('dt', { text: key }), h('dd', { text: value })]))
           : null,
+        d.assessment ? assessment(d.assessment) : null,
         d.text ? longText(d.text) : null,
         stamps(d.stamps, d.stampsWide),
         lifeline(d.life),
