@@ -23,6 +23,8 @@ export class OrbitRig {
     this.cur = { x: 0, y: 0, z: 0, dist: 120, phi: 0.9, theta: 0 };
     this.goal = { ...this.cur };
     this.limits = { min: 8, max: 600 };
+    /** Allowed angles. A layout may narrow them, e.g. keep a timeline's time axis left to right. */
+    this.angles = { theta: null, phi: [PHI_MIN, PHI_MAX] };
     this.stiffness = 7;
     this.userMoved = false;
     this.dragging = false;
@@ -39,10 +41,22 @@ export class OrbitRig {
     this.apply();
   }
 
+  /** Keep the goal inside the allowed angles. */
+  _clampAngles() {
+    this.goal.phi = clamp(this.goal.phi, this.angles.phi[0], this.angles.phi[1]);
+    if (this.angles.theta) this.goal.theta = clamp(this.goal.theta, this.angles.theta[0], this.angles.theta[1]);
+  }
+
+  /** Narrow (or, with no argument, restore) the angles the camera may orbit through. */
+  setAngles({ theta = null, phi = [PHI_MIN, PHI_MAX] } = {}) {
+    this.angles = { theta, phi };
+    this._clampAngles();
+  }
+
   /** Ease toward a pose. Pass `immediate` to jump. */
   flyTo(pose, { immediate = false, stiffness = 4.2 } = {}) {
     Object.assign(this.goal, pose);
-    this.goal.phi = clamp(this.goal.phi, PHI_MIN, PHI_MAX);
+    this._clampAngles();
     this.goal.dist = clamp(this.goal.dist, this.limits.min, this.limits.max);
     // Take the short way round.
     const turn = Math.PI * 2;
@@ -56,7 +70,8 @@ export class OrbitRig {
   nudge({ theta = 0, phi = 0, zoom = 1 }) {
     this._touch();
     this.goal.theta += theta;
-    this.goal.phi = clamp(this.goal.phi + phi, PHI_MIN, PHI_MAX);
+    this.goal.phi += phi;
+    this._clampAngles();
     this.goal.dist = clamp(this.goal.dist * zoom, this.limits.min, this.limits.max);
     this.hooks.onChange();
   }
@@ -152,7 +167,8 @@ export class OrbitRig {
         this._pan(dx, dy);
       } else {
         this.goal.theta -= dx * 0.0052;
-        this.goal.phi = clamp(this.goal.phi - dy * 0.0052, PHI_MIN, PHI_MAX);
+        this.goal.phi -= dy * 0.0052;
+        this._clampAngles();
       }
       this.hooks.onChange();
     });

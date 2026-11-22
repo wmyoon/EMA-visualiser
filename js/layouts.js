@@ -25,6 +25,7 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
  *                                              plus px to keep clear on the left for row labels
  * @property {{phi:number,theta:number}} view home camera angles (polar from +Y, azimuth)
  * @property {number} [fov]  vertical field of view in degrees; a small one gives a nearly orthographic view
+ * @property {{theta?:[number,number], phi?:[number,number]}} [orbit]  angles the camera may orbit through
  */
 
 /** Which record fields carry each date basis. Labels come from the dataset. */
@@ -437,11 +438,14 @@ function lifecycle(records, basis, out, by) {
     lines: new Float32Array(lines),
     labels,
     center: [0, top * 0.3, (zBack - 21 + zFront + 5) / 2],
-    fit: { w: (plan.end * UNIT) / 2 + 3, h: ((zFront - zBack + 26) / 2) * 0.85 + top * 0.4 },
+    fit: { w: ((plan.end * UNIT) / 2 + 3) * 1.16, h: ((zFront - zBack + 26) / 2) * 1.02 + top * 0.4 },
     // Read like a 2D Gantt chart: a long lens (nearly orthographic), so time is not foreshortened
     // anywhere on screen, looking down at the plane of bars; orbit to see the stacks.
     view: { phi: 0.5, theta: 0 },
     fov: 9,
+    // Orbit a little either way and tilt, but never so far that time stops running left to right.
+    // The home view leaves room for the chart at every allowed angle, so it never runs off screen.
+    orbit: { theta: [-0.35, 0.35], phi: [0.1, 0.95] },
   };
 }
 

@@ -539,6 +539,8 @@ export function createScene({ canvas, overlay, count, describe, onHover, onSelec
       // A layout that is read for lengths (a timeline) asks for a long, nearly orthographic lens, so
       // equal lengths look equal anywhere on screen. Swap lenses without a visible jump: move the
       // camera back or forward by the same factor, so the picture is unchanged before it flies home.
+      // A layout may limit how far the camera orbits (a timeline keeps time running left to right).
+      rig.setAngles(next.orbit ?? {});
       const wantFov = next.fov ?? FOV;
       if (wantFov !== fov) {
         const k = Math.tan((fov * Math.PI) / 360) / Math.tan((wantFov * Math.PI) / 360);
