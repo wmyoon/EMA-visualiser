@@ -242,7 +242,11 @@ async function mount(dataset, { records, meta }, saved) {
       }
       if (changed.has('colorBy')) applyTheme();
       if (changed.has('hovered')) stage.setHover(state.hovered);
-      if (changed.has('folded')) detailInset(); // a minimised card gives the map its full width
+      if (changed.has('folded')) {
+        detailInset(); // a minimised card gives the map its full width
+        // ...and the map is recentred to fill it, even after the viewer has orbited, panned or zoomed.
+        if (state.folded) stage.resetView();
+      }
       if (changed.has('selected')) {
         stage.setSelected(state.selected);
         stage.setLinks(linksOf(state.selected));
