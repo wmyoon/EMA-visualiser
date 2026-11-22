@@ -217,7 +217,7 @@ export default {
     {
       id: 'confidence',
       label: 'Confidence',
-      legendTitle: 'Stage assessment',
+      legendTitle: 'Stage assessment confidence',
       of: (r) => [r.stage ? CONFIDENCE[r.stage.confidence].token : '--neutral'],
       // "Not assessed" is listed only when some guideline has no assessment, so it is never confused with Low.
       get legend() {
