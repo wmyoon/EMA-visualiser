@@ -133,9 +133,9 @@ const STAGE_OPTIONS = [
 const CONF_ORDER = { high: 0, medium: 1, low: 2 };
 const LIFECYCLE_PLAN = {
   end: TIMELINE.end,
-  phases: TIMELINE.phases.map((p) => ({ label: EMA_STAGE_BY_ID[p.ema].label, from: p.from, to: p.to, span: p.span })),
+  phases: TIMELINE.phases.map((p) => ({ label: EMA_STAGE_BY_ID[p.ema].label, short: p.short, from: p.from, to: p.to, span: p.span })),
   milestones: TIMELINE.milestones,
-  lanes: TIMELINE.lanes.map((l) => ({ ...l, label: STAGE_BY_ID[l.id].label })),
+  lanes: TIMELINE.lanes.map((l) => ({ ...l, label: STAGE_BY_ID[l.id].label, short: STAGE_BY_ID[l.id].short })),
   spansLabel: 'Spans the lifecycle',
 };
 const audienceTokens = (r) => r.cats.map((c) => AUDIENCE[c].token);

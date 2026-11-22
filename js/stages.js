@@ -69,13 +69,13 @@ export const CONFIDENCE_REASONS = {
 export const TIMELINE = {
   end: 100,
   phases: [
-    { ema: 'rd', from: 0, to: 44, span: '8–15 years' },
-    { ema: 'ma', from: 44, to: 74, span: 'about a year' },
-    { ema: 'pa', from: 74, to: 100, span: 'on the market' },
+    { ema: 'rd', from: 0, to: 44, span: '8–15 years', short: 'R&D' },
+    { ema: 'ma', from: 44, to: 74, span: 'about a year', short: 'Authorisation' },
+    { ema: 'pa', from: 74, to: 100, span: 'on the market', short: 'Post-auth.' },
   ],
   milestones: [
-    { at: 14, label: 'First trials in people' },
-    { at: 44, label: 'Application', about: 'Marketing authorisation application submitted to EMA' },
+    { at: 14, label: 'First trials in people', short: 'Trials' },
+    { at: 44, label: 'Application', short: 'Filed', about: 'Marketing authorisation application submitted to EMA' },
     { at: 62, label: 'Opinion', about: 'CHMP or CVMP opinion, within 210 active days' },
     { at: 74, label: 'Decision', about: 'European Commission decision, within 67 days of the opinion' },
   ],

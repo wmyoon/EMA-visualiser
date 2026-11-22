@@ -12,7 +12,8 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
  * @typedef {Object} Label
  * @property {string} text
  * @property {string} [sub]   secondary line (a count, for example)
- * @property {'axis'|'minor'|'lane'|'group'|'stage'|'phase'|'milestone'} kind
+ * @property {string} [short] shorter text for narrow screens
+ * @property {'axis'|'minor'|'lane'|'group'|'stage'|'phase'|'milestone'|'bar'|'barside'|'barbelow'} kind
  * @property {[number,number,number]} at
  *
  * @typedef {Object} Layout
@@ -321,8 +322,8 @@ function lifecycle(records, basis, out, by) {
   const UNIT = 1.0; // timeline units to world units
   const STEP = 1.0; // dot pitch
   const DEEP = 4; // rows of dots across each bar
-  const LANE = DEEP * STEP + 2.2; // bar pitch, front to back
-  const GROUP_GAP = 4.5; // extra space before the bars that span the lifecycle
+  const LANE = DEEP * STEP + 3; // bar pitch, front to back
+  const GROUP_GAP = 6.5; // extra space before the bars that span the lifecycle
   const { plan } = by;
   const positions = new Float32Array(records.length * 3);
 
@@ -348,6 +349,7 @@ function lifecycle(records, basis, out, by) {
   };
 
   let top = 0;
+  const laneTop = new Map(); // height of each bar's tallest stack, so its name can sit above it
   for (const lane of laneAt.values()) {
     const list = members.get(lane.id);
     if (!list) continue;
@@ -375,6 +377,7 @@ function lifecycle(records, basis, out, by) {
       positions[r.i * 3 + 1] = 0.45 + level * STEP;
       positions[r.i * 3 + 2] = lane.z + ((k % DEEP) - (DEEP - 1) / 2) * STEP;
       top = Math.max(top, 0.45 + level * STEP);
+      laneTop.set(lane.id, Math.max(laneTop.get(lane.id) ?? 0, 0.45 + level * STEP));
     });
   }
 
@@ -398,34 +401,43 @@ function lifecycle(records, basis, out, by) {
   }
   // Milestones: a gate across every bar, standing up at the back.
   const gate = Math.max(4, top + 1.5);
-  for (const m of plan.milestones) {
+  const tagZ = (k) => zBack - 1.2 - ((k + 1) % 2) * 5.6; // alternate rows, so neighbouring tags never meet
+  plan.milestones.forEach((m, k) => {
     const x = xOf(m.at);
-    seg(x, 0, zBack - 1.2, x, 0, zFront + 0.6);
-    seg(x, 0, zBack - 1.2, x, gate, zBack - 1.2);
-  }
+    seg(x, 0, tagZ(k), x, 0, zFront + 0.6);
+    seg(x, 0, tagZ(k), x, gate, tagZ(k));
+  });
   // Phase rule along the back, with ticks at the boundaries.
-  seg(xOf(0), 0, zBack - 10.6, xOf(plan.end), 0, zBack - 10.6);
-  for (const ph of [...plan.phases, { from: plan.end }]) seg(xOf(ph.from), 0, zBack - 11.2, xOf(ph.from), 0, zBack - 10.0);
+  seg(xOf(0), 0, zBack - 16.6, xOf(plan.end), 0, zBack - 16.6);
+  for (const ph of [...plan.phases, { from: plan.end }]) seg(xOf(ph.from), 0, zBack - 17.2, xOf(ph.from), 0, zBack - 16.0);
   // The same time rule along the front, so a bar's start and end can be read without tracing back.
-  seg(xOf(0), 0, zFront + 2.2, xOf(plan.end), 0, zFront + 2.2);
-  for (const ph of [...plan.phases, { from: plan.end }]) seg(xOf(ph.from), 0, zFront + 1.6, xOf(ph.from), 0, zFront + 2.8);
-  for (const m of plan.milestones) seg(xOf(m.at), 0, zFront + 1.9, xOf(m.at), 0, zFront + 2.5);
+  seg(xOf(0), 0, zFront + 4, xOf(plan.end), 0, zFront + 4);
+  for (const ph of [...plan.phases, { from: plan.end }]) seg(xOf(ph.from), 0, zFront + 3.4, xOf(ph.from), 0, zFront + 4.6);
+  for (const m of plan.milestones) seg(xOf(m.at), 0, zFront + 3.7, xOf(m.at), 0, zFront + 4.3);
 
   /** @type {Label[]} */
   const labels = [];
-  for (const ph of plan.phases) labels.push({ text: ph.label, sub: ph.span, kind: 'phase', at: [xOf((ph.from + ph.to) / 2), 0, zBack - 13.5] });
-  for (const m of plan.milestones) labels.push({ text: m.label, kind: 'milestone', at: [xOf(m.at), gate + 0.6, zBack - 1.2] });
+  for (const ph of plan.phases) labels.push({ text: ph.label, short: ph.short, sub: ph.span, kind: 'phase', at: [xOf((ph.from + ph.to) / 2), 0, zBack - 20] });
+  plan.milestones.forEach((m, k) => labels.push({ text: m.label, short: m.short, kind: 'milestone', at: [xOf(m.at), gate + 0.6, tagZ(k)] }));
+  // Each bar is named where it starts: in the empty time before it when it starts later (the usual
+  // Gantt place), or just above it when it starts at the beginning. No margin is kept for names, so the
+  // bars get the full width.
+  const lastId = lanes[lanes.length - 1].id;
   for (const lane of laneAt.values()) {
-    labels.push({ text: `${lane.label} · ${members.get(lane.id)?.length ?? 0}`, kind: 'lane', at: [xOf(lane.from) - 1.2, 0, lane.z] });
+    const sub = String(members.get(lane.id)?.length ?? 0);
+    // The front bar has open ground below it, so its name goes there, at the end clear of the legend.
+    if (lane.id === lastId && lane.from === 0) labels.push({ text: lane.label, short: lane.short, sub, kind: 'barbelow', at: [xOf(lane.to), 0, lane.z + half + 0.3] });
+    else if (lane.from > 0) labels.push({ text: lane.label, short: lane.short, sub, kind: 'barside', at: [xOf(lane.from) - 0.6, 0.45, lane.z] });
+    else labels.push({ text: lane.label, short: lane.short, sub, kind: 'bar', at: [xOf(lane.from), (laneTop.get(lane.id) ?? 0) + 0.9, lane.z - half] });
   }
-  if (firstSpan >= 0) labels.push({ text: plan.spansLabel, kind: 'minor', at: [xOf(plan.end / 2), 0, zOf(firstSpan) - zMid - half - 2.4] });
+  if (firstSpan >= 0) labels.push({ text: plan.spansLabel, kind: 'minor', at: [xOf(plan.end / 2), 0, zOf(firstSpan) - zMid - half - 4.2] });
 
   return {
     positions,
     lines: new Float32Array(lines),
     labels,
-    center: [0, top * 0.3, (zBack - 14.5 + zFront) / 2],
-    fit: { w: (plan.end * UNIT) / 2 + 3, h: (zFront - zBack + 15) / 2 * 0.85 + top * 0.4, left: 10 + 6.6 * Math.max(...lanes.map((l) => l.label.length + 6)) },
+    center: [0, top * 0.3, (zBack - 21 + zFront + 5) / 2],
+    fit: { w: (plan.end * UNIT) / 2 + 3, h: ((zFront - zBack + 26) / 2) * 0.85 + top * 0.4 },
     // Read like a 2D Gantt chart: a long lens (nearly orthographic), so time is not foreshortened
     // anywhere on screen, looking down at the plane of bars; orbit to see the stacks.
     view: { phi: 0.5, theta: 0 },

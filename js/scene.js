@@ -590,7 +590,14 @@ export function createScene({ canvas, overlay, count, describe, onHover, onSelec
       labels = next.labels.map((l) => {
         const node = el('div', `lbl lbl--${l.kind}`);
         const inner = el('span', 'lbl__text');
-        inner.textContent = l.text;
+        if (l.short && l.short !== l.text) {
+          // Both forms go in; the stylesheet shows the short one on narrow screens.
+          const long = el('span', 'lbl__long');
+          long.textContent = l.text;
+          const short = el('span', 'lbl__short');
+          short.textContent = l.short;
+          inner.append(long, short);
+        } else inner.textContent = l.text;
         node.append(inner);
         if (l.sub) {
           const sub = el('span', 'lbl__sub');
