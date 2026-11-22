@@ -24,11 +24,11 @@
   --human: var(--series-1);
   --veterinary: var(--series-2);
   --herbal: var(--series-3);
-  /* stage-assessment confidence: the surer, the more it stands out. High is the darkest and most
-     saturated, medium a pale greyed blue, low plain grey (tests/colors.test.mjs checks the order). */
+  /* stage-assessment confidence: high is the full blue, medium the same blue at half saturation
+     (same hue and lightness), low a greyed-out grey (tests/colors.test.mjs checks this). */
   --conf-high: #0c56b5;
-  --conf-medium: #8696ae;
-  --conf-low: #aeaeae;
+  --conf-medium: #3d5b89;
+  --conf-low: #b4b4b4;
   /* update-age ramp, most recent first */
   --age-1: #0d366b;
   --age-2: #184f95;
@@ -69,7 +69,7 @@
     --series-3: #199e70;
     --neutral: #66758a;
     --conf-high: #76acfc;
-    --conf-medium: #6e7b8f;
+    --conf-medium: #92add4;
     --conf-low: #555555;
     --age-1: #b7d3f6;
     --age-2: #6da7ec;
@@ -100,7 +100,7 @@
   --series-3: #199e70;
   --neutral: #66758a;
   --conf-high: #76acfc;
-  --conf-medium: #6e7b8f;
+  --conf-medium: #92add4;
   --conf-low: #555555;
   --age-1: #b7d3f6;
   --age-2: #6da7ec;
