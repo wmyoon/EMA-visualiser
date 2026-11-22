@@ -54,7 +54,7 @@ Security; sharing it widely would need an Apple Developer ID and notarisation.
 
 | | |
 |---|---|
-| **Arrangements** | *Spiral*: one turn per year, January at the top, stacks where records share a few days. *Skyline*: one column per year, with rows by audience (guidelines) or outcome (medicines). *Clusters*: guidelines by subject or disease area; medicines by ATC class. *Lifecycle* (guidelines): EMA's three lifecycle stages from left to right, with the topics that span them in front; see below. |
+| **Arrangements** | *Spiral*: one turn per year, January at the top, stacks where records share a few days. *Skyline*: one column per year, with rows by audience (guidelines) or outcome (medicines). *Clusters*: guidelines by subject or disease area; medicines by ATC class. *Lifecycle* (guidelines): a medicine's life as a timeline read like a Gantt chart. EMA's three phases run left to right with the milestones (first trials in people, application, opinion, Commission decision) as gates; each stage is a bar over the part of the life it applies to, overlapping where the work does, and its guidelines stack on it. Not to scale; see below. |
 | **Two date bases** | Place by the record's primary date or by its last update. The year filter follows the same choice. |
 | **Colour** | Guidelines: audience or update age. Medicines: status, type (generic, biosimilar, orphan), audience or update age. |
 | **Search and filter** | Free-text search, chips with live counts, and a year range. Matches re-seat at the base of each stack so a filter reads as a bar inside the full bar. |

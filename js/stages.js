@@ -55,16 +55,39 @@ export const CONFIDENCE_REASONS = {
 };
 
 /**
- * How the Lifecycle arrangement lays the stages out: EMA's three stages as
- * columns from left to right, and the topics that span them as a band in front.
+ * The Lifecycle arrangement as a timeline: a medicine's life runs left to
+ * right, EMA's three stages are phases along it, its milestones are gates
+ * across it, and each assessed stage is a bar over the part of the life it
+ * applies to, as in a Gantt chart. Bars overlap where the work does:
+ * non-clinical studies continue through the trials, and quality and
+ * cross-cutting guidance spans the whole life.
+ *
+ * The scale is schematic, not proportional: development takes years, the
+ * authorisation procedure months. Durations are EMA's
+ * (https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/obtaining-eu-marketing-authorisation-step-step).
  */
-export const LIFECYCLE = {
-  columns: [
-    { ema: 'rd', blocks: ['NC', 'CD'] },
-    { ema: 'ma', blocks: ['MA'] },
-    { ema: 'pa', blocks: ['PA'] },
+export const TIMELINE = {
+  end: 100,
+  phases: [
+    { ema: 'rd', from: 0, to: 44, span: '8–15 years' },
+    { ema: 'ma', from: 44, to: 74, span: 'about a year' },
+    { ema: 'pa', from: 74, to: 100, span: 'on the market' },
   ],
-  band: { ema: 'span', blocks: ['QM', 'XC'] },
+  milestones: [
+    { at: 14, label: 'First trials in people' },
+    { at: 44, label: 'Application', about: 'Marketing authorisation application submitted to EMA' },
+    { at: 62, label: 'Opinion', about: 'CHMP or CVMP opinion, within 210 active days' },
+    { at: 74, label: 'Decision', about: 'European Commission decision, within 67 days of the opinion' },
+  ],
+  /** Bars, back to front: [from, to] on the timeline. */
+  lanes: [
+    { id: 'NC', from: 0, to: 44 },
+    { id: 'CD', from: 14, to: 44 },
+    { id: 'MA', from: 44, to: 74 },
+    { id: 'PA', from: 74, to: 100 },
+    { id: 'QM', from: 0, to: 100, spans: true },
+    { id: 'XC', from: 0, to: 100, spans: true },
+  ],
 };
 
 /** `{ url → assessment }` from data/guideline-stages.json; unusable entries are skipped. */

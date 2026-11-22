@@ -17,7 +17,7 @@ import { parseEmaDate, dateFields, uniqueIds, formatDate, formatSpan, similarTit
 import { GROUPS, GROUP_BY_ID, ICH_SERIES, classify, extractCode } from '../classify.js';
 import { AREAS, AREA_BY_ID, classifyArea } from '../areas.js';
 import { ageColors } from '../encodings.js';
-import { STAGES, STAGE_BY_ID, EMA_STAGE_BY_ID, LIFECYCLE, CONFIDENCE, CONFIDENCE_REASONS, indexStages } from '../stages.js';
+import { STAGES, STAGE_BY_ID, EMA_STAGE_BY_ID, TIMELINE, CONFIDENCE, CONFIDENCE_REASONS, indexStages } from '../stages.js';
 
 export const AUDIENCES = [
   { id: 'human', label: 'Human', short: 'Human', token: '--human' },
@@ -132,8 +132,11 @@ const STAGE_OPTIONS = [
 ];
 const CONF_ORDER = { high: 0, medium: 1, low: 2 };
 const LIFECYCLE_PLAN = {
-  columns: LIFECYCLE.columns.map((c) => ({ label: EMA_STAGE_BY_ID[c.ema].label, blocks: c.blocks.map((id) => ({ id, label: STAGE_BY_ID[id].label })) })),
-  band: { label: EMA_STAGE_BY_ID[LIFECYCLE.band.ema].label, blocks: LIFECYCLE.band.blocks.map((id) => ({ id, label: STAGE_BY_ID[id].label })) },
+  end: TIMELINE.end,
+  phases: TIMELINE.phases.map((p) => ({ label: EMA_STAGE_BY_ID[p.ema].label, from: p.from, to: p.to, span: p.span })),
+  milestones: TIMELINE.milestones,
+  lanes: TIMELINE.lanes.map((l) => ({ ...l, label: STAGE_BY_ID[l.id].label })),
+  spansLabel: 'Spans the lifecycle',
 };
 const audienceTokens = (r) => r.cats.map((c) => AUDIENCE[c].token);
 const year = (ms) => new Date(ms).getUTCFullYear();
@@ -192,7 +195,7 @@ export default {
       rankOf: (r) => CONF_ORDER[r.stage?.confidence] ?? 3,
       rest: 'Not yet assessed',
       caption: () =>
-        'EMA’s lifecycle from left to right, with the topics that span it in front. Each guideline sits in the stage it mainly concerns, assessed from its document; within a block, those that also serve a neighbouring stage lean towards it.',
+        'A medicine’s life from left to right, in EMA’s three phases, with its milestones as gates (not to scale). Each stage is a bar over the part of the life it applies to; its guidelines stack on it, nearer the stage they also serve.',
     },
   ],
 

@@ -3,18 +3,25 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import guidelines, { normalise } from '../js/datasets/guidelines.js';
 import { computeLayout } from '../js/layouts.js';
-import { STAGES, STAGE_BY_ID, EMA_STAGE_BY_ID, LIFECYCLE, indexStages } from '../js/stages.js';
+import { STAGES, STAGE_BY_ID, EMA_STAGE_BY_ID, TIMELINE, indexStages } from '../js/stages.js';
 
 const row = (slug, category = 'Human') => ({ title: slug, category, first_published_date: '01/01/2020', url: `https://www.ema.europa.eu/en/scientific-guidelines/${slug}` });
 const url = (slug) => row(slug).url;
 const assess = (slug, stage, more = {}) => ({ url: url(slug), stage, secondary: null, confidence: 'high', confidence_reason: null, food_chain: false, reasoning: 'Because.', evidence: 'a quote', ...more });
 
-test('every assessed stage sits inside one of EMA’s lifecycle stages, and the lifecycle plan uses each once', () => {
+test('every assessed stage sits inside one of EMA’s lifecycle stages and has one bar on the timeline', () => {
   for (const s of STAGES) assert.ok(EMA_STAGE_BY_ID[s.ema], s.id);
-  const planned = [...LIFECYCLE.columns.flatMap((c) => c.blocks), ...LIFECYCLE.band.blocks];
-  assert.deepEqual([...planned].sort(), STAGES.map((s) => s.id).sort());
-  for (const c of LIFECYCLE.columns) for (const b of c.blocks) assert.equal(STAGE_BY_ID[b].ema, c.ema);
-  for (const b of LIFECYCLE.band.blocks) assert.equal(STAGE_BY_ID[b].ema, LIFECYCLE.band.ema);
+  assert.deepEqual(TIMELINE.lanes.map((l) => l.id).sort(), STAGES.map((s) => s.id).sort());
+  for (const lane of TIMELINE.lanes) {
+    const stage = STAGE_BY_ID[lane.id];
+    if (stage.ema === 'span') assert.ok(lane.from === 0 && lane.to === TIMELINE.end, `${lane.id} spans the whole life`);
+    else {
+      const phase = TIMELINE.phases.find((p) => p.ema === stage.ema);
+      assert.ok(lane.from >= phase.from && lane.to <= phase.to, `${lane.id} lies within its EMA phase`);
+    }
+  }
+  const at = TIMELINE.milestones.map((m) => m.at);
+  assert.deepEqual(at, [...at].sort((a, b) => a - b), 'milestones in time order');
 });
 
 test('indexStages keeps usable assessments and tidies the rest', () => {
@@ -74,7 +81,7 @@ test('the card shows the path through EMA’s lifecycle once, with the reasoning
   assert.equal(card(records[2]).empty, 'Not yet assessed.');
 });
 
-test('the lifecycle runs left to right, with the spanning topics in front and lean towards the secondary stage', () => {
+test('the lifecycle runs left to right in time, bars overlap where the work does, and guidelines lean towards their secondary stage', () => {
   const plan = [
     ...['NC', 'CD', 'MA', 'PA', 'QM', 'XC'].flatMap((s) => Array.from({ length: 30 }, (_, k) => [`${s}-${k}`, s, null])),
     ['cd-left', 'CD', 'NC'],
@@ -84,18 +91,19 @@ test('the lifecycle runs left to right, with the spanning topics in front and le
   const stages = plan.filter(([, s]) => s).map(([slug, s, sec]) => assess(slug, s, { secondary: sec }));
   const records = normalise(plan.map(([slug]) => row(slug)), { stages: { stages } });
   const layout = computeLayout(guidelines.layouts.find((l) => l.id === 'lifecycle'), records, 'pub');
-  const mean = (stage, axis) => {
-    const list = records.filter((r) => r.stage?.stage === stage);
-    return list.reduce((s, r) => s + layout.positions[r.i * 3 + axis], 0) / list.length;
-  };
-  assert.ok(mean('NC', 0) < mean('CD', 0) && mean('CD', 0) < mean('MA', 0) && mean('MA', 0) < mean('PA', 0), 'EMA’s stages in order');
-  assert.ok(mean('QM', 2) > mean('MA', 2) + 5 && mean('XC', 2) > mean('MA', 2) + 5, 'the spanning band is in front');
+  const xs = (stage) => records.filter((r) => r.stage?.stage === stage).map((r) => layout.positions[r.i * 3]);
+  const mean = (list) => list.reduce((a, b) => a + b, 0) / list.length;
+  assert.ok(mean(xs('CD')) < mean(xs('MA')) && mean(xs('MA')) < mean(xs('PA')), 'trials, then the application, then life on the market');
+  assert.ok(Math.min(...xs('NC')) < Math.min(...xs('CD')) && Math.max(...xs('NC')) > Math.min(...xs('CD')), 'non-clinical work starts first and overlaps the trials');
+  assert.ok(Math.max(...xs('MA')) < Math.min(...xs('PA')), 'post-authorisation follows the decision');
+  assert.ok(Math.min(...xs('QM')) < Math.min(...xs('NC')) + 2 && Math.max(...xs('QM')) > Math.max(...xs('PA')) - 2, 'quality spans the whole life');
   const x = (slug) => layout.positions[records.find((r) => r.title === slug).i * 3];
-  assert.ok(x('cd-left') < x('cd-right'), 'a clinical guideline that also serves non-clinical work sits left of one that also serves authorisation');
-  assert.ok(layout.labels.some((l) => l.text === 'Not yet assessed'), 'unassessed guidelines get their own block');
-  for (const label of ['Research and development', 'Marketing authorisation', 'Post-authorisation', 'Topics that span the product lifecycle']) {
-    assert.ok(layout.labels.some((l) => l.kind === 'stage' && l.text === label), label);
+  assert.ok(x('cd-left') < x('cd-right'), 'a clinical guideline that also serves non-clinical work sits earlier than one that also serves the application');
+  assert.ok(layout.labels.some((l) => l.text.startsWith('Not yet assessed')), 'unassessed guidelines get their own bar');
+  for (const label of ['Research and development', 'Marketing authorisation', 'Post-authorisation']) {
+    assert.ok(layout.labels.some((l) => l.kind === 'phase' && l.text === label), label);
   }
+  for (const m of TIMELINE.milestones) assert.ok(layout.labels.some((l) => l.text === m.label), m.label);
 });
 
 test('the shipped stage file matches the dataset', async (t) => {

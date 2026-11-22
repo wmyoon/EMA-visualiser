@@ -12,7 +12,7 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
  * @typedef {Object} Label
  * @property {string} text
  * @property {string} [sub]   secondary line (a count, for example)
- * @property {'axis'|'minor'|'lane'|'group'|'stage'} kind
+ * @property {'axis'|'minor'|'lane'|'group'|'stage'|'phase'|'milestone'} kind
  * @property {[number,number,number]} at
  *
  * @typedef {Object} Layout
@@ -301,19 +301,28 @@ function clusters(records, basis, out, by) {
 /* ------------------------------ lifecycle ------------------------------ */
 
 /**
- * EMA's lifecycle as a floor plan: one column per lifecycle stage from left to
- * right, each holding a block of dots per assessed stage, and a band in front
- * for the topics that span the lifecycle. Inside a block, dots sit nearer the
- * side of the stage they also serve (their secondary stage), so a block's
- * left and right edges show what it shares with its neighbours.
+ * A medicine's life as a timeline, read like a Gantt chart. The x axis runs
+ * through the lifecycle (schematic, not to scale), with phases named along the
+ * top and milestones as gates across every bar. Each stage is a bar over the
+ * stretch of the life it applies to; its guidelines stand on it in stacks, so
+ * height shows where guidance concentrates. Along a bar, a guideline sits
+ * nearer the stage it also serves: a clinical guideline that also serves the
+ * application stands near submission.
  *
- * @param {{plan:{columns:{label:string, blocks:{id:string,label:string}[]}[], band:{label:string, blocks:{id:string,label:string}[]}},
+ * @param {{plan:{end:number,
+ *                phases:{label:string, from:number, to:number, span?:string}[],
+ *                milestones:{at:number, label:string}[],
+ *                lanes:{id:string, label:string, from:number, to:number, spans?:boolean}[],
+ *                spansLabel:string},
  *          keyOf:(r:any)=>string|null, pullOf:(r:any)=>string|null, rankOf:(r:any)=>number, rest:string}} by
  */
 function lifecycle(records, basis, out, by) {
-  const STEP = 1.05; // dot spacing
-  const GAP_BLOCK = 2.6; // between blocks of one stage
-  const GAP_COL = 7; // between EMA stages: room for the arrow
+  const UNIT = 1.0; // timeline units to world units
+  const STEP = 1.0; // dot pitch
+  const DEEP = 4; // rows of dots across each bar
+  const LANE = DEEP * STEP + 2.2; // bar pitch, front to back
+  const GROUP_GAP = 4.5; // extra space before the bars that span the lifecycle
+  const { plan } = by;
   const positions = new Float32Array(records.length * 3);
 
   /** @type {Map<string, any[]>} */
@@ -323,102 +332,96 @@ function lifecycle(records, basis, out, by) {
     if (!members.has(key)) members.set(key, []);
     members.get(key).push(r);
   }
-  const count = (id) => members.get(id)?.length ?? 0;
-  const restBlock = count('none') ? [{ id: 'none', label: by.rest }] : [];
-  const allBlocks = [...by.plan.columns.flatMap((c) => c.blocks), ...by.plan.band.blocks, ...restBlock];
-  const rows = Math.max(6, Math.round(Math.sqrt(Math.max(...allBlocks.map((b) => count(b.id)), 1) / 2.2)));
-  const width = (id) => Math.max(1, Math.ceil(count(id) / rows)) * STEP;
-  const depth = rows * STEP;
+  const lanes = [...plan.lanes];
+  if (members.has('none')) lanes.push({ id: 'none', label: by.rest, from: 0, to: plan.end, spans: true });
 
-  /** @type {Map<string,{x0:number,w:number,zc:number}>} */
-  const place = new Map();
-  let x = 0;
-  const cols = by.plan.columns.map((c) => {
-    const x0 = x;
-    c.blocks.forEach((b, k) => {
-      if (k) x += GAP_BLOCK;
-      place.set(b.id, { x0: x, w: width(b.id), zc: 0 });
-      x += width(b.id);
-    });
-    const col = { ...c, x0, x1: x };
-    x += GAP_COL;
-    return col;
-  });
-  const topWidth = x - GAP_COL;
-  const zBand = depth + 9;
-  const bandBlocks = [...by.plan.band.blocks, ...restBlock];
-  const bandWidth = bandBlocks.reduce((s, b) => s + width(b.id), 0) + GAP_BLOCK * (bandBlocks.length - 1);
-  x = (topWidth - bandWidth) / 2;
-  for (const b of bandBlocks) {
-    place.set(b.id, { x0: x, w: width(b.id), zc: zBand });
-    x += width(b.id) + GAP_BLOCK;
-  }
-  const shift = -topWidth / 2;
-  const centreOf = (id) => {
-    const p = place.get(id);
-    return p ? p.x0 + p.w / 2 : null;
+  const x0 = -(plan.end * UNIT) / 2;
+  const xOf = (t) => x0 + t * UNIT;
+  const firstSpan = lanes.findIndex((l) => l.spans);
+  const zOf = (k) => k * LANE + (firstSpan >= 0 && k >= firstSpan ? GROUP_GAP : 0);
+  const zMid = (zOf(0) + zOf(lanes.length - 1)) / 2;
+  const laneAt = new Map(lanes.map((l, k) => [l.id, { ...l, z: zOf(k) - zMid }]));
+  const midOf = (id) => {
+    const l = laneAt.get(id);
+    return l ? (l.from + l.to) / 2 : null;
   };
 
-  for (const b of allBlocks) {
-    const list = members.get(b.id);
+  let top = 0;
+  for (const lane of laneAt.values()) {
+    const list = members.get(lane.id);
     if (!list) continue;
-    const p = place.get(b.id);
-    const own = centreOf(b.id);
-    const pull = (r) => {
-      const target = centreOf(by.pullOf(r));
-      return target == null ? 0 : Math.sign(target - own) * (1 + Math.abs(target - own) / 1000);
+    const own = (lane.from + lane.to) / 2;
+    // Where on the timeline each guideline leans: towards its secondary stage, kept inside its own bar.
+    const lean = (r) => {
+      const t = midOf(by.pullOf(r));
+      return t == null ? own : Math.min(lane.to, Math.max(lane.from, t)) + (t - own) * 1e-3;
     };
-    list
-      .slice()
-      .sort((a, c) => pull(a) - pull(c) || by.rankOf(a) - by.rankOf(c) || c[basis.ms] - a[basis.ms] || a.i - c.i)
-      .forEach((r, j) => {
-        const col = Math.floor(j / rows);
-        const row = j % rows;
-        const px = p.x0 + (col + 0.5) * STEP;
-        const pz = p.zc - depth / 2 + (row + 0.5) * STEP;
-        const u = (px - (p.x0 + p.w / 2)) / Math.max(p.w / 2, depth / 2);
-        const v = (pz - p.zc) / (depth / 2);
-        positions[r.i * 3] = px + shift;
-        positions[r.i * 3 + 1] = 0.35 + 0.9 * Math.max(0, 1 - (u * u + v * v) / 2);
-        positions[r.i * 3 + 2] = pz;
-      });
+    const sorted = list.slice().sort((a, c) => lean(a) - lean(c) || by.rankOf(a) - by.rankOf(c) || c[basis.ms] - a[basis.ms] || a.i - c.i);
+    const slots = Math.max(1, Math.floor((lane.to - lane.from) / STEP));
+    const n = sorted.length;
+    const sparse = n <= slots; // one dot per slot, spread along the bar
+    sorted.forEach((r, j) => {
+      let slot, k;
+      if (sparse) {
+        slot = Math.floor(((j + 0.5) * slots) / n);
+        k = 0;
+      } else {
+        slot = Math.floor((j * slots) / n);
+        k = j - Math.ceil((slot * n) / slots); // place within this slot's stack
+      }
+      const level = Math.floor(k / DEEP);
+      positions[r.i * 3] = xOf(lane.from + (slot + 0.5) * STEP);
+      positions[r.i * 3 + 1] = 0.45 + level * STEP;
+      positions[r.i * 3 + 2] = lane.z + ((k % DEEP) - (DEEP - 1) / 2) * STEP;
+      top = Math.max(top, 0.45 + level * STEP);
+    });
   }
 
   const lines = [];
-  const rect = (x0, x1, z0, z1) => {
-    lines.push(x0, 0, z0, x1, 0, z0, x1, 0, z0, x1, 0, z1, x1, 0, z1, x0, 0, z1, x0, 0, z1, x0, 0, z0);
-  };
-  const PAD = 1.2;
+  const seg = (ax, ay, az, bx, by_, bz) => lines.push(ax, ay, az, bx, by_, bz);
+  const half = (DEEP * STEP) / 2 + 0.35;
+  const zBack = zOf(0) - zMid - half;
+  const zFront = zOf(lanes.length - 1) - zMid + half;
+
+  // The bars: an outline on the ground, with an arrowhead where the life goes on.
+  for (const lane of laneAt.values()) {
+    const a = xOf(lane.from) - 0.2;
+    const b = xOf(lane.to) + 0.2;
+    seg(a, 0, lane.z - half, b, 0, lane.z - half);
+    seg(a, 0, lane.z + half, b, 0, lane.z + half);
+    seg(a, 0, lane.z - half, a, 0, lane.z + half);
+    if (lane.to >= plan.end) {
+      seg(b, 0, lane.z - half, b + 1.4, 0, lane.z);
+      seg(b + 1.4, 0, lane.z, b, 0, lane.z + half);
+    } else seg(b, 0, lane.z - half, b, 0, lane.z + half);
+  }
+  // Milestones: a gate across every bar, standing up at the back.
+  const gate = Math.max(4, top + 1.5);
+  for (const m of plan.milestones) {
+    const x = xOf(m.at);
+    seg(x, 0, zBack - 1.2, x, 0, zFront + 0.6);
+    seg(x, 0, zBack - 1.2, x, gate, zBack - 1.2);
+  }
+  // Phase rule along the back, with ticks at the boundaries.
+  seg(xOf(0), 0, zBack - 10.6, xOf(plan.end), 0, zBack - 10.6);
+  for (const ph of [...plan.phases, { from: plan.end }]) seg(xOf(ph.from), 0, zBack - 11.2, xOf(ph.from), 0, zBack - 10.0);
+
   /** @type {Label[]} */
   const labels = [];
-  const total = (blocks) => String(blocks.reduce((s, b) => s + count(b.id), 0));
-  cols.forEach((c, k) => {
-    rect(c.x0 - PAD + shift, c.x1 + PAD + shift, -depth / 2 - PAD, depth / 2 + PAD);
-    labels.push({ text: c.label, sub: total(c.blocks), kind: 'stage', at: [(c.x0 + c.x1) / 2 + shift, 0, -depth / 2 - 4.6] });
-    if (c.blocks.length > 1) {
-      for (const b of c.blocks) labels.push({ text: b.label, sub: String(count(b.id)), kind: 'group', at: [centreOf(b.id) + shift, 0, -depth / 2 - PAD - 1.2] });
-    }
-    if (k < cols.length - 1) {
-      // an arrow on to the next stage
-      const mx = c.x1 + GAP_COL / 2 + shift;
-      lines.push(mx - 0.9, 0, -1.3, mx + 0.7, 0, 0, mx + 0.7, 0, 0, mx - 0.9, 0, 1.3);
-    }
-  });
-  rect(-topWidth / 2 - PAD, topWidth / 2 + PAD, zBand - depth / 2 - PAD, zBand + depth / 2 + PAD);
-  labels.push({ text: by.plan.band.label, sub: total(by.plan.band.blocks), kind: 'stage', at: [0, 0, zBand + depth / 2 + 4.6] });
-  for (const b of bandBlocks) {
-    labels.push({ text: b.label, sub: String(count(b.id)), kind: 'group', at: [centreOf(b.id) + shift, 0, zBand + depth / 2 + PAD + 0.6] });
+  for (const ph of plan.phases) labels.push({ text: ph.label, sub: ph.span, kind: 'phase', at: [xOf((ph.from + ph.to) / 2), 0, zBack - 13.5] });
+  for (const m of plan.milestones) labels.push({ text: m.label, kind: 'milestone', at: [xOf(m.at), gate + 0.6, zBack - 1.2] });
+  for (const lane of laneAt.values()) {
+    labels.push({ text: `${lane.label} · ${members.get(lane.id)?.length ?? 0}`, kind: 'lane', at: [xOf(lane.from) - 1.2, 0, lane.z] });
   }
+  if (firstSpan >= 0) labels.push({ text: plan.spansLabel, kind: 'minor', at: [xOf(plan.end / 2), 0, zOf(firstSpan) - zMid - half - 2.4] });
 
-  const zMin = -depth / 2 - 6.5; // stage headers behind the columns
-  const zMax = zBand + depth / 2 + 6.5; // band header in front
   return {
     positions,
     lines: new Float32Array(lines),
     labels,
-    center: [0, 0.4, (zMin + zMax) / 2],
-    fit: { w: topWidth / 2 + 4, h: ((zMax - zMin) / 2) * 0.95 },
-    view: { phi: 0.5, theta: 0 },
+    center: [0, top * 0.3, (zBack - 14.5 + zFront) / 2],
+    fit: { w: (plan.end * UNIT) / 2 + 3, h: (zFront - zBack + 15) / 2 * 0.85 + top * 0.4, left: 10 + 6.6 * Math.max(...lanes.map((l) => l.label.length + 6)) },
+    view: { phi: 0.62, theta: 0 },
   };
 }
 
@@ -431,10 +434,10 @@ function lifecycle(records, basis, out, by) {
  * @property {(r:any)=>string} [keyOf]  cluster a record belongs to
  * @property {{id:string,short:string}[]} [defs]  the clusters, in display order
  * @property {string} [last]  catch-all cluster, placed at the edge
- * @property {object} [plan]  lifecycle: EMA's stages as columns and a band, with the blocks in each
- * @property {(r:any)=>string|null} [pullOf]  lifecycle: the block a dot leans towards
- * @property {(r:any)=>number} [rankOf]  lifecycle: order inside a block after the lean
- * @property {string} [rest]  lifecycle: label for records with no block
+ * @property {object} [plan]  lifecycle: phases, milestones and the bar of each stage on the timeline
+ * @property {(r:any)=>string|null} [pullOf]  lifecycle: the bar a dot leans towards
+ * @property {(r:any)=>number} [rankOf]  lifecycle: order along a bar after the lean
+ * @property {string} [rest]  lifecycle: label for records with no stage
  */
 
 /**
